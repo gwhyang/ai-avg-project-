@@ -1,0 +1,62 @@
+
+# 结局：批归
+label ending_return
+leave --All--
+leave --All--
+[background arg="res://Asset/sprite/bg/3.png"]
+抗战胜利，硝烟散尽，海路慢慢恢复通航。阿棠留在江门五邑故土，顺伯年事已高，将顺兴批局托付给他。他恪守“批银重过性命”的祖训，把一封封跨海家书送往千家万户。
+join shunbo (normal) right
+shunbo: （站在批局门口，望着满街重新热闹起来的街巷，眼角泛起泪光）盼了整整八年，总算盼到这一天。海路一开，南洋那边失联的亲人，该有消息回来了。
+阿棠走到顺伯身侧，两人并肩站着。街上的百姓奔走相告，有人喜极而泣，有人还在等。批局门口，陆陆续续聚拢起翘首以盼的侨属。
+join atang (normal) left
+atang: 顺伯，今日起，我照您教的规矩送批。这一封封跨海家书，我都替南洋的华侨，送到他们亲人手上。
+shunbo: （拍了拍阿棠的肩膀，声音发颤）好，好。顺兴批局，往后就交给你了。记住，批银是托付，重过性命。
+复工之后，第一日的批该先送往哪一家？
+- 先送最远的李家
+	jump return_li
+- 先送等待最久的老人
+	jump return_elder
+
+label return_li
+leave --All--
+set {shunbo_trust} += 5
+if {shunbo_trust} > 100:
+	set {shunbo_trust} = 100
+jump return_continue
+
+label return_elder
+leave --All--
+set {amei_affection} += 5
+if {amei_affection} > 100:
+	set {amei_affection} = 100
+jump return_continue
+
+label return_continue
+leave --All--
+阿棠背上油布包裹，踏上久违的乡间道路。战火过后，道路两旁的荒田渐渐泛起青苗。
+他走了一户又一户，把一封封批送到久别重逢的泪水里，也把一箱箱救命银钱交到曾经濒临绝境的家庭手中。
+leave --All--
+[background arg="res://Asset/sprite/bg/8.png"]
+join atang (normal) left
+atang: （拿起信封，指尖一抖，声音轻得几乎听不见）……陈顺成。是我爹。是我爹的信！
+信封落款：陈顺成。是阿棠失踪多年的父亲。信上说，战时被困南洋数次遇险，侥幸活了下来，碍于海上封锁，数年无法寄回只言片语。如今船通，即刻启程归家。
+阿棠握着信纸，泪水一颗颗砸在泛黄纸页上。八年的等待，终于在这一刻有了回音。
+join amei (normal) right
+amei: （站在门口，眼眶也红了，轻声）阿棠，你爹要回来了。
+leave --All--
+[background arg="res://Asset/sprite/bg/1.png"]
+那一日，台山海口埠码头人山人海。阿棠在人潮里拼命踮脚张望。一个瘦削而熟悉的身影提着藤箱走下船，鬓角花白，正是陈顺成。父子相望，千言万语堵在喉咙口。
+join chenshuncheng (normal) right
+chenshuncheng: （哽咽，一把抱住儿子）阿棠，爹回来了。这些年，苦了你，苦了你娘。
+join atang (normal) left
+atang: （声音沙哑）爹，家里……都在等您。
+陈顺成在批局里坐下，讲起新加坡的战时岁月：日军占领南洋，劳工被看管，几次险些丢了性命。海上不通，他连一封平安信都寄不回来，只能在无数个夜晚，对着故土的方向出神。
+阿妹的祖母熬过战乱，身体慢慢好转。阿棠与阿妹，历经乱世磨难，终成眷属。曾经失散的亲情、乱世相守的爱情，都在一纸批信之中落定尘埃。
+leave --All--
+[background arg="res://Asset/sprite/bg/8.png"]
+只是阿棠的木匣之中，还压着当年那封因战乱、因故未能寄往南洋的回批——那是他写给自己父亲陈顺成的。父亲已经平安归来，这封旧信上的话语，便再不必寄出了。
+他望着那封回批出神许久，最终没有把它寄出，而是郑重地锁进黑漆木匣，轻轻合上铜扣。
+join atang (normal) left
+atang: （低声自语）这一封，就当留作念想罢。那些没来得及说的话，都在心里了。
+山海万重，鸿雁终归。一纸尺素，得以相逢。
+jump modern/modern

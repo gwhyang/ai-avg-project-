@@ -1,0 +1,11 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+&"display_name": "赖四",
+&"default_portrait": "normal",
+&"portraits": {
+"normal": {"scene": "", "export_overrides": {"image": "\"res://Asset/sprite/characters/laisi/normal.png\""}},
+"sneer": {"scene": "", "export_overrides": {"image": "\"res://Asset/sprite/characters/laisi/sneer.png\""}},
+"taunt": {"scene": "", "export_overrides": {"image": "\"res://Asset/sprite/characters/laisi/taunt.png\""}}
+}
+}

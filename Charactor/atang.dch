@@ -1,0 +1,12 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+&"display_name": "阿棠",
+&"nicknames": ["陈梧棠"],
+&"default_portrait": "normal",
+&"portraits": {
+"normal": {"scene": "", "export_overrides": {"image": "\"res://Asset/sprite/characters/atang/normal.png\""}},
+"worried": {"scene": "", "export_overrides": {"image": "\"res://Asset/sprite/characters/atang/worried.png\""}},
+"determined": {"scene": "", "export_overrides": {"image": "\"res://Asset/sprite/characters/atang/determined.png\""}}
+}
+}

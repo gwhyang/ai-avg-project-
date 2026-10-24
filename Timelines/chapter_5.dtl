@@ -1,0 +1,89 @@
+
+# 第五章：抉择
+label chapter_5
+leave --All--
+leave --All--
+[background arg="res://Asset/sprite/bg/9.png"]
+1945年春天，沦陷区局势更加凶险。穷途末路的日军与汉奸爪牙，愈发疯狂掠夺民间财物。阿棠已经十八岁。两年批局生涯，少年褪去青涩。
+但无数重担压在肩头：寻找父亲陈顺成下落的执念；阿妹祖孙的生存；批局堆积如山尚未送出银信；所有人的命运，都被裹挟在时代暴雨之中。
+join laisi (normal) right
+laisi: （面目狰狞，环视屋内，厉声喝问）有人告发！你们顺兴批局私藏南洋巨款！把所有批银、批信全部交出来！若是敢藏私，把所有人全部抓走！
+leave laisi
+join shunbo (normal) right
+shunbo: （往前踏出一步，挡在阿棠身前，脊背绷得笔直）官爷莫要听信谗言！这里只是普通民间批局，哪里来什么抗日钱款。
+leave shunbo
+join laisi (normal) right
+laisi: （冷笑，一脚踢翻旁边堆放批信的竹箩）少给我装糊涂！早有人看见阿全伯频繁出入你这后堂！搜！给我把屋子翻个底朝天！一寸地方都不要放过！
+阿棠看着满地四散飞舞的银信，心脏狠狠往下沉。柜中既有无数百姓的家批；若是参与救国批，还藏着救国批凭据。一旦被搜出，全盘皆输。
+# TODO mini-game: 识破伪信; auto-complete during story-only build
+set {shunbo_trust} += 10
+if {shunbo_trust} > 100:
+	set {shunbo_trust} = 100
+阿棠瞥见墨迹在灯光下微微反光，心里顿时有了底。
+join atang (normal) left
+atang: （不慌不忙，语气镇定）官爷，这状子墨迹都还没干透，分明是现写的。若真有人长期盯着我们，何须临时起笔？只怕是有人想借官爷的手，报私仇罢了。
+laisi: （脸色一僵，恼羞成怒地瞪了跟班一眼）……少废话！搜！
+阿棠的镇定为批局争取到了喘息之机，也让他在心底迅速盘算起脱身之计。
+leave laisi
+join shunbo (normal) right
+shunbo: （压低声音，侧过头飞快对阿棠耳语）阿棠，今日之事，你来拿主意。记住批局的规矩，但也要顾全活着的人。
+- 坚守诚信硬抗
+	jump final_resist
+- 虚与委蛇周旋
+	jump final_delay
+- 被迫妥协
+	jump final_compromise
+
+label final_resist
+leave --All--
+join atang (normal) left
+atang: （张开手臂挡在存放批件的木柜之前，手臂止不住发抖，语气却没有半分退让）这些是千万海外华侨托付给故土亲人的活命钱。你们要拿，就先越过我。
+伪军一拥而上。棍棒落在阿棠身上。顺伯扑上来想护住柜中的批信，也遭到推搡殴打。
+if {joined_relief_batch} and {aquanbo_bond} >= 45:
+	jump ending_relief/ending_relief
+elif {shunbo_trust} >= 70 and not {used_batch_money}:
+	jump postwar/postwar
+else:
+	jump ending_unfinished/ending_unfinished
+
+label final_delay
+leave --All--
+（压下胸中怒火，表面垂下头颅，做出顺从姿态，双手却悄悄伸向桌边烛火）官爷息怒，有话好说，批信批银都在此处，容我取来。
+if {joined_relief_batch}:
+	趁着赖四与伪军注意力放在库房，阿棠侧身遮挡，飞快把标记救国批的字条凑近油灯，火苗舔过纸页，秘密凭证化为灰烬。
+	join laisi (normal) right
+	laisi: （看着燃烧的纸灰，勃然大怒）你烧了什么！？
+	join atang (normal) left
+	atang: （面不改色）不过几张作废旧账本而已。真正的家批与批银，分毫未动，尽可查验。
+	伪军翻查良久，再也找不到半点相关证据。勒索了少量零碎财物之后，悻悻离去。满屋狼藉，地上到处散落被踩踏的银信。顺伯扶着受伤的阿棠缓缓站起。
+else:
+	阿棠趁赖四翻查库房，悄悄护住普通家批。
+	伪军翻查良久，再也找不到半点相关证据。勒索了少量零碎财物之后，悻悻离去。满屋狼藉，地上到处散落被踩踏的银信。顺伯扶着受伤的阿棠缓缓站起。
+if {shunbo_trust} >= 70 and not {used_batch_money}:
+	jump postwar/postwar
+else:
+	jump ending_unfinished/ending_unfinished
+
+label final_compromise
+leave --All--
+看着赖四身后凶神恶煞的伪军，看着散落一地、随时可能被付之一炬的家批，阿棠的手在发抖。他清楚，若一味硬扛，不仅批银会被夺走，连批局和所有侨属的家信都会玉石俱焚。
+join atang (normal) left
+atang: （声音沙哑）……官爷，今日之事，我们认栽。这里有一小部分批银，权当孝敬。只求官爷高抬贵手，放过批局，放过这些寻常百姓的家书。
+赖四一把抓过银钱，掂了掂，露出满意的狞笑，带着伪军扬长而去。批局保住了，一部分普通侨批也保住了，但那些被搜走的批银背后，是数户人家嗷嗷待哺的孩童与卧病的老人。
+阿棠站在原地，指甲掐进掌心。
+if {shunbo_trust} >= 90 and not {used_batch_money} and {batch_loss_count} == 0:
+	set {shunbo_trust} -= 20
+	if {shunbo_trust} < 0:
+		set {shunbo_trust} = 0
+	set {batch_loss_count} += 1
+	if {batch_loss_count} > 100:
+		set {batch_loss_count} = 100
+	jump postwar/postwar
+else:
+	set {shunbo_trust} -= 20
+	if {shunbo_trust} < 0:
+		set {shunbo_trust} = 0
+	set {batch_loss_count} += 1
+	if {batch_loss_count} > 100:
+		set {batch_loss_count} = 100
+	jump ending_unfinished/ending_unfinished

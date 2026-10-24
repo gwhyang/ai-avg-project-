@@ -1,0 +1,41 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+&"_translation_id": "",
+&"color": Color(0, 0, 0, 1),
+&"custom_info": {
+"prefix": "",
+"sound_mood_default": "",
+"sound_moods": {},
+"style": "",
+"suffix": ""
+},
+&"default_portrait": "normal",
+&"description": "",
+&"display_name": "林灯",
+&"mirror": false,
+&"nicknames": ["阿灯"],
+&"offset": Vector2(0, 0),
+&"portraits": {
+"curious": {
+"export_overrides": {
+"image": "\"res://Asset/sprite/characters/lindeng/curious.png\""
+},
+"scene": ""
+},
+"normal": {
+"export_overrides": {
+"image": "\"res://Asset/sprite/characters/lindeng/normal.png\""
+},
+"offset": Vector2(0, 0),
+"scene": ""
+},
+"shocked": {
+"export_overrides": {
+"image": "\"res://Asset/sprite/characters/lindeng/shocked.png\""
+},
+"scene": ""
+}
+},
+&"scale": 1.0
+}

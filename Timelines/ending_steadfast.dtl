@@ -1,0 +1,50 @@
+
+# 结局：守信
+label ending_steadfast
+leave --All--
+leave --All--
+[background arg="res://Asset/sprite/bg/8.png"]
+战争结束，海路重开。无数家庭在战火之后重新收到海外亲人的音讯。可阿棠苦苦等候，却始终没有等来父亲的平安批。
+leave --All--
+[background arg="res://Asset/sprite/bg/11.png"]
+join aquanbo (normal) right
+aquanbo: （从南洋归来，风尘仆仆，神色迟疑）阿棠，我替你在新加坡、吉隆坡把熟识的人都问遍了……没有人知道你爹的下落。战乱里走失的劳工，太多了，找不回来了。
+join atang (normal) left
+atang: （沉默良久，握紧拳头又松开）全伯，多谢您为我奔走。我知道了。
+父亲仍下落不明，你会怎样选择？
+- 随全伯下南洋寻父 | [if {aquanbo_bond} >= 45]
+	jump ending_south/ending_south
+- 留守侨乡送批
+	jump steadfast_stay
+
+label steadfast_stay
+leave --All--
+set {shunbo_trust} += 10
+if {shunbo_trust} > 100:
+	set {shunbo_trust} = 100
+有人劝他放下一切去南洋寻父，阿棠却选择留下。他说：村里那些老人、妇人、孩子，都还在盼着海外的亲人。我不能为了自己的念想，丢下他们。
+leave --All--
+[background arg="res://Asset/sprite/bg/10.png"]
+他接过顺伯的衣钵，成为顺兴批局的新掌柜。从此，日出而作，日落而息，把一封封跨海家书送往千家万户。他见过团圆——儿女扑进久别归来的父亲怀里；
+也见过永无回音的等待——白发老人拄着拐杖，一遍遍问：“今日……有我的信吗？”
+join atang (normal) left
+atang: （把一封银信交到老人手上，轻声道）有的，您的信来了。您儿子在南洋好着呢，托我捎回这些银钱，叫您安心。
+春去秋来，批局门口的老榕树绿了又黄。阿棠的鬓角一天天染白。他收拢了许多因为战火、因为地址变迁而永远无法送达的银信，一封封小心收纳进木匣。
+他寻不回自己的父亲，可他愿做千万人的守望者，守住千万人的期盼。
+leave --All--
+[background arg="res://Asset/sprite/bg/11.png"]
+台风过后，道路泥泞难行。有人劝阿棠歇一日再送批，他摇摇头，挽起裤脚，背着油布包裹蹚过积水。村那头，有一户人家正等着海外的银钱给老人抓药。
+join atang (normal) left
+atang: （抹一把脸上的雨水）批可以等，人命等不得。答应了要送到，就一天也不能拖。
+那一日，他把批银送到时，卧病的老人正攥着空空的药方发呆。接过银钱，老人老泪纵横，握住阿棠的手不住地抖。
+阿棠这才明白，自己守的，从来不只是几封批信，而是千家万户在乱世里活下去的指望。
+join amei (normal) right
+amei: （陪在身侧，替他披上外衣）阿棠，你又把这些没人领的批收起来了？
+atang: （摩挲着泛黄的信封）嗯。它们的主人，总有一天会来取的。就算人不在了，也总该有人记得，他们曾寄出过这样一封家书。
+leave --All--
+[background arg="res://Asset/sprite/bg/8.png"]
+没有轰轰烈烈的圆满，没有万里归家的父亲。但乱世之中，阿棠与阿妹相互扶持，平淡相守，走完了一生。他把“信”这个字，刻进了顺兴批局的门楣，也刻进了无数侨属的心坎里。
+join atang (normal) left
+atang: （晚年，望着满屋批信，缓缓道）我这辈子，替人家送了一辈子的批。自己的爹没等回来，是遗憾。可那么多家的团圆，是我一程一程送出来的。值了。
+纵使至亲音信渺茫，亦为人间守住一诺千金。
+jump modern/modern

@@ -1,0 +1,35 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+&"_translation_id": "",
+&"color": Color(0, 0, 0, 1),
+&"custom_info": {
+"prefix": "",
+"sound_mood_default": "",
+"sound_moods": {},
+"style": "",
+"suffix": ""
+},
+&"default_portrait": "normal",
+&"description": "",
+&"display_name": "阿全伯",
+&"mirror": false,
+&"nicknames": ["全伯"],
+&"offset": Vector2(0, 0),
+&"portraits": {
+"normal": {
+"export_overrides": {
+"image": "\"res://Asset/sprite/characters/aquanbo/normal.png\""
+},
+"offset": Vector2(0, 0),
+"scene": ""
+},
+"stern": {
+"export_overrides": {
+"image": "\"res://Asset/sprite/characters/aquanbo/stern.png\""
+},
+"scene": ""
+}
+},
+&"scale": 1.0
+}

@@ -1,0 +1,146 @@
+
+# 第三章：送批
+label chapter_3
+leave --All--
+leave --All--
+[background arg="res://Asset/sprite/bg/2.png"]
+几个月学徒磨炼过去。顺伯决定交给阿棠第一趟独立送批任务。布包用油布层层裹紧，里面两封银信，还有对应的批银。
+join shunbo (normal) right
+shunbo: （眼神凝重，反复拍打油布包裹确认捆扎牢固）阿棠，这一趟差事，分量不轻。山脚下李家寡妇，三个娃娃天天饿肚子；邻乡那位老人，等着银钱抓药续命。
+shunbo: 两家人的活路，就背在你的肩上。
+join atang (normal) left
+atang: （双手接过包裹，背到肩上，肩头往下沉了沉）顺伯，我晓得其中利害。我一定尽力，把批平安送到两家手上。
+shunbo: 路上会过日伪哨卡，更要提防赖四那伙地痞。那人为日本人做事，贪婪狠毒，专劫我们批脚。保全自己固然要紧，但不到万不得已，不能辜负人家托付。
+shunbo: 遇上事，多动脑子，不要一味逞血气之勇。
+lindeng: 赖四，档案口述史料里面提过这个汉奸地痞，很多批脚都遭过他的劫。千万不要冲动硬拼。
+atang: 我记住了。
+# TODO mini-game: 银两清点; auto-complete during story-only build
+set {shunbo_trust} += 10
+if {shunbo_trust} > 100:
+	set {shunbo_trust} = 100
+阿棠手口并用，很快点清了数目，一分不差。
+shunbo: （满意点头）批银是侨属的活命钱，一分一厘都要清楚。点得明白，才送得安心。
+# TODO mini-game: 送批路线选择; auto-complete during story-only build
+阿棠背着包裹走上乡间土路。走到半山腰岔路口，路边灌木丛猛地窜出几个人。赖四一身灰布汉奸短打，嘴角挂着狞笑，身后跟着两个手持木棍的跟班，拦死整条小路。
+leave shunbo
+join laisi (normal) right
+laisi: （抱臂拦路，阴阳怪气）哟呵，这不是顺兴批局新来的后生仔么？背上这一包鼓鼓囊囊，该不会是南洋过来的批银吧？
+atang: （停下脚步，下意识把后背往身后侧了侧，手心冒出冷汗）不过是寻常乡里书信，没有什么银钱。还请官爷行个方便，放我过路。
+laisi: （哈哈大笑，身后跟班跟着哄笑）少跟我演戏！顺兴批局的批脚出门，包里会没有银钱？想要从这条道过去，得交过路钱。
+laisi: 识相就把银钱拿出来，不然，我直接把你押去哨卡，叫日本人好好审审你！到时候是死是活，可就由不得你了！
+- 冒险保批
+	jump ambush_defend
+- 藏批待机
+	jump ambush_hide
+- 冒险求援
+	jump ambush_help
+
+label ambush_defend
+leave --All--
+set {shunbo_trust} -= 10
+if {shunbo_trust} < 0:
+	set {shunbo_trust} = 0
+set {amei_affection} -= 5
+if {amei_affection} < 0:
+	set {amei_affection} = 0
+set {batch_loss_count} += 1
+if {batch_loss_count} > 100:
+	set {batch_loss_count} = 100
+set {widow_li_batch_lost} = true
+（内心翻腾）这包里是两家人活命的指望。我绝不能交出去！
+join atang (normal) left
+atang: （把布包死死护在怀里）批银是侨属活命钱，我半分也不会给你！
+join laisi (normal) right
+laisi: （脸色一沉，挥手示意跟班上前）敬酒不吃吃罚酒！给我搜！
+赖四跟班一拥而上抢夺包裹。一番撕扯打斗，油布被撕开一道裂口，一部分银元滚落在泥土杂草之中。阿棠拼尽全力护住大部分批信批银，身上挨了几记拳脚，肩头火辣辣疼。
+赖四捡走散落一部分银钱，不甘心放阿棠逃走。
+阿棠带伤赶路。其中一封批完整送到；另一户侨属，只能收到残缺的一部分银钱。
+leave laisi
+join widow_li (normal) right
+widow_li: （看着手里少掉大半的银元，嘴唇哆嗦）就只有这些么……三个孩子还等着米下锅。
+atang: （满心愧疚低头）路上遇上劫匪，损失一部分批银。是我没有护好。
+赖四心中记恨顺兴批局，埋下后续祸根。
+jump ambush_merge
+
+label ambush_hide
+leave --All--
+set {shunbo_trust} += 10
+if {shunbo_trust} > 100:
+	set {shunbo_trust} = 100
+（内心急速盘算）硬碰硬我打不过他们。硬拼只会全部被抢走。只能先把批件藏好。
+join atang (normal) left
+atang: （面上装作慌乱害怕）官爷息怒！银钱并不在我身上，还搁在前边村子一户人家里，要过去才拿得到。
+一边嘴上周旋，趁赖四注意力松懈，猛地冲到路旁土坡，飞快刨开浮土，把用油布裹好整套批信批银埋进草丛泥土。做完这一切，空手折返回来应付赖四的盘问。
+join laisi (normal) right
+laisi: （半信半疑，上下搜阿棠全身，什么都没有摸到）钱呢？拿不出来，今日就别想走！
+赖四耗到暮色降临，迟迟捞不到好处，骂骂咧咧带人离开。等到夜深，阿棠悄悄返回，挖出完好无损的批件，连夜赶路，两户全部送达。
+leave laisi
+join elder_villager (normal) right
+elder_villager: （握着批银老泪纵横）终于盼到我儿的批，孙儿总算有药吃。
+阿棠内心后怕，深深明白送批这条路步步惊心。
+jump ambush_merge
+
+label ambush_help
+leave --All--
+set {aquanbo_bond} += 15
+if {aquanbo_bond} > 100:
+	set {aquanbo_bond} = 100
+set {shunbo_trust} -= 5
+if {shunbo_trust} < 0:
+	set {shunbo_trust} = 0
+（内心）我一个人敌不过他们。阿全伯今日在附近村落处理批务，他在乡里有脸面，或许能镇住赖四。阿棠假装顺从，趁对方不备，拼尽全力挣脱，向着村落方向狂奔。
+join laisi (normal) right
+laisi: （怒吼）抓住他！别让他跑了！
+赖四的人在后追赶一段距离没能追上。阿棠找到阿全伯。
+leave laisi
+join aquanbo (normal) right
+aquanbo: （看见气喘吁吁满身尘土的阿棠）出什么事？慌慌张张。
+join atang (normal) left
+atang: 赖四带人拦路勒索批银，我跑过来求您出面解围。
+阿全伯凭着人脉与威慑呵斥退赖四一伙。
+aquanbo: （事后告诫阿棠）我不可能永远都在你身边。往后凶险，终究要靠你自己拿主意。
+jump ambush_merge
+
+label ambush_merge
+leave --All--
+黄昏，阿棠拖着疲惫身躯返回镇上。老街巷晚霞沉沉，阿妹挎着竹篮站在批局门口等候，显然已经等了许久。
+join amei (normal) right
+if {batch_loss_count} > 0:
+	amei: 你的肩膀在渗血！路上真遇上歹人了？
+else:
+	amei: 你回来了。我坐在门口等你，心里一直不安。
+amei: 祖母卧病在床，家里野菜吃完，已经断粮两日。
+lindeng: 阿妹祖孙俩，就是那个年代千千万万留守侨属的缩影。
+你的布包夹层之中，还存放另外几户人家尚未送出的批银。眼下阿妹祖母性命垂危。你是否要私自挪用一小部分批银救急？
+提示：批银是远方华侨托付给别家眷属的血汗，信义之上，分文不可擅动；但眼前是活生生人命，两难。
+- 绝不挪用他人批银，用自己的工钱接济
+	jump refuse_misuse
+- 偷偷挪一小部分批银救急
+	jump misuse
+
+label refuse_misuse
+leave --All--
+set {used_batch_money} = false
+set {shunbo_trust} += 20
+if {shunbo_trust} > 100:
+	set {shunbo_trust} = 100
+阿棠低下头，内心剧烈挣扎。看着阿妹憔悴模样，心中难受万分，但依旧守住底线。把自己口袋少得可怜的学徒月钱全部掏出来递给阿妹。
+join atang (normal) left
+atang: 阿妹，我心里清楚祖母处境有多难。可是布包里这些银钱，全是别家侨属的活命批银，我万万动不得。一动，便是辜负千里之外华侨的托付。
+atang: 这是我这几个月做工攒下全部工钱，不多，你先拿去给祖母抓药。
+join amei (normal) right
+amei: （愣了愣，眼眶微微泛红，双手接过银元）我懂你的难处。批信之上，系着无数家庭的盼头。难为你，阿棠。这份恩情，我记下。
+jump chapter_4/chapter_4
+
+label misuse
+leave --All--
+set {used_batch_money} = true
+set {shunbo_trust} -= 30
+if {shunbo_trust} < 0:
+	set {shunbo_trust} = 0
+阿棠内心煎熬，终究于心不忍，悄悄从布包夹层取出一小块银元，塞到阿妹手里。
+join atang (normal) left
+atang: （压低声音，神色不安）这一块银元你拿去给祖母救命。千万千万，不可对外人说起这笔钱的来历。我之后拼命干活，一定要把这笔亏空悄悄补回去。
+join amei (normal) right
+amei: （双手攥住银元，又感激又惶恐）我明白轻重，绝不会向外吐露半个字。只是阿棠，你千万不要因为我惹下大祸。
+jump chapter_4/chapter_4

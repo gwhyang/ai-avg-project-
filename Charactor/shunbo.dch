@@ -1,0 +1,10 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+&"display_name": "顺伯",
+&"default_portrait": "normal",
+&"portraits": {
+"normal": {"scene": "", "export_overrides": {"image": "\"res://Asset/sprite/characters/shunbo/normal.png\""}},
+"advising": {"scene": "", "export_overrides": {"image": "\"res://Asset/sprite/characters/shunbo/advising.png\""}}
+}
+}

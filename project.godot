@@ -21,9 +21,32 @@ Dialogic="*uid://ds2q0uclmolvu"
 [dialogic]
 
 directories/dch_directory={
-"character": "res://Charactor/character.dch"
+"amei": "res://Charactor/amei.dch",
+"aquanbo": "res://Charactor/aquanbo.dch",
+"atang": "res://Charactor/atang.dch",
+"character": "res://Charactor/character.dch",
+"chenshuncheng": "res://Charactor/chenshuncheng.dch",
+"elder_villager": "res://Charactor/elder_villager.dch",
+"grandma_lindeng": "res://Charactor/grandma_lindeng.dch",
+"laisi": "res://Charactor/laisi.dch",
+"lindeng": "res://Charactor/lindeng.dch",
+"shunbo": "res://Charactor/shunbo.dch",
+"soldier": "res://Charactor/soldier.dch",
+"widow_li": "res://Charactor/widow_li.dch"
 }
 directories/dtl_directory={
+"chapter_1": "res://Timelines/chapter_1.dtl",
+"chapter_2": "res://Timelines/chapter_2.dtl",
+"chapter_3": "res://Timelines/chapter_3.dtl",
+"chapter_4": "res://Timelines/chapter_4.dtl",
+"chapter_5": "res://Timelines/chapter_5.dtl",
+"ending_relief": "res://Timelines/ending_relief.dtl",
+"ending_return": "res://Timelines/ending_return.dtl",
+"ending_south": "res://Timelines/ending_south.dtl",
+"ending_steadfast": "res://Timelines/ending_steadfast.dtl",
+"ending_unfinished": "res://Timelines/ending_unfinished.dtl",
+"modern": "res://Timelines/modern.dtl",
+"postwar": "res://Timelines/postwar.dtl",
 "timeline": "res://Timelines/timeline.dtl"
 }
 layout/style_directory={}
@@ -59,12 +82,24 @@ audio/channel_defaults={
 "volume": 0.0
 }
 }
-variables={}
+variables={
+"amei_affection": 0,
+"aquanbo_bond": 0,
+"batch_loss_count": 0,
+"father_letter": false,
+"father_roll": 0,
+"joined_relief_batch": false,
+"shunbo_trust": 0,
+"used_batch_money": false,
+"widow_li_batch_lost": false
+}
 layout/style_list=[]
 layout/default_style="Default"
 
 [display]
 
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
