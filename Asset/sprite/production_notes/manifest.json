@@ -1,0 +1,251 @@
+{
+  "canvas": [
+    538,
+    1080
+  ],
+  "format": "PNG",
+  "records": [
+    {
+      "file": "assets/sprites/characters/atang/normal.png",
+      "source": "阿棠_旧布衣与斜挎包少年.png",
+      "status": "base",
+      "size": [
+        538,
+        1080
+      ],
+      "alpha": true,
+      "note": "阿棠默认立绘"
+    },
+    {
+      "file": "assets/sprites/characters/atang/worried.png",
+      "source": "忧心忡忡的少年信使.png",
+      "status": "variant",
+      "size": [
+        538,
+        1080
+      ],
+      "alpha": true,
+      "note": "忧虑/手持批信；动作构图与normal不同"
+    },
+    {
+      "file": "assets/sprites/characters/atang/determined.png",
+      "source": "坚毅前行的风尘少年.png",
+      "status": "action",
+      "size": [
+        538,
+        1080
+      ],
+      "alpha": true,
+      "note": "握拳坚定；动作版"
+    },
+    {
+      "file": "assets/sprites/characters/shunbo/normal.png",
+      "source": "温润儒雅的旧式长衫先生.png",
+      "status": "base",
+      "size": [
+        538,
+        1080
+      ],
+      "alpha": true,
+      "note": "顺伯白长衫与小挎包"
+    },
+    {
+      "file": "assets/sprites/characters/shunbo/advising.png",
+      "source": "复古长衫智者_一指箴言.png",
+      "status": "action",
+      "size": [
+        538,
+        1080
+      ],
+      "alpha": true,
+      "note": "训诫/举指动作"
+    },
+    {
+      "file": "assets/sprites/characters/amei/normal.png",
+      "source": "质朴乡村少女立绘.png",
+      "status": "base",
+      "size": [
+        538,
+        1080
+      ],
+      "alpha": true,
+      "note": "阿妹默认立绘"
+    },
+    {
+      "file": "assets/sprites/characters/amei/worried.png",
+      "source": "乡野双辫少女立绘.png",
+      "status": "variant",
+      "size": [
+        538,
+        1080
+      ],
+      "alpha": true,
+      "note": "难过忧虑；同衣着但不完全同构图"
+    },
+    {
+      "file": "assets/sprites/characters/aquanbo/normal.png",
+      "source": "风尘仆仆的信使角色立绘.png",
+      "status": "base",
+      "size": [
+        538,
+        1080
+      ],
+      "alpha": true,
+      "note": "阿全伯默认立绘"
+    },
+    {
+      "file": "assets/sprites/characters/aquanbo/stern.png",
+      "source": "粗粝江湖行者_full_body.png",
+      "status": "variant",
+      "size": [
+        538,
+        1080
+      ],
+      "alpha": true,
+      "note": "严肃站姿；需核验身份和外观一致性"
+    },
+    {
+      "file": "assets/sprites/characters/lindeng/normal.png",
+      "source": "中国学生志愿者角色立绘.png",
+      "status": "base",
+      "size": [
+        538,
+        1080
+      ],
+      "alpha": true,
+      "note": "现代女性林灯，短发眼镜"
+    },
+    {
+      "file": "assets/sprites/characters/lindeng/curious.png",
+      "source": "戴眼镜的书卷气女孩.png",
+      "status": "variant",
+      "size": [
+        538,
+        1080
+      ],
+      "alpha": true,
+      "note": "现代林灯好奇神情"
+    },
+    {
+      "file": "assets/sprites/characters/lindeng/shocked.png",
+      "source": "惊讶的复古学院风女孩.png",
+      "status": "action",
+      "size": [
+        538,
+        1080
+      ],
+      "alpha": true,
+      "note": "现代林灯震惊动作"
+    },
+    {
+      "file": "assets/sprites/characters/laisi/normal.png",
+      "source": "粗犷旧装的冷峻农夫.png",
+      "status": "base",
+      "size": [
+        538,
+        1080
+      ],
+      "alpha": true,
+      "note": "赖四默认候选：面色凶狠"
+    },
+    {
+      "file": "assets/sprites/characters/laisi/sneer.png",
+      "source": "破旧衣衫的冷峻浪客.png",
+      "status": "variant",
+      "size": [
+        538,
+        1080
+      ],
+      "alpha": true,
+      "note": "赖四冷笑候选；动作外形不同"
+    },
+    {
+      "file": "assets/sprites/characters/laisi/taunt.png",
+      "source": "嚣张落魄的街头少年.png",
+      "status": "action",
+      "size": [
+        538,
+        1080
+      ],
+      "alpha": true,
+      "note": "挑衅动作；形象可能偏年轻，需复核"
+    },
+    {
+      "file": "assets/sprites/characters/chenshuncheng/normal.png",
+      "source": "温暖旅途中的旧行者.png",
+      "status": "base",
+      "size": [
+        538,
+        1080
+      ],
+      "alpha": true,
+      "note": "陈顺成默认中年形象"
+    },
+    {
+      "file": "assets/sprites/characters/chenshuncheng/relieved.png",
+      "source": "温柔沧桑的旅人守护者.png",
+      "status": "variant",
+      "size": [
+        538,
+        1080
+      ],
+      "alpha": true,
+      "note": "陈顺成释然情绪候选"
+    },
+    {
+      "file": "assets/sprites/characters/grandma_lindeng/normal.png",
+      "source": "温柔银发老人角色立绘.png",
+      "status": "base",
+      "size": [
+        538,
+        1080
+      ],
+      "alpha": true,
+      "note": "现代林灯奶奶半身"
+    },
+    {
+      "file": "assets/sprites/characters/widow_li/normal.png",
+      "source": "忧郁的旧衣女子角色立绘.png",
+      "status": "base",
+      "size": [
+        538,
+        1080
+      ],
+      "alpha": true,
+      "note": "李家寡妇半身"
+    },
+    {
+      "file": "assets/sprites/characters/widow_li/sad.png",
+      "source": "忧虑的复古少女角色立绘.png",
+      "status": "variant",
+      "size": [
+        538,
+        1080
+      ],
+      "alpha": true,
+      "note": "仅作候选，年龄/外貌可能不一致"
+    },
+    {
+      "file": "assets/sprites/characters/elder_villager/normal.png",
+      "source": "落寞老人全身立绘.png",
+      "status": "base",
+      "size": [
+        538,
+        1080
+      ],
+      "alpha": true,
+      "note": "邻乡老人"
+    },
+    {
+      "file": "assets/sprites/characters/soldier/normal.png",
+      "source": "严肃的卡其军装士兵立绘.png",
+      "status": "base",
+      "size": [
+        538,
+        1080
+      ],
+      "alpha": true,
+      "note": "通用伪军/士兵模板，历史服装尚待考证"
+    }
+  ]
+}
