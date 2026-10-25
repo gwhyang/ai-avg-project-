@@ -1,6 +1,8 @@
 
 # 结局三 ·《下南洋》
 label ending_south
+if not Dialogic.Audio.is_channel_playing_file("res://Asset/music/《批归》《守信》《下南洋》+所有结局统一汇入.mp3", "music"):
+	audio music "res://Asset/music/《批归》《守信》《下南洋》+所有结局统一汇入.mp3" [fade="1.5" volume="-12" loop="true"]
 leave --All--
 leave --All--
 [background arg="res://Asset/sprite/bg/1.png"]

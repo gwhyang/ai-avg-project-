@@ -1,6 +1,8 @@
 
 # 结局：未竟
 label ending_unfinished
+if not Dialogic.Audio.is_channel_playing_file("res://Asset/music/【淡入】第二章音乐+《救国批》+《未竟》.mp3", "music"):
+	audio music "res://Asset/music/【淡入】第二章音乐+《救国批》+《未竟》.mp3" [fade="1.5" volume="-8" loop="true"]
 leave --All--
 leave --All--
 [background arg="res://Asset/sprite/bg/6.png"]

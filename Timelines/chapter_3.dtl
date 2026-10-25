@@ -1,6 +1,8 @@
 
 # 第三章：送批
 label chapter_3
+if not Dialogic.Audio.is_channel_playing_file("res://Asset/music/【淡入】第三章音乐.mp3", "music"):
+	audio music "res://Asset/music/【淡入】第三章音乐.mp3" [fade="1.5" volume="-13" loop="true"]
 leave --All--
 leave --All--
 [background arg="res://Asset/sprite/bg/2.png"]
@@ -102,6 +104,8 @@ aquanbo: （事后告诫阿棠）我不可能永远都在你身边。往后凶�
 jump ambush_merge
 
 label ambush_merge
+if not Dialogic.Audio.is_channel_playing_file("res://Asset/music/第三章（阿棠是否要给阿妹钱抉择）.mp3", "music"):
+	audio music "res://Asset/music/第三章（阿棠是否要给阿妹钱抉择）.mp3" [fade="1.5" volume="-10" loop="true"]
 leave --All--
 黄昏，阿棠拖着疲惫身躯返回镇上。老街巷晚霞沉沉，阿妹挎着竹篮站在批局门口等候，显然已经等了许久。
 join amei (normal) right

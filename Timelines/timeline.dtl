@@ -1,6 +1,8 @@
 
 # 序章：迟到的批
 label start
+if not Dialogic.Audio.is_channel_playing_file("res://Asset/music/【淡入】序章音乐.mp3", "music"):
+	audio music "res://Asset/music/【淡入】序章音乐.mp3" [fade="1.5" volume="-8" loop="true"]
 leave --All--
 set {shunbo_trust} = 0
 set {amei_affection} = 0

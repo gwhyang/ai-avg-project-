@@ -128,11 +128,16 @@ func validate_resources() -> void:
 			elif event is DialogicCharacterEvent:
 				if event.character_identifier != "--All--":
 					check_character(event.character_identifier, event.portrait, characters, context)
+			elif event is DialogicAudioEvent:
+				if event.file_path:
+					var stream := load(event.file_path) as AudioStream
+					if stream == null or stream.get_length() <= 0.0:
+						fail(context + " missing or invalid audio: " + event.file_path)
 			elif event is DialogicTextEvent:
 				var content: String = event.event_node_as_text.strip_edges()
 				if event.character_identifier:
 					check_character(event.character_identifier, event.portrait, characters, context)
-				for prefix in ["- ", "if ", "elif ", "else:", "set ", "jump ", "label ", "join ", "leave ", "update ", "[background"]:
+				for prefix in ["- ", "if ", "elif ", "else:", "set ", "jump ", "label ", "join ", "leave ", "update ", "audio ", "[background"]:
 					if content.begins_with(prefix):
 						fail(context + " parsed command as text: " + content.left(100))
 						break

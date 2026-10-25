@@ -26,13 +26,26 @@ func _run() -> void:
 		printerr("Start button did not launch the opening timeline")
 		quit(1)
 		return
+	if not dialogic.Audio.is_channel_playing_file("res://Asset/music/【淡入】序章音乐.mp3", "music"):
+		printerr("Opening timeline did not start its music")
+		quit(1)
+		return
 
+	# Ending during a crossfade must release both players and their volume tweens.
+	dialogic.Audio.update_audio("music", "res://Asset/music/【淡入】第一章音乐.mp3", {"fade_length": 1.5})
 	await dialogic.call("end_timeline", true)
-	await process_frame
+	for frame in range(3):
+		await process_frame
 	if not menu.visible or not start_button.has_focus():
 		printerr("Main menu did not return after the timeline ended")
 		quit(1)
 		return
+	if dialogic.Audio.is_any_channel_playing() or dialogic.Audio.audio_node.get_child_count() != 0:
+		printerr("Story music continued after returning to the main menu")
+		quit(1)
+		return
 
 	print("Main scene start and return flow passed")
+	# Allow the audio server to release playback resources before process shutdown.
+	await create_timer(0.1).timeout
 	quit()

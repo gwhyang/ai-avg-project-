@@ -1,6 +1,8 @@
 
 # 终章：纸落千山
 label modern
+if not Dialogic.Audio.is_channel_playing_file("res://Asset/music/《批归》《守信》《下南洋》+所有结局统一汇入.mp3", "music"):
+	audio music "res://Asset/music/《批归》《守信》《下南洋》+所有结局统一汇入.mp3" [fade="1.5" volume="-12" loop="true"]
 leave --All--
 leave --All--
 [background arg="res://Asset/sprite/bg/13.png"]
@@ -65,4 +67,6 @@ lindeng: （轻声，收尾点题）一封银信，一纸千山。故土与山�
 # TODO interaction: 扫码故事与接力写批；待内容与界面接入
 
 label finish
+audio music - [fade="1.5"]
+[wait time="1.5" hide_text="false"]
 leave --All--

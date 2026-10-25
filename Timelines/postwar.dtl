@@ -32,6 +32,8 @@ else:
 
 # 待补：收到父亲来信但阿妹好感不足
 label ending_letter_pending
+if not Dialogic.Audio.is_channel_playing_file("res://Asset/music/《批归》《守信》《下南洋》+所有结局统一汇入.mp3", "music"):
+	audio music "res://Asset/music/《批归》《守信》《下南洋》+所有结局统一汇入.mp3" [fade="1.5" volume="-12" loop="true"]
 leave --All--
 # TODO screenplay: father_letter=true and amei<15 has no defined ending.
 阿棠留在侨乡，接下顺兴批局的担子。来自新加坡的那封信被他郑重收好；他仍将手中的银信送往千家万户。
