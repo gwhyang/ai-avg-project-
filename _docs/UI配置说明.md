@@ -142,9 +142,9 @@ godot --headless --path . --script res://tools/build_ui_resources.gd
 | --- | --- | --- |
 | `PrototypeHub.tscn` | 背景、压暗、标题、分隔线、卡片滚动区、页脚 | 只把 `GAMES` 数据填进 `GameCard.tscn`，处理打开/返回 |
 | `GameCard.tscn` | 卷轴卡 `GameCard` 变体 + 序号/标题/章节标签 | 填充一条游戏数据 |
-| `Quiz.tscn` | 返回/序号、标题、章节、深墨工作区、公文纸、题面、固定 A/B/C 选项、反馈、重试/重开 | 按 `QuizData` 填文本，处理答题状态与奖励 |
-| `Pairing.tscn` | 两组“隐语/实际传递内容”静态布局、状态栏、提交/重开、`Links` 连线层 | 绑定两组数据、选中态、对错判定、连线坐标 |
-| `Route.tscn` | 标题、路线滚动区、结果框、状态与重开 | 实例化 `RouteCard.tscn`，处理选中与结果 |
+| `Quiz.tscn` | 返回/序号、标题、章节、深墨工作区、公文纸、题面、固定 A/B/C 选项、反馈、重试/重开/继续剧情 | 按 `QuizData` 填文本，处理答题状态与奖励 |
+| `Pairing.tscn` | 两组“隐语/实际传递内容”静态布局、状态栏、提交/重开/继续剧情、`Links` 连线层 | 绑定两组数据、选中态、对错判定、连线坐标 |
+| `Route.tscn` | 标题、路线滚动区、结果框、状态、重开/确认路线 | 实例化 `RouteCard.tscn`，处理选中与结果 |
 | `RouteCard.tscn` | 路线卡 `RouteCard` 变体 + 路线名/说明/取舍/选择按钮 | 填充一条路线数据，切换选中变体 |
 
 美术接入：
@@ -157,11 +157,25 @@ godot --headless --path . --script res://tools/build_ui_resources.gd
 
 交互状态都走 Theme 变体：`AnswerCorrect/AnswerWrong`、`ChipSelected`、`RouteCardSelected`、`FeedbackSuccess/Failure`；脚本只切换 `theme_type_variation` 或改文本，不拼 UI。
 
+## 小游戏接入主线
+
+- autoload `Minigames` → `Minigames/MinigameBridge.gd`
+- Timeline 用 `do Minigames.run("reading")` 调用；Dialogic call 事件会 await，剧情停在小游戏
+- 桥接层用 `CanvasLayer(layer=50)` 盖在 Dialogic 布局上，完成后释放；不暂停背景音乐
+- 结果写入 `minigame_success / minigame_retried / minigame_reward / minigame_choice`
+- Timeline 再用 `set {shunbo_trust} += {minigame_reward}` 结算，重试成功为半额（7.5 存 float）
+- 剧情模式隐藏返回/重新开始，成功/选定路线后显示「继续剧情 / 确认路线」；Esc 不会跳过剧情节点
+
+接入点、八个 id 与奖励表见 `Minigames/README.md`。小游戏剧情模式截图见 `tools/capture_ui.gd` 的 `ui_story_quiz*`。
+
 ## 验证
 
 ```bash
 # 主题 / 样式 / 运行时对话框断言
 godot --headless --path . --script res://tools/validate_ui.gd
+
+# 小游戏剧情模式、桥接变量与 Timeline 接入点
+godot --headless --path . --script res://tools/validate_story_flow.gd
 
 # 原有流程回归
 godot --headless --path . --script res://tools/validate_main.gd
@@ -173,4 +187,4 @@ godot --headless --path . --script res://tools/validate_music.gd
 godot --path . --script res://tools/capture_ui.gd
 ```
 
-`capture_ui.gd` 会输出 `user://ui_menu.png`、`ui_dialogue.png`、`ui_speaker.png`、`ui_choices.png`、`ui_hub.png`、`ui_quiz.png`、`ui_quiz_answer.png`、`ui_pairing.png`、`ui_pairing_selected.png`、`ui_route.png`、`ui_route_selected.png`。
+`capture_ui.gd` 会输出 `user://ui_menu.png`、`ui_dialogue.png`、`ui_speaker.png`、`ui_choices.png`、`ui_hub.png`、`ui_quiz.png`、`ui_quiz_answer.png`、`ui_pairing.png`、`ui_pairing_selected.png`、`ui_route.png`、`ui_route_selected.png`、`ui_story_quiz.png`、`ui_story_quiz_done.png`。

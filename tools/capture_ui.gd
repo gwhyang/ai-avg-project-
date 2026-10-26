@@ -79,6 +79,21 @@ func _run() -> void:
 			game.emit_signal("exit_requested")
 			await _wait(0.4)
 
+	var bridge = root.get_node("Minigames")
+	bridge.call_deferred("run", "reading")
+	await _wait(0.8)
+	await _save("ui_story_quiz")
+	var layer: CanvasLayer = bridge.get_node_or_null("StoryMinigameLayer")
+	if layer and layer.get_child_count() > 0:
+		var game: Control = layer.get_child(0)
+		var quiz_data: Dictionary = game.get("game")
+		game.get("option_buttons")[int(quiz_data.correct)].pressed.emit()
+		await _wait(0.4)
+		await _save("ui_story_quiz_done")
+		game.get("continue_button").pressed.emit()
+	while bridge.is_running():
+		await _wait(0.1)
+
 	await _wait(0.2)
 	quit()
 
