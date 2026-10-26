@@ -1,0 +1,15 @@
+[gd_resource type="StyleBoxTexture" format=3]
+
+[ext_resource type="Texture2D" path="res://Asset/ui/buttons/button_006.png" id="1_p651o"]
+
+[resource]
+content_margin_left = 84.0
+content_margin_top = 16.0
+content_margin_right = 84.0
+content_margin_bottom = 22.0
+texture = ExtResource("1_p651o")
+texture_margin_left = 72.0
+texture_margin_top = 26.0
+texture_margin_right = 72.0
+texture_margin_bottom = 26.0
+modulate_color = Color(0.82, 0.8, 0.76, 0.9)

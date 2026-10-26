@@ -1,0 +1,117 @@
+[gd_resource type="Theme" format=3]
+
+[ext_resource type="SystemFont" path="res://UI/Fonts/ink_serif.tres" id="1_vi2i2"]
+[ext_resource type="StyleBox" path="res://UI/StyleBoxes/button_disabled.tres" id="2_ucoys"]
+[ext_resource type="StyleBox" path="res://UI/StyleBoxes/button_focus.tres" id="3_4jfu7"]
+[ext_resource type="StyleBox" path="res://UI/StyleBoxes/button_hover.tres" id="4_nblk0"]
+[ext_resource type="StyleBox" path="res://UI/StyleBoxes/button_normal.tres" id="5_8wl6q"]
+[ext_resource type="StyleBox" path="res://UI/StyleBoxes/button_pressed.tres" id="6_0c0n2"]
+[ext_resource type="StyleBox" path="res://UI/StyleBoxes/line_edit_focus.tres" id="7_bj8v0"]
+[ext_resource type="StyleBox" path="res://UI/StyleBoxes/button_focus_gold.tres" id="7_r1h4i"]
+[ext_resource type="StyleBox" path="res://UI/StyleBoxes/document_panel.tres" id="8_id400"]
+[ext_resource type="StyleBox" path="res://UI/StyleBoxes/line_edit.tres" id="8_vxwyc"]
+[ext_resource type="StyleBox" path="res://UI/StyleBoxes/game_card_normal.tres" id="9_ji8j3"]
+[ext_resource type="StyleBox" path="res://UI/StyleBoxes/panel_paper.tres" id="9_q2h6g"]
+[ext_resource type="StyleBox" path="res://UI/StyleBoxes/panel_flat.tres" id="9_ucoys"]
+[ext_resource type="StyleBox" path="res://UI/StyleBoxes/game_card_hover.tres" id="10_kgtuv"]
+[ext_resource type="StyleBox" path="res://UI/StyleBoxes/progress_background.tres" id="10_tg6r3"]
+[ext_resource type="StyleBox" path="res://UI/StyleBoxes/game_card_pressed.tres" id="11_c36gw"]
+[ext_resource type="StyleBox" path="res://UI/StyleBoxes/progress_fill.tres" id="11_r1h4i"]
+[ext_resource type="SystemFont" path="res://UI/Fonts/ink_serif_bold.tres" id="12_id400"]
+[ext_resource type="StyleBox" path="res://UI/StyleBoxes/result_panel.tres" id="18_5yl17"]
+[ext_resource type="StyleBox" path="res://UI/StyleBoxes/route_card.tres" id="20_au2ha"]
+[ext_resource type="StyleBox" path="res://UI/StyleBoxes/route_card_selected.tres" id="21_q774p"]
+[ext_resource type="StyleBox" path="res://UI/StyleBoxes/workspace_dark.tres" id="22_orf15"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_r1h4i"]
+color = Color(0.72, 0.62, 0.45, 0.3)
+
+[resource]
+default_font = ExtResource("1_vi2i2")
+default_font_size = 26
+AnswerCorrect/base_type = &"Button"
+AnswerCorrect/colors/font_disabled_color = Color(0.161, 0.113, 0.075, 1)
+AnswerCorrect/styles/disabled = ExtResource("4_nblk0")
+AnswerWrong/base_type = &"Button"
+AnswerWrong/colors/font_disabled_color = Color(0.965, 0.918, 0.839, 1)
+AnswerWrong/styles/disabled = ExtResource("6_0c0n2")
+Button/colors/font_color = Color(0.161, 0.113, 0.075, 1)
+Button/colors/font_disabled_color = Color(0.28, 0.25, 0.21, 0.9)
+Button/colors/font_focus_color = Color(0.161, 0.113, 0.075, 1)
+Button/colors/font_hover_color = Color(0.44, 0.15, 0.1, 1)
+Button/colors/font_pressed_color = Color(0.965, 0.918, 0.839, 1)
+Button/font_sizes/font_size = 32
+Button/fonts/font = ExtResource("1_vi2i2")
+Button/styles/disabled = ExtResource("2_ucoys")
+Button/styles/focus = ExtResource("3_4jfu7")
+Button/styles/hover = ExtResource("4_nblk0")
+Button/styles/normal = ExtResource("5_8wl6q")
+Button/styles/pressed = ExtResource("6_0c0n2")
+ChipSelected/base_type = &"Button"
+ChipSelected/colors/font_color = Color(0.161, 0.113, 0.075, 1)
+ChipSelected/colors/font_focus_color = Color(0.161, 0.113, 0.075, 1)
+ChipSelected/colors/font_hover_color = Color(0.161, 0.113, 0.075, 1)
+ChipSelected/colors/font_pressed_color = Color(0.965, 0.918, 0.839, 1)
+ChipSelected/font_sizes/font_size = 22
+ChipSelected/styles/focus = ExtResource("7_r1h4i")
+ChipSelected/styles/hover = ExtResource("4_nblk0")
+ChipSelected/styles/normal = ExtResource("4_nblk0")
+ChipSelected/styles/pressed = ExtResource("6_0c0n2")
+DocumentPanel/base_type = &"PanelContainer"
+DocumentPanel/styles/panel = ExtResource("8_id400")
+FeedbackFailure/base_type = &"Label"
+FeedbackFailure/colors/font_color = Color(1, 0.75, 0.7, 1)
+FeedbackSuccess/base_type = &"Label"
+FeedbackSuccess/colors/font_color = Color(0.72, 0.94, 0.8, 1)
+GameCard/base_type = &"Button"
+GameCard/colors/font_color = Color(0.161, 0.113, 0.075, 1)
+GameCard/colors/font_focus_color = Color(0.161, 0.113, 0.075, 1)
+GameCard/colors/font_hover_color = Color(0.161, 0.113, 0.075, 1)
+GameCard/colors/font_pressed_color = Color(0.161, 0.113, 0.075, 1)
+GameCard/styles/disabled = ExtResource("9_ji8j3")
+GameCard/styles/focus = ExtResource("10_kgtuv")
+GameCard/styles/hover = ExtResource("10_kgtuv")
+GameCard/styles/normal = ExtResource("9_ji8j3")
+GameCard/styles/pressed = ExtResource("11_c36gw")
+HSeparator/styles/separator = SubResource("StyleBoxLine_r1h4i")
+Label/colors/font_color = Color(0.161, 0.113, 0.075, 1)
+Label/font_sizes/font_size = 26
+Label/fonts/font = ExtResource("1_vi2i2")
+LineEdit/colors/caret_color = Color(0.647, 0.22, 0.145, 1)
+LineEdit/colors/font_color = Color(0.161, 0.113, 0.075, 1)
+LineEdit/colors/font_placeholder_color = Color(0.36, 0.3, 0.24, 0.65)
+LineEdit/colors/selection_color = Color(0.65, 0.22, 0.14, 0.35)
+LineEdit/font_sizes/font_size = 30
+LineEdit/fonts/font = ExtResource("1_vi2i2")
+LineEdit/styles/focus = ExtResource("7_bj8v0")
+LineEdit/styles/normal = ExtResource("8_vxwyc")
+LineEdit/styles/read_only = ExtResource("8_vxwyc")
+Panel/styles/panel = ExtResource("9_ucoys")
+PanelContainer/styles/panel = ExtResource("9_ucoys")
+PopupPanel/styles/panel = ExtResource("9_q2h6g")
+ProgressBar/colors/font_color = Color(0.161, 0.113, 0.075, 1)
+ProgressBar/font_sizes/font_size = 24
+ProgressBar/styles/background = ExtResource("10_tg6r3")
+ProgressBar/styles/fill = ExtResource("11_r1h4i")
+ResultPanel/base_type = &"PanelContainer"
+ResultPanel/styles/panel = ExtResource("18_5yl17")
+RichTextLabel/colors/default_color = Color(0.161, 0.113, 0.075, 1)
+RichTextLabel/constants/line_separation = 6
+RichTextLabel/font_sizes/bold_font_size = 26
+RichTextLabel/font_sizes/bold_italics_font_size = 26
+RichTextLabel/font_sizes/italics_font_size = 26
+RichTextLabel/font_sizes/normal_font_size = 26
+RichTextLabel/fonts/bold_font = ExtResource("12_id400")
+RichTextLabel/fonts/bold_italics_font = ExtResource("12_id400")
+RichTextLabel/fonts/italics_font = ExtResource("1_vi2i2")
+RichTextLabel/fonts/normal_font = ExtResource("1_vi2i2")
+RouteCard/base_type = &"PanelContainer"
+RouteCard/styles/panel = ExtResource("20_au2ha")
+RouteCardSelected/base_type = &"PanelContainer"
+RouteCardSelected/styles/panel = ExtResource("21_q774p")
+TooltipLabel/colors/font_color = Color(0.161, 0.113, 0.075, 1)
+TooltipLabel/font_sizes/font_size = 24
+TooltipLabel/fonts/font = ExtResource("1_vi2i2")
+TooltipPanel/styles/panel = ExtResource("9_q2h6g")
+WorkspacePanel/base_type = &"PanelContainer"
+WorkspacePanel/styles/panel = ExtResource("22_orf15")
