@@ -1,0 +1,2930 @@
+[
+  {
+    "name": "panel_001.png",
+    "path": "assets/ui/panels/panel_001.png",
+    "source": "复古水墨中式游戏界面素材包.png",
+    "source_bbox": [
+      17,
+      9,
+      1409,
+      421
+    ],
+    "size": [
+      1417,
+      429
+    ],
+    "category": "panels"
+  },
+  {
+    "name": "panel_002.png",
+    "path": "assets/ui/panels/panel_002.png",
+    "source": "复古水墨中式游戏界面素材包.png",
+    "source_bbox": [
+      35,
+      440,
+      1383,
+      243
+    ],
+    "size": [
+      1391,
+      251
+    ],
+    "category": "panels"
+  },
+  {
+    "name": "panel_003.png",
+    "path": "assets/ui/panels/panel_003.png",
+    "source": "复古水墨中式游戏界面素材包.png",
+    "source_bbox": [
+      89,
+      691,
+      531,
+      233
+    ],
+    "size": [
+      539,
+      241
+    ],
+    "category": "panels"
+  },
+  {
+    "name": "panel_004.png",
+    "path": "assets/ui/panels/panel_004.png",
+    "source": "复古水墨中式游戏界面素材包.png",
+    "source_bbox": [
+      643,
+      696,
+      571,
+      162
+    ],
+    "size": [
+      579,
+      170
+    ],
+    "category": "panels"
+  },
+  {
+    "name": "panel_005.png",
+    "path": "assets/ui/panels/panel_005.png",
+    "source": "复古水墨中式游戏界面素材包.png",
+    "source_bbox": [
+      1280,
+      737,
+      83,
+      142
+    ],
+    "size": [
+      91,
+      150
+    ],
+    "category": "panels"
+  },
+  {
+    "name": "panel_006.png",
+    "path": "assets/ui/panels/panel_006.png",
+    "source": "复古水墨中式游戏界面素材包.png",
+    "source_bbox": [
+      729,
+      808,
+      416,
+      129
+    ],
+    "size": [
+      424,
+      137
+    ],
+    "category": "panels"
+  },
+  {
+    "name": "panel_007.png",
+    "path": "assets/ui/panels/panel_007.png",
+    "source": "复古水墨中式游戏界面素材包.png",
+    "source_bbox": [
+      23,
+      932,
+      292,
+      125
+    ],
+    "size": [
+      300,
+      133
+    ],
+    "category": "panels"
+  },
+  {
+    "name": "panel_008.png",
+    "path": "assets/ui/panels/panel_008.png",
+    "source": "复古水墨中式游戏界面素材包.png",
+    "source_bbox": [
+      361,
+      966,
+      297,
+      100
+    ],
+    "size": [
+      305,
+      108
+    ],
+    "category": "panels"
+  },
+  {
+    "name": "panel_009.png",
+    "path": "assets/ui/panels/panel_009.png",
+    "source": "复古水墨中式游戏界面素材包.png",
+    "source_bbox": [
+      690,
+      941,
+      437,
+      116
+    ],
+    "size": [
+      445,
+      124
+    ],
+    "category": "panels"
+  },
+  {
+    "name": "panel_010.png",
+    "path": "assets/ui/panels/panel_010.png",
+    "source": "复古水墨中式游戏界面素材包.png",
+    "source_bbox": [
+      1161,
+      941,
+      60,
+      126
+    ],
+    "size": [
+      68,
+      134
+    ],
+    "category": "panels"
+  },
+  {
+    "name": "panel_011.png",
+    "path": "assets/ui/panels/panel_011.png",
+    "source": "复古水墨中式游戏界面素材包.png",
+    "source_bbox": [
+      1244,
+      953,
+      96,
+      97
+    ],
+    "size": [
+      104,
+      105
+    ],
+    "category": "panels"
+  },
+  {
+    "name": "panel_012.png",
+    "path": "assets/ui/panels/panel_012.png",
+    "source": "复古水墨中式游戏界面素材包.png",
+    "source_bbox": [
+      1360,
+      964,
+      71,
+      74
+    ],
+    "size": [
+      79,
+      82
+    ],
+    "category": "panels"
+  },
+  {
+    "name": "icon_001.png",
+    "path": "assets/ui/icons/icon_001.png",
+    "source": "中国风手绘水墨游戏界面图标集.png",
+    "source_bbox": [
+      16,
+      75,
+      167,
+      166
+    ],
+    "size": [
+      175,
+      174
+    ],
+    "category": "icons"
+  },
+  {
+    "name": "icon_002.png",
+    "path": "assets/ui/icons/icon_002.png",
+    "source": "中国风手绘水墨游戏界面图标集.png",
+    "source_bbox": [
+      195,
+      75,
+      168,
+      165
+    ],
+    "size": [
+      176,
+      173
+    ],
+    "category": "icons"
+  },
+  {
+    "name": "icon_003.png",
+    "path": "assets/ui/icons/icon_003.png",
+    "source": "中国风手绘水墨游戏界面图标集.png",
+    "source_bbox": [
+      373,
+      75,
+      168,
+      165
+    ],
+    "size": [
+      176,
+      173
+    ],
+    "category": "icons"
+  },
+  {
+    "name": "icon_004.png",
+    "path": "assets/ui/icons/icon_004.png",
+    "source": "中国风手绘水墨游戏界面图标集.png",
+    "source_bbox": [
+      553,
+      75,
+      167,
+      167
+    ],
+    "size": [
+      175,
+      175
+    ],
+    "category": "icons"
+  },
+  {
+    "name": "icon_005.png",
+    "path": "assets/ui/icons/icon_005.png",
+    "source": "中国风手绘水墨游戏界面图标集.png",
+    "source_bbox": [
+      731,
+      75,
+      167,
+      167
+    ],
+    "size": [
+      175,
+      175
+    ],
+    "category": "icons"
+  },
+  {
+    "name": "icon_006.png",
+    "path": "assets/ui/icons/icon_006.png",
+    "source": "中国风手绘水墨游戏界面图标集.png",
+    "source_bbox": [
+      909,
+      75,
+      169,
+      167
+    ],
+    "size": [
+      177,
+      175
+    ],
+    "category": "icons"
+  },
+  {
+    "name": "icon_007.png",
+    "path": "assets/ui/icons/icon_007.png",
+    "source": "中国风手绘水墨游戏界面图标集.png",
+    "source_bbox": [
+      1090,
+      75,
+      167,
+      167
+    ],
+    "size": [
+      175,
+      175
+    ],
+    "category": "icons"
+  },
+  {
+    "name": "icon_008.png",
+    "path": "assets/ui/icons/icon_008.png",
+    "source": "中国风手绘水墨游戏界面图标集.png",
+    "source_bbox": [
+      1269,
+      75,
+      167,
+      167
+    ],
+    "size": [
+      175,
+      175
+    ],
+    "category": "icons"
+  },
+  {
+    "name": "icon_009.png",
+    "path": "assets/ui/icons/icon_009.png",
+    "source": "中国风手绘水墨游戏界面图标集.png",
+    "source_bbox": [
+      23,
+      311,
+      168,
+      167
+    ],
+    "size": [
+      176,
+      175
+    ],
+    "category": "icons"
+  },
+  {
+    "name": "icon_010.png",
+    "path": "assets/ui/icons/icon_010.png",
+    "source": "中国风手绘水墨游戏界面图标集.png",
+    "source_bbox": [
+      207,
+      312,
+      167,
+      166
+    ],
+    "size": [
+      175,
+      174
+    ],
+    "category": "icons"
+  },
+  {
+    "name": "icon_011.png",
+    "path": "assets/ui/icons/icon_011.png",
+    "source": "中国风手绘水墨游戏界面图标集.png",
+    "source_bbox": [
+      396,
+      326,
+      98,
+      143
+    ],
+    "size": [
+      106,
+      151
+    ],
+    "category": "icons"
+  },
+  {
+    "name": "icon_012.png",
+    "path": "assets/ui/icons/icon_012.png",
+    "source": "中国风手绘水墨游戏界面图标集.png",
+    "source_bbox": [
+      578,
+      326,
+      98,
+      142
+    ],
+    "size": [
+      106,
+      150
+    ],
+    "category": "icons"
+  },
+  {
+    "name": "icon_013.png",
+    "path": "assets/ui/icons/icon_013.png",
+    "source": "中国风手绘水墨游戏界面图标集.png",
+    "source_bbox": [
+      688,
+      309,
+      181,
+      181
+    ],
+    "size": [
+      189,
+      189
+    ],
+    "category": "icons"
+  },
+  {
+    "name": "icon_014.png",
+    "path": "assets/ui/icons/icon_014.png",
+    "source": "中国风手绘水墨游戏界面图标集.png",
+    "source_bbox": [
+      882,
+      314,
+      179,
+      179
+    ],
+    "size": [
+      187,
+      187
+    ],
+    "category": "icons"
+  },
+  {
+    "name": "icon_015.png",
+    "path": "assets/ui/icons/icon_015.png",
+    "source": "中国风手绘水墨游戏界面图标集.png",
+    "source_bbox": [
+      1079,
+      318,
+      164,
+      162
+    ],
+    "size": [
+      172,
+      170
+    ],
+    "category": "icons"
+  },
+  {
+    "name": "icon_016.png",
+    "path": "assets/ui/icons/icon_016.png",
+    "source": "中国风手绘水墨游戏界面图标集.png",
+    "source_bbox": [
+      1258,
+      316,
+      162,
+      164
+    ],
+    "size": [
+      170,
+      172
+    ],
+    "category": "icons"
+  },
+  {
+    "name": "icon_017.png",
+    "path": "assets/ui/icons/icon_017.png",
+    "source": "中国风手绘水墨游戏界面图标集.png",
+    "source_bbox": [
+      32,
+      548,
+      522,
+      86
+    ],
+    "size": [
+      530,
+      94
+    ],
+    "category": "icons"
+  },
+  {
+    "name": "icon_018.png",
+    "path": "assets/ui/icons/icon_018.png",
+    "source": "中国风手绘水墨游戏界面图标集.png",
+    "source_bbox": [
+      587,
+      569,
+      271,
+      44
+    ],
+    "size": [
+      279,
+      52
+    ],
+    "category": "icons"
+  },
+  {
+    "name": "icon_019.png",
+    "path": "assets/ui/icons/icon_019.png",
+    "source": "中国风手绘水墨游戏界面图标集.png",
+    "source_bbox": [
+      879,
+      571,
+      261,
+      40
+    ],
+    "size": [
+      269,
+      48
+    ],
+    "category": "icons"
+  },
+  {
+    "name": "icon_020.png",
+    "path": "assets/ui/icons/icon_020.png",
+    "source": "中国风手绘水墨游戏界面图标集.png",
+    "source_bbox": [
+      1171,
+      542,
+      97,
+      96
+    ],
+    "size": [
+      105,
+      104
+    ],
+    "category": "icons"
+  },
+  {
+    "name": "icon_021.png",
+    "path": "assets/ui/icons/icon_021.png",
+    "source": "中国风手绘水墨游戏界面图标集.png",
+    "source_bbox": [
+      1311,
+      545,
+      95,
+      95
+    ],
+    "size": [
+      103,
+      103
+    ],
+    "category": "icons"
+  },
+  {
+    "name": "icon_022.png",
+    "path": "assets/ui/icons/icon_022.png",
+    "source": "中国风手绘水墨游戏界面图标集.png",
+    "source_bbox": [
+      33,
+      678,
+      520,
+      84
+    ],
+    "size": [
+      528,
+      92
+    ],
+    "category": "icons"
+  },
+  {
+    "name": "icon_023.png",
+    "path": "assets/ui/icons/icon_023.png",
+    "source": "中国风手绘水墨游戏界面图标集.png",
+    "source_bbox": [
+      1187,
+      670,
+      100,
+      97
+    ],
+    "size": [
+      108,
+      105
+    ],
+    "category": "icons"
+  },
+  {
+    "name": "icon_024.png",
+    "path": "assets/ui/icons/icon_024.png",
+    "source": "中国风手绘水墨游戏界面图标集.png",
+    "source_bbox": [
+      1327,
+      673,
+      92,
+      92
+    ],
+    "size": [
+      100,
+      100
+    ],
+    "category": "icons"
+  },
+  {
+    "name": "icon_025.png",
+    "path": "assets/ui/icons/icon_025.png",
+    "source": "中国风手绘水墨游戏界面图标集.png",
+    "source_bbox": [
+      585,
+      694,
+      230,
+      44
+    ],
+    "size": [
+      238,
+      52
+    ],
+    "category": "icons"
+  },
+  {
+    "name": "icon_026.png",
+    "path": "assets/ui/icons/icon_026.png",
+    "source": "中国风手绘水墨游戏界面图标集.png",
+    "source_bbox": [
+      831,
+      695,
+      230,
+      43
+    ],
+    "size": [
+      238,
+      51
+    ],
+    "category": "icons"
+  },
+  {
+    "name": "icon_027.png",
+    "path": "assets/ui/icons/icon_027.png",
+    "source": "中国风手绘水墨游戏界面图标集.png",
+    "source_bbox": [
+      37,
+      806,
+      191,
+      87
+    ],
+    "size": [
+      199,
+      95
+    ],
+    "category": "icons"
+  },
+  {
+    "name": "icon_028.png",
+    "path": "assets/ui/icons/icon_028.png",
+    "source": "中国风手绘水墨游戏界面图标集.png",
+    "source_bbox": [
+      274,
+      804,
+      177,
+      89
+    ],
+    "size": [
+      185,
+      97
+    ],
+    "category": "icons"
+  },
+  {
+    "name": "icon_029.png",
+    "path": "assets/ui/icons/icon_029.png",
+    "source": "中国风手绘水墨游戏界面图标集.png",
+    "source_bbox": [
+      490,
+      803,
+      89,
+      88
+    ],
+    "size": [
+      97,
+      96
+    ],
+    "category": "icons"
+  },
+  {
+    "name": "icon_030.png",
+    "path": "assets/ui/icons/icon_030.png",
+    "source": "中国风手绘水墨游戏界面图标集.png",
+    "source_bbox": [
+      609,
+      803,
+      89,
+      89
+    ],
+    "size": [
+      97,
+      97
+    ],
+    "category": "icons"
+  },
+  {
+    "name": "icon_031.png",
+    "path": "assets/ui/icons/icon_031.png",
+    "source": "中国风手绘水墨游戏界面图标集.png",
+    "source_bbox": [
+      783,
+      844,
+      151,
+      160
+    ],
+    "size": [
+      159,
+      168
+    ],
+    "category": "icons"
+  },
+  {
+    "name": "icon_032.png",
+    "path": "assets/ui/icons/icon_032.png",
+    "source": "中国风手绘水墨游戏界面图标集.png",
+    "source_bbox": [
+      967,
+      821,
+      105,
+      213
+    ],
+    "size": [
+      113,
+      221
+    ],
+    "category": "icons"
+  },
+  {
+    "name": "icon_033.png",
+    "path": "assets/ui/icons/icon_033.png",
+    "source": "中国风手绘水墨游戏界面图标集.png",
+    "source_bbox": [
+      1091,
+      831,
+      195,
+      193
+    ],
+    "size": [
+      203,
+      201
+    ],
+    "category": "icons"
+  },
+  {
+    "name": "icon_034.png",
+    "path": "assets/ui/icons/icon_034.png",
+    "source": "中国风手绘水墨游戏界面图标集.png",
+    "source_bbox": [
+      1310,
+      830,
+      102,
+      192
+    ],
+    "size": [
+      110,
+      200
+    ],
+    "category": "icons"
+  },
+  {
+    "name": "icon_035.png",
+    "path": "assets/ui/icons/icon_035.png",
+    "source": "中国风手绘水墨游戏界面图标集.png",
+    "source_bbox": [
+      42,
+      932,
+      699,
+      75
+    ],
+    "size": [
+      707,
+      83
+    ],
+    "category": "icons"
+  },
+  {
+    "name": "button_001.png",
+    "path": "assets/ui/buttons/button_001.png",
+    "source": "古风水墨游戏界面素材表.png",
+    "source_bbox": [
+      38,
+      88,
+      856,
+      139
+    ],
+    "size": [
+      864,
+      147
+    ],
+    "category": "buttons"
+  },
+  {
+    "name": "button_002.png",
+    "path": "assets/ui/buttons/button_002.png",
+    "source": "古风水墨游戏界面素材表.png",
+    "source_bbox": [
+      919,
+      85,
+      496,
+      696
+    ],
+    "size": [
+      504,
+      704
+    ],
+    "category": "buttons"
+  },
+  {
+    "name": "button_003.png",
+    "path": "assets/ui/buttons/button_003.png",
+    "source": "古风水墨游戏界面素材表.png",
+    "source_bbox": [
+      33,
+      246,
+      868,
+      148
+    ],
+    "size": [
+      876,
+      156
+    ],
+    "category": "buttons"
+  },
+  {
+    "name": "button_004.png",
+    "path": "assets/ui/buttons/button_004.png",
+    "source": "古风水墨游戏界面素材表.png",
+    "source_bbox": [
+      38,
+      408,
+      857,
+      140
+    ],
+    "size": [
+      865,
+      148
+    ],
+    "category": "buttons"
+  },
+  {
+    "name": "button_005.png",
+    "path": "assets/ui/buttons/button_005.png",
+    "source": "古风水墨游戏界面素材表.png",
+    "source_bbox": [
+      38,
+      570,
+      856,
+      138
+    ],
+    "size": [
+      864,
+      146
+    ],
+    "category": "buttons"
+  },
+  {
+    "name": "button_006.png",
+    "path": "assets/ui/buttons/button_006.png",
+    "source": "古风水墨游戏界面素材表.png",
+    "source_bbox": [
+      59,
+      757,
+      430,
+      99
+    ],
+    "size": [
+      438,
+      107
+    ],
+    "category": "buttons"
+  },
+  {
+    "name": "button_007.png",
+    "path": "assets/ui/buttons/button_007.png",
+    "source": "古风水墨游戏界面素材表.png",
+    "source_bbox": [
+      1317,
+      842,
+      91,
+      134
+    ],
+    "size": [
+      99,
+      142
+    ],
+    "category": "buttons"
+  },
+  {
+    "name": "button_008.png",
+    "path": "assets/ui/buttons/button_008.png",
+    "source": "古风水墨游戏界面素材表.png",
+    "source_bbox": [
+      59,
+      877,
+      430,
+      101
+    ],
+    "size": [
+      438,
+      109
+    ],
+    "category": "buttons"
+  },
+  {
+    "name": "button_009.png",
+    "path": "assets/ui/buttons/button_009.png",
+    "source": "古风水墨游戏界面素材表.png",
+    "source_bbox": [
+      549,
+      858,
+      348,
+      110
+    ],
+    "size": [
+      356,
+      118
+    ],
+    "category": "buttons"
+  },
+  {
+    "name": "button_010.png",
+    "path": "assets/ui/buttons/button_010.png",
+    "source": "古风水墨游戏界面素材表.png",
+    "source_bbox": [
+      930,
+      855,
+      342,
+      112
+    ],
+    "size": [
+      350,
+      120
+    ],
+    "category": "buttons"
+  },
+  {
+    "name": "item_001.png",
+    "path": "assets/ui/items/item_001.png",
+    "source": "中式水墨风格道具图标合集.png",
+    "source_bbox": [
+      19,
+      64,
+      291,
+      178
+    ],
+    "size": [
+      299,
+      186
+    ],
+    "category": "items"
+  },
+  {
+    "name": "item_002.png",
+    "path": "assets/ui/items/item_002.png",
+    "source": "中式水墨风格道具图标合集.png",
+    "source_bbox": [
+      320,
+      20,
+      231,
+      262
+    ],
+    "size": [
+      239,
+      270
+    ],
+    "category": "items"
+  },
+  {
+    "name": "item_003.png",
+    "path": "assets/ui/items/item_003.png",
+    "source": "中式水墨风格道具图标合集.png",
+    "source_bbox": [
+      563,
+      22,
+      253,
+      265
+    ],
+    "size": [
+      261,
+      273
+    ],
+    "category": "items"
+  },
+  {
+    "name": "item_004.png",
+    "path": "assets/ui/items/item_004.png",
+    "source": "中式水墨风格道具图标合集.png",
+    "source_bbox": [
+      798,
+      19,
+      212,
+      266
+    ],
+    "size": [
+      220,
+      274
+    ],
+    "category": "items"
+  },
+  {
+    "name": "item_005.png",
+    "path": "assets/ui/items/item_005.png",
+    "source": "中式水墨风格道具图标合集.png",
+    "source_bbox": [
+      1019,
+      13,
+      182,
+      255
+    ],
+    "size": [
+      190,
+      263
+    ],
+    "category": "items"
+  },
+  {
+    "name": "item_006.png",
+    "path": "assets/ui/items/item_006.png",
+    "source": "中式水墨风格道具图标合集.png",
+    "source_bbox": [
+      1225,
+      32,
+      219,
+      244
+    ],
+    "size": [
+      227,
+      252
+    ],
+    "category": "items"
+  },
+  {
+    "name": "item_007.png",
+    "path": "assets/ui/items/item_007.png",
+    "source": "中式水墨风格道具图标合集.png",
+    "source_bbox": [
+      28,
+      273,
+      272,
+      215
+    ],
+    "size": [
+      280,
+      223
+    ],
+    "category": "items"
+  },
+  {
+    "name": "item_008.png",
+    "path": "assets/ui/items/item_008.png",
+    "source": "中式水墨风格道具图标合集.png",
+    "source_bbox": [
+      315,
+      315,
+      115,
+      116
+    ],
+    "size": [
+      123,
+      124
+    ],
+    "category": "items"
+  },
+  {
+    "name": "item_009.png",
+    "path": "assets/ui/items/item_009.png",
+    "source": "中式水墨风格道具图标合集.png",
+    "source_bbox": [
+      542,
+      326,
+      103,
+      102
+    ],
+    "size": [
+      111,
+      110
+    ],
+    "category": "items"
+  },
+  {
+    "name": "item_010.png",
+    "path": "assets/ui/items/item_010.png",
+    "source": "中式水墨风格道具图标合集.png",
+    "source_bbox": [
+      803,
+      333,
+      182,
+      107
+    ],
+    "size": [
+      190,
+      115
+    ],
+    "category": "items"
+  },
+  {
+    "name": "item_011.png",
+    "path": "assets/ui/items/item_011.png",
+    "source": "中式水墨风格道具图标合集.png",
+    "source_bbox": [
+      1116,
+      280,
+      137,
+      179
+    ],
+    "size": [
+      145,
+      187
+    ],
+    "category": "items"
+  },
+  {
+    "name": "item_012.png",
+    "path": "assets/ui/items/item_012.png",
+    "source": "中式水墨风格道具图标合集.png",
+    "source_bbox": [
+      1261,
+      312,
+      161,
+      131
+    ],
+    "size": [
+      169,
+      139
+    ],
+    "category": "items"
+  },
+  {
+    "name": "item_013.png",
+    "path": "assets/ui/items/item_013.png",
+    "source": "中式水墨风格道具图标合集.png",
+    "source_bbox": [
+      433,
+      352,
+      103,
+      103
+    ],
+    "size": [
+      111,
+      111
+    ],
+    "category": "items"
+  },
+  {
+    "name": "item_014.png",
+    "path": "assets/ui/items/item_014.png",
+    "source": "中式水墨风格道具图标合集.png",
+    "source_bbox": [
+      675,
+      341,
+      120,
+      89
+    ],
+    "size": [
+      128,
+      97
+    ],
+    "category": "items"
+  },
+  {
+    "name": "item_015.png",
+    "path": "assets/ui/items/item_015.png",
+    "source": "中式水墨风格道具图标合集.png",
+    "source_bbox": [
+      1001,
+      343,
+      88,
+      64
+    ],
+    "size": [
+      96,
+      72
+    ],
+    "category": "items"
+  },
+  {
+    "name": "item_016.png",
+    "path": "assets/ui/items/item_016.png",
+    "source": "中式水墨风格道具图标合集.png",
+    "source_bbox": [
+      22,
+      505,
+      280,
+      143
+    ],
+    "size": [
+      288,
+      151
+    ],
+    "category": "items"
+  },
+  {
+    "name": "item_017.png",
+    "path": "assets/ui/items/item_017.png",
+    "source": "中式水墨风格道具图标合集.png",
+    "source_bbox": [
+      314,
+      486,
+      184,
+      179
+    ],
+    "size": [
+      192,
+      187
+    ],
+    "category": "items"
+  },
+  {
+    "name": "item_018.png",
+    "path": "assets/ui/items/item_018.png",
+    "source": "中式水墨风格道具图标合集.png",
+    "source_bbox": [
+      366,
+      490,
+      612,
+      394
+    ],
+    "size": [
+      620,
+      402
+    ],
+    "category": "items"
+  },
+  {
+    "name": "item_019.png",
+    "path": "assets/ui/items/item_019.png",
+    "source": "中式水墨风格道具图标合集.png",
+    "source_bbox": [
+      499,
+      445,
+      265,
+      239
+    ],
+    "size": [
+      273,
+      247
+    ],
+    "category": "items"
+  },
+  {
+    "name": "item_020.png",
+    "path": "assets/ui/items/item_020.png",
+    "source": "中式水墨风格道具图标合集.png",
+    "source_bbox": [
+      1003,
+      435,
+      137,
+      247
+    ],
+    "size": [
+      145,
+      255
+    ],
+    "category": "items"
+  },
+  {
+    "name": "item_021.png",
+    "path": "assets/ui/items/item_021.png",
+    "source": "中式水墨风格道具图标合集.png",
+    "source_bbox": [
+      1154,
+      459,
+      265,
+      232
+    ],
+    "size": [
+      273,
+      240
+    ],
+    "category": "items"
+  },
+  {
+    "name": "item_022.png",
+    "path": "assets/ui/items/item_022.png",
+    "source": "中式水墨风格道具图标合集.png",
+    "source_bbox": [
+      17,
+      657,
+      348,
+      236
+    ],
+    "size": [
+      356,
+      244
+    ],
+    "category": "items"
+  },
+  {
+    "name": "item_023.png",
+    "path": "assets/ui/items/item_023.png",
+    "source": "中式水墨风格道具图标合集.png",
+    "source_bbox": [
+      929,
+      695,
+      223,
+      186
+    ],
+    "size": [
+      231,
+      194
+    ],
+    "category": "items"
+  },
+  {
+    "name": "item_024.png",
+    "path": "assets/ui/items/item_024.png",
+    "source": "中式水墨风格道具图标合集.png",
+    "source_bbox": [
+      1178,
+      699,
+      241,
+      195
+    ],
+    "size": [
+      249,
+      203
+    ],
+    "category": "items"
+  },
+  {
+    "name": "item_025.png",
+    "path": "assets/ui/items/item_025.png",
+    "source": "中式水墨风格道具图标合集.png",
+    "source_bbox": [
+      38,
+      896,
+      315,
+      163
+    ],
+    "size": [
+      323,
+      171
+    ],
+    "category": "items"
+  },
+  {
+    "name": "item_026.png",
+    "path": "assets/ui/items/item_026.png",
+    "source": "中式水墨风格道具图标合集.png",
+    "source_bbox": [
+      527,
+      897,
+      141,
+      162
+    ],
+    "size": [
+      149,
+      170
+    ],
+    "category": "items"
+  },
+  {
+    "name": "item_027.png",
+    "path": "assets/ui/items/item_027.png",
+    "source": "中式水墨风格道具图标合集.png",
+    "source_bbox": [
+      680,
+      894,
+      208,
+      174
+    ],
+    "size": [
+      216,
+      182
+    ],
+    "category": "items"
+  },
+  {
+    "name": "item_028.png",
+    "path": "assets/ui/items/item_028.png",
+    "source": "中式水墨风格道具图标合集.png",
+    "source_bbox": [
+      914,
+      903,
+      186,
+      164
+    ],
+    "size": [
+      194,
+      172
+    ],
+    "category": "items"
+  },
+  {
+    "name": "item_029.png",
+    "path": "assets/ui/items/item_029.png",
+    "source": "中式水墨风格道具图标合集.png",
+    "source_bbox": [
+      1103,
+      869,
+      141,
+      204
+    ],
+    "size": [
+      149,
+      212
+    ],
+    "category": "items"
+  },
+  {
+    "name": "item_030.png",
+    "path": "assets/ui/items/item_030.png",
+    "source": "中式水墨风格道具图标合集.png",
+    "source_bbox": [
+      1260,
+      899,
+      155,
+      164
+    ],
+    "size": [
+      163,
+      172
+    ],
+    "category": "items"
+  },
+  {
+    "name": "item_031.png",
+    "path": "assets/ui/items/item_031.png",
+    "source": "中式水墨风格道具图标合集.png",
+    "source_bbox": [
+      371,
+      936,
+      136,
+      106
+    ],
+    "size": [
+      144,
+      114
+    ],
+    "category": "items"
+  },
+  {
+    "name": "widget_001.png",
+    "path": "assets/ui/widgets/widget_001.png",
+    "source": "传统水墨风游戏界面精灵图集.png",
+    "source_bbox": [
+      23,
+      34,
+      202,
+      221
+    ],
+    "size": [
+      210,
+      229
+    ],
+    "category": "widgets"
+  },
+  {
+    "name": "widget_002.png",
+    "path": "assets/ui/widgets/widget_002.png",
+    "source": "传统水墨风游戏界面精灵图集.png",
+    "source_bbox": [
+      238,
+      26,
+      220,
+      238
+    ],
+    "size": [
+      228,
+      246
+    ],
+    "category": "widgets"
+  },
+  {
+    "name": "widget_003.png",
+    "path": "assets/ui/widgets/widget_003.png",
+    "source": "传统水墨风游戏界面精灵图集.png",
+    "source_bbox": [
+      467,
+      32,
+      206,
+      225
+    ],
+    "size": [
+      214,
+      233
+    ],
+    "category": "widgets"
+  },
+  {
+    "name": "widget_004.png",
+    "path": "assets/ui/widgets/widget_004.png",
+    "source": "传统水墨风游戏界面精灵图集.png",
+    "source_bbox": [
+      694,
+      32,
+      190,
+      227
+    ],
+    "size": [
+      198,
+      235
+    ],
+    "category": "widgets"
+  },
+  {
+    "name": "widget_005.png",
+    "path": "assets/ui/widgets/widget_005.png",
+    "source": "传统水墨风游戏界面精灵图集.png",
+    "source_bbox": [
+      901,
+      31,
+      184,
+      227
+    ],
+    "size": [
+      192,
+      235
+    ],
+    "category": "widgets"
+  },
+  {
+    "name": "widget_006.png",
+    "path": "assets/ui/widgets/widget_006.png",
+    "source": "传统水墨风游戏界面精灵图集.png",
+    "source_bbox": [
+      1111,
+      32,
+      319,
+      229
+    ],
+    "size": [
+      327,
+      237
+    ],
+    "category": "widgets"
+  },
+  {
+    "name": "widget_007.png",
+    "path": "assets/ui/widgets/widget_007.png",
+    "source": "传统水墨风游戏界面精灵图集.png",
+    "source_bbox": [
+      14,
+      299,
+      153,
+      155
+    ],
+    "size": [
+      161,
+      163
+    ],
+    "category": "widgets"
+  },
+  {
+    "name": "widget_008.png",
+    "path": "assets/ui/widgets/widget_008.png",
+    "source": "传统水墨风游戏界面精灵图集.png",
+    "source_bbox": [
+      172,
+      291,
+      512,
+      173
+    ],
+    "size": [
+      520,
+      181
+    ],
+    "category": "widgets"
+  },
+  {
+    "name": "widget_009.png",
+    "path": "assets/ui/widgets/widget_009.png",
+    "source": "传统水墨风游戏界面精灵图集.png",
+    "source_bbox": [
+      704,
+      284,
+      194,
+      186
+    ],
+    "size": [
+      202,
+      194
+    ],
+    "category": "widgets"
+  },
+  {
+    "name": "widget_010.png",
+    "path": "assets/ui/widgets/widget_010.png",
+    "source": "传统水墨风游戏界面精灵图集.png",
+    "source_bbox": [
+      903,
+      296,
+      148,
+      161
+    ],
+    "size": [
+      156,
+      169
+    ],
+    "category": "widgets"
+  },
+  {
+    "name": "widget_011.png",
+    "path": "assets/ui/widgets/widget_011.png",
+    "source": "传统水墨风游戏界面精灵图集.png",
+    "source_bbox": [
+      1070,
+      291,
+      166,
+      176
+    ],
+    "size": [
+      174,
+      184
+    ],
+    "category": "widgets"
+  },
+  {
+    "name": "widget_012.png",
+    "path": "assets/ui/widgets/widget_012.png",
+    "source": "传统水墨风游戏界面精灵图集.png",
+    "source_bbox": [
+      1246,
+      278,
+      186,
+      189
+    ],
+    "size": [
+      194,
+      197
+    ],
+    "category": "widgets"
+  },
+  {
+    "name": "widget_013.png",
+    "path": "assets/ui/widgets/widget_013.png",
+    "source": "传统水墨风游戏界面精灵图集.png",
+    "source_bbox": [
+      34,
+      485,
+      85,
+      109
+    ],
+    "size": [
+      93,
+      117
+    ],
+    "category": "widgets"
+  },
+  {
+    "name": "widget_014.png",
+    "path": "assets/ui/widgets/widget_014.png",
+    "source": "传统水墨风游戏界面精灵图集.png",
+    "source_bbox": [
+      142,
+      485,
+      84,
+      110
+    ],
+    "size": [
+      92,
+      118
+    ],
+    "category": "widgets"
+  },
+  {
+    "name": "widget_015.png",
+    "path": "assets/ui/widgets/widget_015.png",
+    "source": "传统水墨风游戏界面精灵图集.png",
+    "source_bbox": [
+      238,
+      483,
+      121,
+      109
+    ],
+    "size": [
+      129,
+      117
+    ],
+    "category": "widgets"
+  },
+  {
+    "name": "widget_016.png",
+    "path": "assets/ui/widgets/widget_016.png",
+    "source": "传统水墨风游戏界面精灵图集.png",
+    "source_bbox": [
+      378,
+      481,
+      58,
+      120
+    ],
+    "size": [
+      66,
+      128
+    ],
+    "category": "widgets"
+  },
+  {
+    "name": "widget_017.png",
+    "path": "assets/ui/widgets/widget_017.png",
+    "source": "传统水墨风游戏界面精灵图集.png",
+    "source_bbox": [
+      460,
+      481,
+      236,
+      117
+    ],
+    "size": [
+      244,
+      125
+    ],
+    "category": "widgets"
+  },
+  {
+    "name": "widget_018.png",
+    "path": "assets/ui/widgets/widget_018.png",
+    "source": "传统水墨风游戏界面精灵图集.png",
+    "source_bbox": [
+      710,
+      478,
+      131,
+      121
+    ],
+    "size": [
+      139,
+      129
+    ],
+    "category": "widgets"
+  },
+  {
+    "name": "widget_019.png",
+    "path": "assets/ui/widgets/widget_019.png",
+    "source": "传统水墨风游戏界面精灵图集.png",
+    "source_bbox": [
+      867,
+      476,
+      132,
+      123
+    ],
+    "size": [
+      140,
+      131
+    ],
+    "category": "widgets"
+  },
+  {
+    "name": "widget_020.png",
+    "path": "assets/ui/widgets/widget_020.png",
+    "source": "传统水墨风游戏界面精灵图集.png",
+    "source_bbox": [
+      1019,
+      485,
+      398,
+      116
+    ],
+    "size": [
+      406,
+      124
+    ],
+    "category": "widgets"
+  },
+  {
+    "name": "widget_021.png",
+    "path": "assets/ui/widgets/widget_021.png",
+    "source": "传统水墨风游戏界面精灵图集.png",
+    "source_bbox": [
+      24,
+      609,
+      62,
+      53
+    ],
+    "size": [
+      70,
+      61
+    ],
+    "category": "widgets"
+  },
+  {
+    "name": "widget_022.png",
+    "path": "assets/ui/widgets/widget_022.png",
+    "source": "传统水墨风游戏界面精灵图集.png",
+    "source_bbox": [
+      154,
+      626,
+      92,
+      53
+    ],
+    "size": [
+      100,
+      61
+    ],
+    "category": "widgets"
+  },
+  {
+    "name": "widget_023.png",
+    "path": "assets/ui/widgets/widget_023.png",
+    "source": "传统水墨风游戏界面精灵图集.png",
+    "source_bbox": [
+      272,
+      614,
+      484,
+      66
+    ],
+    "size": [
+      492,
+      74
+    ],
+    "category": "widgets"
+  },
+  {
+    "name": "widget_024.png",
+    "path": "assets/ui/widgets/widget_024.png",
+    "source": "传统水墨风游戏界面精灵图集.png",
+    "source_bbox": [
+      766,
+      615,
+      368,
+      62
+    ],
+    "size": [
+      376,
+      70
+    ],
+    "category": "widgets"
+  },
+  {
+    "name": "widget_025.png",
+    "path": "assets/ui/widgets/widget_025.png",
+    "source": "传统水墨风游戏界面精灵图集.png",
+    "source_bbox": [
+      1178,
+      622,
+      108,
+      49
+    ],
+    "size": [
+      116,
+      57
+    ],
+    "category": "widgets"
+  },
+  {
+    "name": "widget_026.png",
+    "path": "assets/ui/widgets/widget_026.png",
+    "source": "传统水墨风游戏界面精灵图集.png",
+    "source_bbox": [
+      1291,
+      618,
+      116,
+      65
+    ],
+    "size": [
+      124,
+      73
+    ],
+    "category": "widgets"
+  },
+  {
+    "name": "widget_027.png",
+    "path": "assets/ui/widgets/widget_027.png",
+    "source": "传统水墨风游戏界面精灵图集.png",
+    "source_bbox": [
+      18,
+      693,
+      450,
+      102
+    ],
+    "size": [
+      458,
+      110
+    ],
+    "category": "widgets"
+  },
+  {
+    "name": "widget_028.png",
+    "path": "assets/ui/widgets/widget_028.png",
+    "source": "传统水墨风游戏界面精灵图集.png",
+    "source_bbox": [
+      483,
+      691,
+      482,
+      108
+    ],
+    "size": [
+      490,
+      116
+    ],
+    "category": "widgets"
+  },
+  {
+    "name": "widget_029.png",
+    "path": "assets/ui/widgets/widget_029.png",
+    "source": "传统水墨风游戏界面精灵图集.png",
+    "source_bbox": [
+      981,
+      691,
+      104,
+      109
+    ],
+    "size": [
+      112,
+      117
+    ],
+    "category": "widgets"
+  },
+  {
+    "name": "widget_030.png",
+    "path": "assets/ui/widgets/widget_030.png",
+    "source": "传统水墨风游戏界面精灵图集.png",
+    "source_bbox": [
+      1100,
+      697,
+      95,
+      97
+    ],
+    "size": [
+      103,
+      105
+    ],
+    "category": "widgets"
+  },
+  {
+    "name": "widget_031.png",
+    "path": "assets/ui/widgets/widget_031.png",
+    "source": "传统水墨风游戏界面精灵图集.png",
+    "source_bbox": [
+      1215,
+      695,
+      97,
+      99
+    ],
+    "size": [
+      105,
+      107
+    ],
+    "category": "widgets"
+  },
+  {
+    "name": "widget_032.png",
+    "path": "assets/ui/widgets/widget_032.png",
+    "source": "传统水墨风游戏界面精灵图集.png",
+    "source_bbox": [
+      1325,
+      695,
+      95,
+      98
+    ],
+    "size": [
+      103,
+      106
+    ],
+    "category": "widgets"
+  },
+  {
+    "name": "widget_033.png",
+    "path": "assets/ui/widgets/widget_033.png",
+    "source": "传统水墨风游戏界面精灵图集.png",
+    "source_bbox": [
+      19,
+      806,
+      427,
+      103
+    ],
+    "size": [
+      435,
+      111
+    ],
+    "category": "widgets"
+  },
+  {
+    "name": "widget_034.png",
+    "path": "assets/ui/widgets/widget_034.png",
+    "source": "传统水墨风游戏界面精灵图集.png",
+    "source_bbox": [
+      456,
+      807,
+      299,
+      102
+    ],
+    "size": [
+      307,
+      110
+    ],
+    "category": "widgets"
+  },
+  {
+    "name": "widget_035.png",
+    "path": "assets/ui/widgets/widget_035.png",
+    "source": "传统水墨风游戏界面精灵图集.png",
+    "source_bbox": [
+      765,
+      814,
+      356,
+      91
+    ],
+    "size": [
+      364,
+      99
+    ],
+    "category": "widgets"
+  },
+  {
+    "name": "widget_036.png",
+    "path": "assets/ui/widgets/widget_036.png",
+    "source": "传统水墨风游戏界面精灵图集.png",
+    "source_bbox": [
+      1136,
+      825,
+      207,
+      71
+    ],
+    "size": [
+      215,
+      79
+    ],
+    "category": "widgets"
+  },
+  {
+    "name": "widget_037.png",
+    "path": "assets/ui/widgets/widget_037.png",
+    "source": "传统水墨风游戏界面精灵图集.png",
+    "source_bbox": [
+      1353,
+      820,
+      63,
+      83
+    ],
+    "size": [
+      71,
+      91
+    ],
+    "category": "widgets"
+  },
+  {
+    "name": "widget_038.png",
+    "path": "assets/ui/widgets/widget_038.png",
+    "source": "传统水墨风游戏界面精灵图集.png",
+    "source_bbox": [
+      20,
+      920,
+      151,
+      137
+    ],
+    "size": [
+      159,
+      145
+    ],
+    "category": "widgets"
+  },
+  {
+    "name": "widget_039.png",
+    "path": "assets/ui/widgets/widget_039.png",
+    "source": "传统水墨风游戏界面精灵图集.png",
+    "source_bbox": [
+      188,
+      920,
+      146,
+      137
+    ],
+    "size": [
+      154,
+      145
+    ],
+    "category": "widgets"
+  },
+  {
+    "name": "widget_040.png",
+    "path": "assets/ui/widgets/widget_040.png",
+    "source": "传统水墨风游戏界面精灵图集.png",
+    "source_bbox": [
+      352,
+      922,
+      131,
+      135
+    ],
+    "size": [
+      139,
+      143
+    ],
+    "category": "widgets"
+  },
+  {
+    "name": "widget_041.png",
+    "path": "assets/ui/widgets/widget_041.png",
+    "source": "传统水墨风游戏界面精灵图集.png",
+    "source_bbox": [
+      498,
+      921,
+      140,
+      135
+    ],
+    "size": [
+      148,
+      143
+    ],
+    "category": "widgets"
+  },
+  {
+    "name": "widget_042.png",
+    "path": "assets/ui/widgets/widget_042.png",
+    "source": "传统水墨风游戏界面精灵图集.png",
+    "source_bbox": [
+      654,
+      921,
+      138,
+      145
+    ],
+    "size": [
+      146,
+      153
+    ],
+    "category": "widgets"
+  },
+  {
+    "name": "widget_043.png",
+    "path": "assets/ui/widgets/widget_043.png",
+    "source": "传统水墨风游戏界面精灵图集.png",
+    "source_bbox": [
+      809,
+      920,
+      141,
+      134
+    ],
+    "size": [
+      149,
+      142
+    ],
+    "category": "widgets"
+  },
+  {
+    "name": "widget_044.png",
+    "path": "assets/ui/widgets/widget_044.png",
+    "source": "传统水墨风游戏界面精灵图集.png",
+    "source_bbox": [
+      958,
+      920,
+      141,
+      136
+    ],
+    "size": [
+      149,
+      144
+    ],
+    "category": "widgets"
+  },
+  {
+    "name": "widget_045.png",
+    "path": "assets/ui/widgets/widget_045.png",
+    "source": "传统水墨风游戏界面精灵图集.png",
+    "source_bbox": [
+      1109,
+      921,
+      143,
+      134
+    ],
+    "size": [
+      151,
+      142
+    ],
+    "category": "widgets"
+  },
+  {
+    "name": "widget_046.png",
+    "path": "assets/ui/widgets/widget_046.png",
+    "source": "传统水墨风游戏界面精灵图集.png",
+    "source_bbox": [
+      1263,
+      919,
+      161,
+      137
+    ],
+    "size": [
+      169,
+      145
+    ],
+    "category": "widgets"
+  },
+  {
+    "name": "paper_001.png",
+    "path": "assets/ui/papers/paper_001.png",
+    "source": "传统中式复古纸张游戏界面素材合集.png",
+    "source_bbox": [
+      19,
+      17,
+      326,
+      273
+    ],
+    "size": [
+      334,
+      281
+    ],
+    "category": "papers"
+  },
+  {
+    "name": "paper_002.png",
+    "path": "assets/ui/papers/paper_002.png",
+    "source": "传统中式复古纸张游戏界面素材合集.png",
+    "source_bbox": [
+      333,
+      34,
+      179,
+      249
+    ],
+    "size": [
+      187,
+      257
+    ],
+    "category": "papers"
+  },
+  {
+    "name": "paper_003.png",
+    "path": "assets/ui/papers/paper_003.png",
+    "source": "传统中式复古纸张游戏界面素材合集.png",
+    "source_bbox": [
+      534,
+      18,
+      424,
+      266
+    ],
+    "size": [
+      432,
+      274
+    ],
+    "category": "papers"
+  },
+  {
+    "name": "paper_004.png",
+    "path": "assets/ui/papers/paper_004.png",
+    "source": "传统中式复古纸张游戏界面素材合集.png",
+    "source_bbox": [
+      980,
+      36,
+      228,
+      246
+    ],
+    "size": [
+      236,
+      254
+    ],
+    "category": "papers"
+  },
+  {
+    "name": "paper_005.png",
+    "path": "assets/ui/papers/paper_005.png",
+    "source": "传统中式复古纸张游戏界面素材合集.png",
+    "source_bbox": [
+      1138,
+      40,
+      289,
+      242
+    ],
+    "size": [
+      297,
+      250
+    ],
+    "category": "papers"
+  },
+  {
+    "name": "paper_006.png",
+    "path": "assets/ui/papers/paper_006.png",
+    "source": "传统中式复古纸张游戏界面素材合集.png",
+    "source_bbox": [
+      24,
+      305,
+      472,
+      202
+    ],
+    "size": [
+      480,
+      210
+    ],
+    "category": "papers"
+  },
+  {
+    "name": "paper_007.png",
+    "path": "assets/ui/papers/paper_007.png",
+    "source": "传统中式复古纸张游戏界面素材合集.png",
+    "source_bbox": [
+      529,
+      303,
+      502,
+      95
+    ],
+    "size": [
+      510,
+      103
+    ],
+    "category": "papers"
+  },
+  {
+    "name": "paper_008.png",
+    "path": "assets/ui/papers/paper_008.png",
+    "source": "传统中式复古纸张游戏界面素材合集.png",
+    "source_bbox": [
+      1057,
+      295,
+      195,
+      214
+    ],
+    "size": [
+      203,
+      222
+    ],
+    "category": "papers"
+  },
+  {
+    "name": "paper_009.png",
+    "path": "assets/ui/papers/paper_009.png",
+    "source": "传统中式复古纸张游戏界面素材合集.png",
+    "source_bbox": [
+      1244,
+      301,
+      188,
+      201
+    ],
+    "size": [
+      196,
+      209
+    ],
+    "category": "papers"
+  },
+  {
+    "name": "paper_010.png",
+    "path": "assets/ui/papers/paper_010.png",
+    "source": "传统中式复古纸张游戏界面素材合集.png",
+    "source_bbox": [
+      530,
+      400,
+      493,
+      106
+    ],
+    "size": [
+      501,
+      114
+    ],
+    "category": "papers"
+  },
+  {
+    "name": "paper_011.png",
+    "path": "assets/ui/papers/paper_011.png",
+    "source": "传统中式复古纸张游戏界面素材合集.png",
+    "source_bbox": [
+      26,
+      518,
+      322,
+      125
+    ],
+    "size": [
+      330,
+      133
+    ],
+    "category": "papers"
+  },
+  {
+    "name": "paper_012.png",
+    "path": "assets/ui/papers/paper_012.png",
+    "source": "传统中式复古纸张游戏界面素材合集.png",
+    "source_bbox": [
+      367,
+      521,
+      352,
+      70
+    ],
+    "size": [
+      360,
+      78
+    ],
+    "category": "papers"
+  },
+  {
+    "name": "paper_013.png",
+    "path": "assets/ui/papers/paper_013.png",
+    "source": "传统中式复古纸张游戏界面素材合集.png",
+    "source_bbox": [
+      726,
+      526,
+      174,
+      65
+    ],
+    "size": [
+      182,
+      73
+    ],
+    "category": "papers"
+  },
+  {
+    "name": "paper_014.png",
+    "path": "assets/ui/papers/paper_014.png",
+    "source": "传统中式复古纸张游戏界面素材合集.png",
+    "source_bbox": [
+      922,
+      524,
+      102,
+      133
+    ],
+    "size": [
+      110,
+      141
+    ],
+    "category": "papers"
+  },
+  {
+    "name": "paper_015.png",
+    "path": "assets/ui/papers/paper_015.png",
+    "source": "传统中式复古纸张游戏界面素材合集.png",
+    "source_bbox": [
+      1034,
+      523,
+      126,
+      139
+    ],
+    "size": [
+      134,
+      147
+    ],
+    "category": "papers"
+  },
+  {
+    "name": "paper_016.png",
+    "path": "assets/ui/papers/paper_016.png",
+    "source": "传统中式复古纸张游戏界面素材合集.png",
+    "source_bbox": [
+      1167,
+      519,
+      139,
+      145
+    ],
+    "size": [
+      147,
+      153
+    ],
+    "category": "papers"
+  },
+  {
+    "name": "paper_017.png",
+    "path": "assets/ui/papers/paper_017.png",
+    "source": "传统中式复古纸张游戏界面素材合集.png",
+    "source_bbox": [
+      1319,
+      525,
+      105,
+      129
+    ],
+    "size": [
+      113,
+      137
+    ],
+    "category": "papers"
+  },
+  {
+    "name": "paper_018.png",
+    "path": "assets/ui/papers/paper_018.png",
+    "source": "传统中式复古纸张游戏界面素材合集.png",
+    "source_bbox": [
+      68,
+      609,
+      352,
+      76
+    ],
+    "size": [
+      360,
+      84
+    ],
+    "category": "papers"
+  },
+  {
+    "name": "paper_019.png",
+    "path": "assets/ui/papers/paper_019.png",
+    "source": "传统中式复古纸张游戏界面素材合集.png",
+    "source_bbox": [
+      422,
+      603,
+      283,
+      64
+    ],
+    "size": [
+      291,
+      72
+    ],
+    "category": "papers"
+  },
+  {
+    "name": "paper_020.png",
+    "path": "assets/ui/papers/paper_020.png",
+    "source": "传统中式复古纸张游戏界面素材合集.png",
+    "source_bbox": [
+      722,
+      605,
+      179,
+      64
+    ],
+    "size": [
+      187,
+      72
+    ],
+    "category": "papers"
+  },
+  {
+    "name": "paper_021.png",
+    "path": "assets/ui/papers/paper_021.png",
+    "source": "传统中式复古纸张游戏界面素材合集.png",
+    "source_bbox": [
+      29,
+      691,
+      147,
+      93
+    ],
+    "size": [
+      155,
+      101
+    ],
+    "category": "papers"
+  },
+  {
+    "name": "paper_022.png",
+    "path": "assets/ui/papers/paper_022.png",
+    "source": "传统中式复古纸张游戏界面素材合集.png",
+    "source_bbox": [
+      189,
+      691,
+      148,
+      93
+    ],
+    "size": [
+      156,
+      101
+    ],
+    "category": "papers"
+  },
+  {
+    "name": "paper_023.png",
+    "path": "assets/ui/papers/paper_023.png",
+    "source": "传统中式复古纸张游戏界面素材合集.png",
+    "source_bbox": [
+      349,
+      691,
+      149,
+      94
+    ],
+    "size": [
+      157,
+      102
+    ],
+    "category": "papers"
+  },
+  {
+    "name": "paper_024.png",
+    "path": "assets/ui/papers/paper_024.png",
+    "source": "传统中式复古纸张游戏界面素材合集.png",
+    "source_bbox": [
+      510,
+      692,
+      149,
+      94
+    ],
+    "size": [
+      157,
+      102
+    ],
+    "category": "papers"
+  },
+  {
+    "name": "paper_025.png",
+    "path": "assets/ui/papers/paper_025.png",
+    "source": "传统中式复古纸张游戏界面素材合集.png",
+    "source_bbox": [
+      687,
+      684,
+      70,
+      105
+    ],
+    "size": [
+      78,
+      113
+    ],
+    "category": "papers"
+  },
+  {
+    "name": "paper_026.png",
+    "path": "assets/ui/papers/paper_026.png",
+    "source": "传统中式复古纸张游戏界面素材合集.png",
+    "source_bbox": [
+      780,
+      682,
+      80,
+      112
+    ],
+    "size": [
+      88,
+      120
+    ],
+    "category": "papers"
+  },
+  {
+    "name": "paper_027.png",
+    "path": "assets/ui/papers/paper_027.png",
+    "source": "传统中式复古纸张游戏界面素材合集.png",
+    "source_bbox": [
+      883,
+      682,
+      87,
+      116
+    ],
+    "size": [
+      95,
+      124
+    ],
+    "category": "papers"
+  },
+  {
+    "name": "paper_028.png",
+    "path": "assets/ui/papers/paper_028.png",
+    "source": "传统中式复古纸张游戏界面素材合集.png",
+    "source_bbox": [
+      987,
+      686,
+      66,
+      102
+    ],
+    "size": [
+      74,
+      110
+    ],
+    "category": "papers"
+  },
+  {
+    "name": "paper_029.png",
+    "path": "assets/ui/papers/paper_029.png",
+    "source": "传统中式复古纸张游戏界面素材合集.png",
+    "source_bbox": [
+      1092,
+      690,
+      69,
+      104
+    ],
+    "size": [
+      77,
+      112
+    ],
+    "category": "papers"
+  },
+  {
+    "name": "paper_030.png",
+    "path": "assets/ui/papers/paper_030.png",
+    "source": "传统中式复古纸张游戏界面素材合集.png",
+    "source_bbox": [
+      1178,
+      687,
+      66,
+      108
+    ],
+    "size": [
+      74,
+      116
+    ],
+    "category": "papers"
+  },
+  {
+    "name": "paper_031.png",
+    "path": "assets/ui/papers/paper_031.png",
+    "source": "传统中式复古纸张游戏界面素材合集.png",
+    "source_bbox": [
+      1263,
+      687,
+      66,
+      106
+    ],
+    "size": [
+      74,
+      114
+    ],
+    "category": "papers"
+  },
+  {
+    "name": "paper_032.png",
+    "path": "assets/ui/papers/paper_032.png",
+    "source": "传统中式复古纸张游戏界面素材合集.png",
+    "source_bbox": [
+      1349,
+      689,
+      71,
+      106
+    ],
+    "size": [
+      79,
+      114
+    ],
+    "category": "papers"
+  },
+  {
+    "name": "paper_033.png",
+    "path": "assets/ui/papers/paper_033.png",
+    "source": "传统中式复古纸张游戏界面素材合集.png",
+    "source_bbox": [
+      21,
+      813,
+      205,
+      103
+    ],
+    "size": [
+      213,
+      111
+    ],
+    "category": "papers"
+  },
+  {
+    "name": "paper_034.png",
+    "path": "assets/ui/papers/paper_034.png",
+    "source": "传统中式复古纸张游戏界面素材合集.png",
+    "source_bbox": [
+      234,
+      812,
+      103,
+      105
+    ],
+    "size": [
+      111,
+      113
+    ],
+    "category": "papers"
+  },
+  {
+    "name": "paper_035.png",
+    "path": "assets/ui/papers/paper_035.png",
+    "source": "传统中式复古纸张游戏界面素材合集.png",
+    "source_bbox": [
+      349,
+      812,
+      100,
+      103
+    ],
+    "size": [
+      108,
+      111
+    ],
+    "category": "papers"
+  },
+  {
+    "name": "paper_036.png",
+    "path": "assets/ui/papers/paper_036.png",
+    "source": "传统中式复古纸张游戏界面素材合集.png",
+    "source_bbox": [
+      458,
+      810,
+      94,
+      98
+    ],
+    "size": [
+      102,
+      106
+    ],
+    "category": "papers"
+  },
+  {
+    "name": "paper_037.png",
+    "path": "assets/ui/papers/paper_037.png",
+    "source": "传统中式复古纸张游戏界面素材合集.png",
+    "source_bbox": [
+      560,
+      806,
+      110,
+      110
+    ],
+    "size": [
+      118,
+      118
+    ],
+    "category": "papers"
+  },
+  {
+    "name": "paper_038.png",
+    "path": "assets/ui/papers/paper_038.png",
+    "source": "传统中式复古纸张游戏界面素材合集.png",
+    "source_bbox": [
+      682,
+      808,
+      109,
+      112
+    ],
+    "size": [
+      117,
+      120
+    ],
+    "category": "papers"
+  },
+  {
+    "name": "paper_039.png",
+    "path": "assets/ui/papers/paper_039.png",
+    "source": "传统中式复古纸张游戏界面素材合集.png",
+    "source_bbox": [
+      803,
+      808,
+      108,
+      111
+    ],
+    "size": [
+      116,
+      119
+    ],
+    "category": "papers"
+  },
+  {
+    "name": "paper_040.png",
+    "path": "assets/ui/papers/paper_040.png",
+    "source": "传统中式复古纸张游戏界面素材合集.png",
+    "source_bbox": [
+      930,
+      791,
+      123,
+      142
+    ],
+    "size": [
+      131,
+      150
+    ],
+    "category": "papers"
+  },
+  {
+    "name": "paper_041.png",
+    "path": "assets/ui/papers/paper_041.png",
+    "source": "传统中式复古纸张游戏界面素材合集.png",
+    "source_bbox": [
+      1073,
+      817,
+      99,
+      96
+    ],
+    "size": [
+      107,
+      104
+    ],
+    "category": "papers"
+  },
+  {
+    "name": "paper_042.png",
+    "path": "assets/ui/papers/paper_042.png",
+    "source": "传统中式复古纸张游戏界面素材合集.png",
+    "source_bbox": [
+      1185,
+      813,
+      105,
+      107
+    ],
+    "size": [
+      113,
+      115
+    ],
+    "category": "papers"
+  },
+  {
+    "name": "paper_043.png",
+    "path": "assets/ui/papers/paper_043.png",
+    "source": "传统中式复古纸张游戏界面素材合集.png",
+    "source_bbox": [
+      1305,
+      818,
+      118,
+      93
+    ],
+    "size": [
+      126,
+      101
+    ],
+    "category": "papers"
+  },
+  {
+    "name": "paper_044.png",
+    "path": "assets/ui/papers/paper_044.png",
+    "source": "传统中式复古纸张游戏界面素材合集.png",
+    "source_bbox": [
+      1001,
+      926,
+      171,
+      139
+    ],
+    "size": [
+      179,
+      147
+    ],
+    "category": "papers"
+  },
+  {
+    "name": "paper_045.png",
+    "path": "assets/ui/papers/paper_045.png",
+    "source": "传统中式复古纸张游戏界面素材合集.png",
+    "source_bbox": [
+      1181,
+      924,
+      245,
+      127
+    ],
+    "size": [
+      253,
+      135
+    ],
+    "category": "papers"
+  },
+  {
+    "name": "paper_046.png",
+    "path": "assets/ui/papers/paper_046.png",
+    "source": "传统中式复古纸张游戏界面素材合集.png",
+    "source_bbox": [
+      15,
+      944,
+      349,
+      82
+    ],
+    "size": [
+      357,
+      90
+    ],
+    "category": "papers"
+  },
+  {
+    "name": "paper_047.png",
+    "path": "assets/ui/papers/paper_047.png",
+    "source": "传统中式复古纸张游戏界面素材合集.png",
+    "source_bbox": [
+      370,
+      944,
+      314,
+      83
+    ],
+    "size": [
+      322,
+      91
+    ],
+    "category": "papers"
+  },
+  {
+    "name": "paper_048.png",
+    "path": "assets/ui/papers/paper_048.png",
+    "source": "传统中式复古纸张游戏界面素材合集.png",
+    "source_bbox": [
+      697,
+      936,
+      155,
+      115
+    ],
+    "size": [
+      163,
+      123
+    ],
+    "category": "papers"
+  },
+  {
+    "name": "paper_049.png",
+    "path": "assets/ui/papers/paper_049.png",
+    "source": "传统中式复古纸张游戏界面素材合集.png",
+    "source_bbox": [
+      858,
+      935,
+      128,
+      125
+    ],
+    "size": [
+      136,
+      133
+    ],
+    "category": "papers"
+  }
+]
