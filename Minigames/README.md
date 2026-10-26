@@ -4,6 +4,19 @@
 
 所有结果只在当前试玩场景显示，不读取或修改 Dialogic 变量。主线现有小游戏占位和自动发放首次成功奖励的逻辑保持原样。接入主线时，应将真实结果替换对应占位与自动奖励，避免重复计分。
 
+## 界面结构
+
+界面不再在脚本里 `new` 控件。布局在 `.tscn`，样式在 `UI/Theme/ink_theme.tres`，脚本只处理数据、选中态与判定：
+
+- `PrototypeHub.tscn`：大厅骨架；卡片由 `GameCard.tscn` 实例化
+- `GameCard.tscn`：卷轴卡（`button_001/003/004` 切图）
+- `Quiz.tscn`：批文解读类页面；选项固定 A/B/C，答题状态用 `AnswerCorrect/AnswerWrong` 主题变体
+- `Pairing.tscn`：两组配对、`Links` 连线层；选中用 `ChipSelected` 主题变体
+- `Route.tscn`：路线选择页；路线卡由 `RouteCard.tscn` 实例化，选中用 `RouteCardSelected`
+- `RouteCard.tscn`：路线卡（`widget_001/002` 切图）
+
+新增界面时优先复用主题变体与 `UI/StyleBoxes`，不要在脚本里拼布局。
+
 ## 待定规则
 
 - 批文解读首次成功为顺伯信任 +15，重试成功按剧本的“一半”显示 +7.5；正式接入整数关系值前需要确定取整规则。

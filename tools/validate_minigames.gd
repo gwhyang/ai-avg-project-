@@ -25,6 +25,9 @@ func _check_quiz(game_id: String) -> void:
 	quiz.call("configure", game_id)
 	root.add_child(quiz)
 	await process_frame
+	for node_name in ["DocumentPanel", "OptionA", "OptionB", "OptionC", "Feedback", "Retry", "Restart"]:
+		if quiz.find_child(node_name, true, false) == null:
+			_fail(game_id + " UI is missing scene node " + node_name)
 	var options: Array = quiz.get("option_buttons")
 	var feedback: Label = quiz.get("feedback_label")
 	var retry: Button = quiz.get("retry_button")
@@ -61,6 +64,9 @@ func _check_pairing() -> void:
 	var pairing: Control = load("res://Minigames/Pairing.tscn").instantiate()
 	root.add_child(pairing)
 	await process_frame
+	for node_name in ["Grid1", "Grid2", "Phrase1", "Phrase2", "A1A", "A2C", "Submit", "Status"]:
+		if pairing.find_child(node_name, true, false) == null:
+			_fail("Pairing UI is missing scene node " + node_name)
 	var sources: Array = pairing.get("source_buttons")
 	var choices: Array = pairing.get("option_buttons")
 	var submit: Button = pairing.get("submit_button")
@@ -88,6 +94,9 @@ func _check_route() -> void:
 	var route: Control = load("res://Minigames/Route.tscn").instantiate()
 	root.add_child(route)
 	await process_frame
+	for node_name in ["RouteGrid", "ResultPanel", "ResultHeading", "Back", "Replay"]:
+		if route.find_child(node_name, true, false) == null:
+			_fail("Route UI is missing scene node " + node_name)
 	var choices: Array = route.get("route_buttons")
 	for index in range(3):
 		choices[index].pressed.emit()
@@ -108,6 +117,9 @@ func _check_hub() -> void:
 	var hub: Control = load("res://Minigames/PrototypeHub.tscn").instantiate()
 	root.add_child(hub)
 	await process_frame
+	for node_name in ["Menu", "Grid", "QuitButton"]:
+		if hub.find_child(node_name, true, false) == null:
+			_fail("Hub UI is missing scene node " + node_name)
 	var grid: GridContainer = hub.get("grid")
 	if grid.get_child_count() != 8:
 		_fail("Hub does not list all eight games")

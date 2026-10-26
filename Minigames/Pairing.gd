@@ -1,4 +1,5 @@
 extends Control
+## 隐语配对。两组题目与连线画布都在 Pairing.tscn 里，本脚本只负责数据与判定。
 
 signal exit_requested
 
@@ -19,30 +20,29 @@ const ACCENTS := [Color("76c6b1"), Color("e2b76b")]
 const TEXT := Color("f4f0e6")
 const MUTED := Color("bcbdb3")
 
-@onready var content: VBoxContainer = $Workspace/Padding/Content
 @onready var links: Node2D = $Links
 @onready var padding: MarginContainer = $Workspace/Padding
+@onready var header_grid: GridContainer = %HeaderGrid
+@onready var footer_grid: GridContainer = %FooterGrid
+@onready var scroll_view: ScrollContainer = %Scroll
+@onready var status_label: Label = %Status
+@onready var reward_label: Label = %Reward
+@onready var submit_button: Button = %Submit
+@onready var replay_button: Button = %Replay
+@onready var back_button: Button = %Back
+@onready var source_buttons: Array = [%Phrase1, %Phrase2]
+@onready var option_buttons: Array = [[%A1A, %A1B], [%A2A, %A2B, %A2C]]
+@onready var group_grids: Array = [%Grid1, %Grid2]
 
-var source_buttons: Array[Button] = []
-var option_buttons: Array = []
-var group_grids: Array[GridContainer] = []
 var link_lines: Array[Line2D] = []
-var chosen := [-1, -1]
+var chosen: Array[int] = [-1, -1]
 var active_group := -1
 var had_error := false
 var completed := false
 
-var title_label: Label
-var reward_label: Label
-var status_label: Label
-var submit_button: Button
-var scroll_view: ScrollContainer
-var header_grid: GridContainer
-var footer_grid: GridContainer
-
 
 func _ready() -> void:
-	_build_ui()
+	_bind_ui()
 	resized.connect(_on_resized)
 	_on_resized()
 	_set_status("选择一条隐语，再选择它对应的实际含义。", MUTED)
@@ -50,165 +50,27 @@ func _ready() -> void:
 	source_buttons[0].grab_focus()
 
 
-func _build_ui() -> void:
-	header_grid = GridContainer.new()
-	header_grid.columns = 3
-	header_grid.add_theme_constant_override("h_separation", 20)
-	header_grid.add_theme_constant_override("v_separation", 8)
-	content.add_child(header_grid)
-
-	var heading := VBoxContainer.new()
-	heading.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	heading.add_theme_constant_override("separation", 5)
-	header_grid.add_child(heading)
-
-	var eyebrow := _make_label("第二章  /  学批", 19, ACCENTS[1])
-	heading.add_child(eyebrow)
-	title_label = _make_label("隐语配对", 42, TEXT)
-	heading.add_child(title_label)
-
-	reward_label = _make_label("奖励预览  顺伯信任 +10", 22, ACCENTS[0])
-	reward_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
-	header_grid.add_child(reward_label)
-
-	var back_button := _make_button("返回", 144, 54)
-	back_button.pressed.connect(_on_back_pressed)
-	header_grid.add_child(back_button)
-
-	content.add_child(HSeparator.new())
-	var intro := _make_label("顺伯摆出两封批，请将隐语与其真正含义相连。", 24, TEXT)
-	intro.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	content.add_child(intro)
-
-	scroll_view = ScrollContainer.new()
-	scroll_view.size_flags_vertical = Control.SIZE_EXPAND_FILL
-	scroll_view.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	scroll_view.get_v_scroll_bar().value_changed.connect(func(_value: float) -> void: _layout_links())
-	content.add_child(scroll_view)
-
-	var groups := VBoxContainer.new()
-	groups.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	groups.add_theme_constant_override("separation", 22)
-	scroll_view.add_child(groups)
+func _bind_ui() -> void:
 	for group_index in PHRASES.size():
-		_build_group(group_index, groups)
+		source_buttons[group_index].text = PHRASES[group_index]
+		source_buttons[group_index].pressed.connect(_select_source.bind(group_index))
+		for option_index in OPTIONS[group_index].size():
+			var option: Button = option_buttons[group_index][option_index]
+			option.text = OPTIONS[group_index][option_index]
+			option.pressed.connect(_select_answer.bind(group_index, option_index))
+		var line := Line2D.new()
+		line.width = 4.0
+		line.antialiased = true
+		line.default_color = ACCENTS[group_index]
+		line.visible = false
+		links.add_child(line)
+		link_lines.append(line)
 
-	content.add_child(HSeparator.new())
-	footer_grid = GridContainer.new()
-	footer_grid.columns = 3
-	footer_grid.add_theme_constant_override("h_separation", 16)
-	footer_grid.add_theme_constant_override("v_separation", 10)
-	content.add_child(footer_grid)
-
-	status_label = _make_label("", 20, MUTED)
-	status_label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	status_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
-	status_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	footer_grid.add_child(status_label)
-
-	var replay_button := _make_button("重新开始", 156, 60)
+	back_button.pressed.connect(_on_back_pressed)
 	replay_button.pressed.connect(_on_replay_pressed)
-	footer_grid.add_child(replay_button)
-
-	submit_button = _make_button("核对配对", 156, 60)
 	submit_button.pressed.connect(_on_submit_pressed)
-	footer_grid.add_child(submit_button)
-
-
-func _build_group(group_index: int, parent: VBoxContainer) -> void:
-	var section := VBoxContainer.new()
-	section.add_theme_constant_override("separation", 12)
-	parent.add_child(section)
-
-	var heading := _make_label("0%d  /  %s" % [group_index + 1, "第一组" if group_index == 0 else "第二组"], 20, ACCENTS[group_index])
-	section.add_child(heading)
-
-	var grid := GridContainer.new()
-	grid.columns = 2
-	grid.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	grid.add_theme_constant_override("h_separation", 68)
-	grid.add_theme_constant_override("v_separation", 18)
-	section.add_child(grid)
-	group_grids.append(grid)
-
-	var phrase_column := VBoxContainer.new()
-	phrase_column.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	phrase_column.add_theme_constant_override("separation", 9)
-	grid.add_child(phrase_column)
-	phrase_column.add_child(_make_label("隐语", 18, MUTED))
-	var phrase_button := _make_button(PHRASES[group_index], 0, 76)
-	phrase_button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	phrase_button.pressed.connect(_select_source.bind(group_index))
-	phrase_column.add_child(phrase_button)
-	source_buttons.append(phrase_button)
-
-	var answer_column := VBoxContainer.new()
-	answer_column.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	answer_column.add_theme_constant_override("separation", 8)
-	grid.add_child(answer_column)
-	answer_column.add_child(_make_label("实际传递内容", 18, MUTED))
-	var group_options: Array[Button] = []
-	for option_index in OPTIONS[group_index].size():
-		var answer_button := _make_button(OPTIONS[group_index][option_index], 0, 66)
-		answer_button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-		answer_button.alignment = HORIZONTAL_ALIGNMENT_LEFT
-		answer_button.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-		answer_button.pressed.connect(_select_answer.bind(group_index, option_index))
-		answer_column.add_child(answer_button)
-		group_options.append(answer_button)
-	option_buttons.append(group_options)
-
-	var line := Line2D.new()
-	line.width = 4.0
-	line.antialiased = true
-	line.default_color = ACCENTS[group_index]
-	line.visible = false
-	links.add_child(line)
-	link_lines.append(line)
-
-	if group_index == 0:
-		parent.add_child(HSeparator.new())
-
-
-func _make_label(value: String, font_size: int, color: Color) -> Label:
-	var label := Label.new()
-	label.text = value
-	label.add_theme_font_size_override("font_size", font_size)
-	label.add_theme_color_override("font_color", color)
-	return label
-
-
-func _make_button(value: String, min_width: float, min_height: float) -> Button:
-	var button := Button.new()
-	button.text = value
-	button.custom_minimum_size = Vector2(min_width, min_height)
-	button.add_theme_font_size_override("font_size", 22)
-	_style_button(button, Color("263332"), Color("71827b"), TEXT)
-	return button
-
-
-func _style_button(button: Button, fill: Color, border: Color, color: Color) -> void:
-	button.add_theme_stylebox_override("normal", _style(fill, border))
-	button.add_theme_stylebox_override("hover", _style(fill.lightened(0.1), border.lightened(0.2)))
-	button.add_theme_stylebox_override("pressed", _style(fill.lightened(0.17), border))
-	button.add_theme_stylebox_override("focus", _style(Color.TRANSPARENT, border.lightened(0.25)))
-	button.add_theme_color_override("font_color", color)
-	button.add_theme_color_override("font_hover_color", color)
-	button.add_theme_color_override("font_pressed_color", color)
-	button.add_theme_color_override("font_disabled_color", color.darkened(0.35))
-
-
-func _style(fill: Color, border: Color) -> StyleBoxFlat:
-	var style := StyleBoxFlat.new()
-	style.bg_color = fill
-	style.border_color = border
-	style.set_border_width_all(2)
-	style.set_corner_radius_all(5)
-	style.content_margin_left = 16
-	style.content_margin_right = 16
-	style.content_margin_top = 10
-	style.content_margin_bottom = 10
-	return style
+	scroll_view.get_v_scroll_bar().value_changed.connect(
+		func(_value: float) -> void: _layout_links())
 
 
 func _select_source(group_index: int) -> void:
@@ -249,7 +111,8 @@ func _on_submit_pressed() -> void:
 			wrong_numbers.append(str(group_index + 1))
 			chosen[group_index] = -1
 		active_group = wrong_groups[0]
-		_set_status("第 %s 组仍不相符，已保留正确连线。" % ", ".join(wrong_numbers), Color("f0a99b"))
+		_set_status("第 %s 组仍不相符，已保留正确连线。" % ", ".join(wrong_numbers),
+			Color("f0a99b"))
 	_refresh()
 
 
@@ -278,18 +141,17 @@ func _set_status(message: String, color: Color) -> void:
 func _refresh() -> void:
 	reward_label.text = "奖励预览  顺伯信任 +%d" % (5 if had_error else 10)
 	submit_button.disabled = completed or chosen.has(-1)
-	_style_button(submit_button, Color("8d3e35"), Color("d49a77"), TEXT)
 	for group_index in PHRASES.size():
-		var accent: Color = ACCENTS[group_index]
-		var source_selected: bool = active_group == group_index or chosen[group_index] >= 0
-		_style_button(source_buttons[group_index], Color("29413e") if source_selected else Color("263332"), accent if source_selected else Color("71827b"), TEXT)
-		source_buttons[group_index].disabled = completed
-		for option_index in option_buttons[group_index].size():
-			var button: Button = option_buttons[group_index][option_index]
-			var selected: bool = chosen[group_index] == option_index
-			_style_button(button, Color("29413e") if selected else Color("263332"), accent if selected else Color("71827b"), TEXT)
-			button.disabled = completed
+		var source: Button = source_buttons[group_index]
+		_set_chip_selected(source, active_group == group_index or chosen[group_index] >= 0)
+		for option_index in OPTIONS[group_index].size():
+			var option: Button = option_buttons[group_index][option_index]
+			_set_chip_selected(option, chosen[group_index] == option_index)
 	call_deferred("_layout_links")
+
+
+func _set_chip_selected(button: Button, selected: bool) -> void:
+	button.theme_type_variation = &"ChipSelected" if selected else &""
 
 
 func _on_resized() -> void:
@@ -312,9 +174,10 @@ func _layout_links() -> void:
 		line.visible = option_index >= 0
 		if option_index < 0:
 			continue
-		var source_rect := source_buttons[group_index].get_global_rect()
+		var source_button: Button = source_buttons[group_index]
+		var source_rect: Rect2 = source_button.get_global_rect()
 		var target: Button = option_buttons[group_index][option_index]
-		var target_rect := target.get_global_rect()
+		var target_rect: Rect2 = target.get_global_rect()
 		if not scroll_view.get_global_rect().intersects(source_rect) or not scroll_view.get_global_rect().intersects(target_rect):
 			line.visible = false
 			continue

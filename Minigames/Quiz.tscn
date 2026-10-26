@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene load_steps=4 format=3]
 
 [ext_resource type="Script" path="res://Minigames/Quiz.gd" id="1_quiz"]
+[ext_resource type="Texture2D" path="res://Asset/sprite/bg/5.png" id="2_background"]
+[ext_resource type="Font" path="res://UI/Fonts/ink_kai_bold.tres" id="3_title"]
 
 [node name="Quiz" type="Control"]
 layout_mode = 3
@@ -10,3 +12,200 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_quiz")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_background")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Shade" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.025, 0.035, 0.04, 0.55)
+
+[node name="ScreenMargin" type="MarginContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 70
+theme_override_constants/margin_top = 44
+theme_override_constants/margin_right = 70
+theme_override_constants/margin_bottom = 44
+
+[node name="Column" type="VBoxContainer" parent="ScreenMargin"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Header" type="HBoxContainer" parent="ScreenMargin/Column"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="BackButton" type="Button" parent="ScreenMargin/Column/Header"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(136, 52)
+layout_mode = 2
+theme_override_font_sizes/font_size = 21
+text = "返回"
+
+[node name="Spacer" type="Control" parent="ScreenMargin/Column/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="OrderLabel" type="Label" parent="ScreenMargin/Column/Header"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.91, 0.85, 0.73, 1)
+theme_override_font_sizes/font_size = 21
+text = "01 / 08"
+vertical_alignment = 1
+
+[node name="TitleLabel" type="Label" parent="ScreenMargin/Column"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.97, 0.9, 1)
+theme_override_fonts/font = ExtResource("3_title")
+theme_override_font_sizes/font_size = 50
+text = "批文解读"
+
+[node name="ChapterLabel" type="Label" parent="ScreenMargin/Column"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.886, 0.718, 0.42, 1)
+theme_override_font_sizes/font_size = 22
+text = "第二章 · 学批"
+
+[node name="Workspace" type="PanelContainer" parent="ScreenMargin/Column"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_type_variation = &"WorkspacePanel"
+
+[node name="Padding" type="MarginContainer" parent="ScreenMargin/Column/Workspace"]
+layout_mode = 2
+theme_override_constants/margin_left = 26
+theme_override_constants/margin_top = 18
+theme_override_constants/margin_right = 26
+theme_override_constants/margin_bottom = 18
+
+[node name="Body" type="VBoxContainer" parent="ScreenMargin/Column/Workspace/Padding"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Scroll" type="ScrollContainer" parent="ScreenMargin/Column/Workspace/Padding/Body"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+follow_focus = true
+
+[node name="ScrollBody" type="VBoxContainer" parent="ScreenMargin/Column/Workspace/Padding/Body/Scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 16
+
+[node name="DocumentPanel" type="PanelContainer" parent="ScreenMargin/Column/Workspace/Padding/Body/Scroll/ScrollBody"]
+layout_mode = 2
+theme_type_variation = &"DocumentPanel"
+
+[node name="DocContent" type="VBoxContainer" parent="ScreenMargin/Column/Workspace/Padding/Body/Scroll/ScrollBody/DocumentPanel"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="DocumentTitle" type="Label" parent="ScreenMargin/Column/Workspace/Padding/Body/Scroll/ScrollBody/DocumentPanel/DocContent"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.48, 0.15, 0.14, 1)
+theme_override_font_sizes/font_size = 22
+text = "南洋来批"
+
+[node name="Document" type="Label" parent="ScreenMargin/Column/Workspace/Padding/Body/Scroll/ScrollBody/DocumentPanel/DocContent"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.161, 0.113, 0.075, 1)
+theme_override_font_sizes/font_size = 30
+text = "吾今在外尚安，寄蕃茨贰佰斤，家中省吃俭用。勿向外人提及，免招祸端。"
+autowrap_mode = 3
+
+[node name="Question" type="Label" parent="ScreenMargin/Column/Workspace/Padding/Body/Scroll/ScrollBody"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.97, 0.9, 1)
+theme_override_font_sizes/font_size = 29
+text = "这封批信实际汇款数额是多少？"
+autowrap_mode = 3
+
+[node name="Options" type="VBoxContainer" parent="ScreenMargin/Column/Workspace/Padding/Body/Scroll/ScrollBody"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="OptionA" type="Button" parent="ScreenMargin/Column/Workspace/Padding/Body/Scroll/ScrollBody/Options"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 76)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "A  饼干两百包"
+alignment = 0
+autowrap_mode = 3
+
+[node name="OptionB" type="Button" parent="ScreenMargin/Column/Workspace/Padding/Body/Scroll/ScrollBody/Options"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 76)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "B  港币二百元"
+alignment = 0
+autowrap_mode = 3
+
+[node name="OptionC" type="Button" parent="ScreenMargin/Column/Workspace/Padding/Body/Scroll/ScrollBody/Options"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 76)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "C  大米二百斤"
+alignment = 0
+autowrap_mode = 3
+
+[node name="Feedback" type="Label" parent="ScreenMargin/Column/Workspace/Padding/Body/Scroll/ScrollBody"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 56)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.96, 0.87, 1)
+theme_override_font_sizes/font_size = 23
+autowrap_mode = 3
+
+[node name="Actions" type="HBoxContainer" parent="ScreenMargin/Column/Workspace/Padding/Body/Scroll/ScrollBody"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Retry" type="Button" parent="ScreenMargin/Column/Workspace/Padding/Body/Scroll/ScrollBody/Actions"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(196, 54)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "再试一次"
+
+[node name="Restart" type="Button" parent="ScreenMargin/Column/Workspace/Padding/Body/Scroll/ScrollBody/Actions"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(196, 54)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "重新开始"

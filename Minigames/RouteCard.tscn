@@ -1,0 +1,54 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://Minigames/RouteCard.gd" id="1_card"]
+[ext_resource type="Font" path="res://UI/Fonts/ink_kai_bold.tres" id="2_name"]
+
+[node name="RouteCard" type="PanelContainer"]
+custom_minimum_size = Vector2(0, 430)
+size_flags_horizontal = 3
+theme_type_variation = &"RouteCard"
+script = ExtResource("1_card")
+
+[node name="Column" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Number" type="Label" parent="Column"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.42, 0.24, 0.16, 1)
+theme_override_font_sizes/font_size = 18
+text = "01 / 路线甲"
+
+[node name="Name" type="Label" parent="Column"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.161, 0.113, 0.075, 1)
+theme_override_fonts/font = ExtResource("2_name")
+theme_override_font_sizes/font_size = 32
+text = "官道"
+
+[node name="Pace" type="Label" parent="Column"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.42, 0.24, 0.16, 1)
+theme_override_font_sizes/font_size = 19
+text = "路程较短"
+
+[node name="Description" type="Label" parent="Column"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.2, 0.149, 0.102, 1)
+theme_override_font_sizes/font_size = 21
+text = "道路平坦，但必经日伪哨卡，容易遭到盘查。"
+autowrap_mode = 3
+
+[node name="Tradeoff" type="Label" parent="Column"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.376, 0.267, 0.184, 1)
+theme_override_font_sizes/font_size = 18
+text = "哨卡盘查 · 批银有损失风险"
+autowrap_mode = 3
+
+[node name="SelectButton" type="Button" parent="Column"]
+custom_minimum_size = Vector2(0, 54)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "选择官道"

@@ -2,18 +2,7 @@
 
 [ext_resource type="Script" path="res://Minigames/Pairing.gd" id="1_script"]
 [ext_resource type="Texture2D" path="res://Asset/sprite/bg/5.png" id="2_background"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_workspace"]
-bg_color = Color(0.06, 0.09, 0.09, 0.94)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.69, 0.55, 0.36, 0.8)
-corner_radius_top_left = 6
-corner_radius_top_right = 6
-corner_radius_bottom_right = 6
-corner_radius_bottom_left = 6
+[ext_resource type="Font" path="res://UI/Fonts/ink_kai_bold.tres" id="3_title"]
 
 [node name="Pairing" type="Control"]
 layout_mode = 3
@@ -52,7 +41,9 @@ anchor_left = 0.055
 anchor_top = 0.055
 anchor_right = 0.945
 anchor_bottom = 0.945
-theme_override_styles/panel = SubResource("StyleBoxFlat_workspace")
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"WorkspacePanel"
 
 [node name="Padding" type="MarginContainer" parent="Workspace"]
 layout_mode = 2
@@ -63,6 +54,251 @@ theme_override_constants/margin_bottom = 28
 
 [node name="Content" type="VBoxContainer" parent="Workspace/Padding"]
 layout_mode = 2
-theme_override_constants/separation = 18
+theme_override_constants/separation = 16
+
+[node name="HeaderGrid" type="GridContainer" parent="Workspace/Padding/Content"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 8
+columns = 3
+
+[node name="Heading" type="VBoxContainer" parent="Workspace/Padding/Content/HeaderGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 5
+
+[node name="Eyebrow" type="Label" parent="Workspace/Padding/Content/HeaderGrid/Heading"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.886, 0.718, 0.42, 1)
+theme_override_font_sizes/font_size = 19
+text = "第二章  /  学批"
+
+[node name="Title" type="Label" parent="Workspace/Padding/Content/HeaderGrid/Heading"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.957, 0.941, 0.902, 1)
+theme_override_fonts/font = ExtResource("3_title")
+theme_override_font_sizes/font_size = 42
+text = "隐语配对"
+
+[node name="Reward" type="Label" parent="Workspace/Padding/Content/HeaderGrid"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.463, 0.776, 0.694, 1)
+theme_override_font_sizes/font_size = 22
+text = "奖励预览  顺伯信任 +10"
+vertical_alignment = 1
+
+[node name="Back" type="Button" parent="Workspace/Padding/Content/HeaderGrid"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(136, 52)
+layout_mode = 2
+theme_override_font_sizes/font_size = 21
+text = "返回"
+
+[node name="SeparatorTop" type="HSeparator" parent="Workspace/Padding/Content"]
+layout_mode = 2
+
+[node name="Intro" type="Label" parent="Workspace/Padding/Content"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.957, 0.941, 0.902, 1)
+theme_override_font_sizes/font_size = 24
+text = "顺伯摆出两封批，请将隐语与其真正含义相连。"
+autowrap_mode = 3
+
+[node name="Scroll" type="ScrollContainer" parent="Workspace/Padding/Content"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+follow_focus = true
+
+[node name="Groups" type="VBoxContainer" parent="Workspace/Padding/Content/Scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 20
+
+[node name="Group1" type="VBoxContainer" parent="Workspace/Padding/Content/Scroll/Groups"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Heading1" type="Label" parent="Workspace/Padding/Content/Scroll/Groups/Group1"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.463, 0.776, 0.694, 1)
+theme_override_font_sizes/font_size = 20
+text = "01  /  第一组"
+
+[node name="Grid1" type="GridContainer" parent="Workspace/Padding/Content/Scroll/Groups/Group1"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/h_separation = 60
+theme_override_constants/v_separation = 18
+columns = 2
+
+[node name="PhraseColumn" type="VBoxContainer" parent="Workspace/Padding/Content/Scroll/Groups/Group1/Grid1"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 9
+
+[node name="PhraseLabel" type="Label" parent="Workspace/Padding/Content/Scroll/Groups/Group1/Grid1/PhraseColumn"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.737, 0.741, 0.702, 1)
+theme_override_font_sizes/font_size = 18
+text = "隐语"
+
+[node name="Phrase1" type="Button" parent="Workspace/Padding/Content/Scroll/Groups/Group1/Grid1/PhraseColumn"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 74)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 22
+text = "悦弟尾牙到莆"
+
+[node name="AnswerColumn" type="VBoxContainer" parent="Workspace/Padding/Content/Scroll/Groups/Group1/Grid1"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
+
+[node name="AnswerLabel" type="Label" parent="Workspace/Padding/Content/Scroll/Groups/Group1/Grid1/AnswerColumn"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.737, 0.741, 0.702, 1)
+theme_override_font_sizes/font_size = 18
+text = "实际传递内容"
+
+[node name="A1A" type="Button" parent="Workspace/Padding/Content/Scroll/Groups/Group1/Grid1/AnswerColumn"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 21
+text = "A  告知“一位叫‘悦弟’的亲人，年底要回莆田老家”"
+alignment = 0
+autowrap_mode = 3
+
+[node name="A1B" type="Button" parent="Workspace/Padding/Content/Scroll/Groups/Group1/Grid1/AnswerColumn"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 21
+text = "B  一笔二十元汇款将于年底汇至莆田"
+alignment = 0
+autowrap_mode = 3
+
+[node name="SeparatorMid" type="HSeparator" parent="Workspace/Padding/Content/Scroll/Groups"]
+layout_mode = 2
+
+[node name="Group2" type="VBoxContainer" parent="Workspace/Padding/Content/Scroll/Groups"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Heading2" type="Label" parent="Workspace/Padding/Content/Scroll/Groups/Group2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.886, 0.718, 0.42, 1)
+theme_override_font_sizes/font_size = 20
+text = "02  /  第二组"
+
+[node name="Grid2" type="GridContainer" parent="Workspace/Padding/Content/Scroll/Groups/Group2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/h_separation = 60
+theme_override_constants/v_separation = 18
+columns = 2
+
+[node name="PhraseColumn" type="VBoxContainer" parent="Workspace/Padding/Content/Scroll/Groups/Group2/Grid2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 9
+
+[node name="PhraseLabel" type="Label" parent="Workspace/Padding/Content/Scroll/Groups/Group2/Grid2/PhraseColumn"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.737, 0.741, 0.702, 1)
+theme_override_font_sizes/font_size = 18
+text = "隐语"
+
+[node name="Phrase2" type="Button" parent="Workspace/Padding/Content/Scroll/Groups/Group2/Grid2/PhraseColumn"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 74)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 22
+text = "分配米伍拾斤"
+
+[node name="AnswerColumn" type="VBoxContainer" parent="Workspace/Padding/Content/Scroll/Groups/Group2/Grid2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
+
+[node name="AnswerLabel" type="Label" parent="Workspace/Padding/Content/Scroll/Groups/Group2/Grid2/AnswerColumn"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.737, 0.741, 0.702, 1)
+theme_override_font_sizes/font_size = 18
+text = "实际传递内容"
+
+[node name="A2A" type="Button" parent="Workspace/Padding/Content/Scroll/Groups/Group2/Grid2/AnswerColumn"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 21
+text = "A  收到港币伍拾元"
+alignment = 0
+autowrap_mode = 3
+
+[node name="A2B" type="Button" parent="Workspace/Padding/Content/Scroll/Groups/Group2/Grid2/AnswerColumn"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 21
+text = "B  收到大洋伍拾元"
+alignment = 0
+autowrap_mode = 3
+
+[node name="A2C" type="Button" parent="Workspace/Padding/Content/Scroll/Groups/Group2/Grid2/AnswerColumn"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 21
+text = "C  分配米伍拾斤"
+alignment = 0
+autowrap_mode = 3
+
+[node name="SeparatorBottom" type="HSeparator" parent="Workspace/Padding/Content"]
+layout_mode = 2
+
+[node name="FooterGrid" type="GridContainer" parent="Workspace/Padding/Content"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 10
+columns = 3
+
+[node name="Status" type="Label" parent="Workspace/Padding/Content/FooterGrid"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.737, 0.741, 0.702, 1)
+theme_override_font_sizes/font_size = 20
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Replay" type="Button" parent="Workspace/Padding/Content/FooterGrid"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(156, 56)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "重新开始"
+
+[node name="Submit" type="Button" parent="Workspace/Padding/Content/FooterGrid"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(156, 56)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "核对配对"
 
 [node name="Links" type="Node2D" parent="."]

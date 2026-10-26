@@ -2,18 +2,7 @@
 
 [ext_resource type="Script" path="res://Minigames/Route.gd" id="1_script"]
 [ext_resource type="Texture2D" path="res://Asset/sprite/bg/2.png" id="2_background"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_workspace"]
-bg_color = Color(0.06, 0.09, 0.09, 0.95)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.69, 0.55, 0.36, 0.8)
-corner_radius_top_left = 6
-corner_radius_top_right = 6
-corner_radius_bottom_right = 6
-corner_radius_bottom_left = 6
+[ext_resource type="Font" path="res://UI/Fonts/ink_kai_bold.tres" id="3_title"]
 
 [node name="Route" type="Control"]
 layout_mode = 3
@@ -44,7 +33,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-color = Color(0.025, 0.035, 0.04, 0.67)
+color = Color(0.025, 0.035, 0.04, 0.62)
 
 [node name="Workspace" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -52,7 +41,9 @@ anchor_left = 0.055
 anchor_top = 0.055
 anchor_right = 0.945
 anchor_bottom = 0.945
-theme_override_styles/panel = SubResource("StyleBoxFlat_workspace")
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"WorkspacePanel"
 
 [node name="Padding" type="MarginContainer" parent="Workspace"]
 layout_mode = 2
@@ -63,4 +54,113 @@ theme_override_constants/margin_bottom = 28
 
 [node name="Content" type="VBoxContainer" parent="Workspace/Padding"]
 layout_mode = 2
-theme_override_constants/separation = 18
+theme_override_constants/separation = 14
+
+[node name="Header" type="HBoxContainer" parent="Workspace/Padding/Content"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Heading" type="VBoxContainer" parent="Workspace/Padding/Content/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 4
+
+[node name="Eyebrow" type="Label" parent="Workspace/Padding/Content/Header/Heading"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.886, 0.718, 0.42, 1)
+theme_override_font_sizes/font_size = 19
+text = "第三章  /  送批"
+
+[node name="Title" type="Label" parent="Workspace/Padding/Content/Header/Heading"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.957, 0.941, 0.902, 1)
+theme_override_fonts/font = ExtResource("3_title")
+theme_override_font_sizes/font_size = 42
+text = "送批路线"
+
+[node name="Back" type="Button" parent="Workspace/Padding/Content/Header"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(136, 52)
+layout_mode = 2
+theme_override_font_sizes/font_size = 21
+text = "返回"
+
+[node name="SeparatorTop" type="HSeparator" parent="Workspace/Padding/Content"]
+layout_mode = 2
+
+[node name="Intro" type="Label" parent="Workspace/Padding/Content"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.957, 0.941, 0.902, 1)
+theme_override_font_sizes/font_size = 24
+text = "出了镇子，三条路通往乡下。两户人家还等着批银与家书。"
+autowrap_mode = 3
+
+[node name="Scroll" type="ScrollContainer" parent="Workspace/Padding/Content"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+follow_focus = true
+
+[node name="RouteGrid" type="GridContainer" parent="Workspace/Padding/Content/Scroll"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 16
+columns = 3
+
+[node name="ResultPanel" type="PanelContainer" parent="Workspace/Padding/Content"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 142)
+layout_mode = 2
+theme_type_variation = &"ResultPanel"
+
+[node name="ResultContent" type="VBoxContainer" parent="Workspace/Padding/Content/ResultPanel"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="ResultHeading" type="Label" parent="Workspace/Padding/Content/ResultPanel/ResultContent"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.957, 0.941, 0.902, 1)
+theme_override_font_sizes/font_size = 24
+text = "尚未选择路线"
+
+[node name="ResultBody" type="Label" parent="Workspace/Padding/Content/ResultPanel/ResultContent"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.737, 0.741, 0.702, 1)
+theme_override_font_sizes/font_size = 20
+text = "请从官道、山道、水路中选一条。"
+autowrap_mode = 3
+
+[node name="ResultReward" type="Label" parent="Workspace/Padding/Content/ResultPanel/ResultContent"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.52, 0.73, 0.82, 1)
+theme_override_font_sizes/font_size = 20
+
+[node name="SeparatorBottom" type="HSeparator" parent="Workspace/Padding/Content"]
+layout_mode = 2
+
+[node name="Footer" type="HBoxContainer" parent="Workspace/Padding/Content"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Status" type="Label" parent="Workspace/Padding/Content/Footer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.737, 0.741, 0.702, 1)
+theme_override_font_sizes/font_size = 19
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Replay" type="Button" parent="Workspace/Padding/Content/Footer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(156, 56)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "重新开始"

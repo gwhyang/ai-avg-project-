@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://Minigames/GameCard.gd" id="1_card"]
+[ext_resource type="Font" path="res://UI/Fonts/ink_kai_bold.tres" id="2_title"]
+
+[node name="GameCard" type="Button"]
+custom_minimum_size = Vector2(360, 148)
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+theme_type_variation = &"GameCard"
+script = ExtResource("1_card")
+
+[node name="Padding" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 228
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 228
+theme_override_constants/margin_bottom = 14
+
+[node name="Content" type="VBoxContainer" parent="Padding"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 2
+alignment = 1
+
+[node name="Order" type="Label" parent="Padding/Content"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.478, 0.318, 0.196, 1)
+theme_override_font_sizes/font_size = 18
+text = "01 / 08"
+
+[node name="Title" type="Label" parent="Padding/Content"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.161, 0.113, 0.075, 1)
+theme_override_fonts/font = ExtResource("2_title")
+theme_override_font_sizes/font_size = 34
+text = "批文解读"
+
+[node name="Chapter" type="Label" parent="Padding/Content"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.376, 0.267, 0.184, 1)
+theme_override_font_sizes/font_size = 20
+text = "第二章 · 学批"

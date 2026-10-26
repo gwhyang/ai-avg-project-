@@ -1,4 +1,5 @@
 extends Control
+## 小游戏大厅：卡片由 GameCard.tscn 实例化，本脚本只负责数据与跳转。
 
 const GAMES = [
 	{"id": "reading", "title": "批文解读", "chapter": "第二章 · 学批", "kind": "quiz"},
@@ -11,147 +12,42 @@ const GAMES = [
 	{"id": "restoration", "title": "批文还原", "chapter": "终章 · 现代", "kind": "quiz"},
 ]
 
-var menu: MarginContainer
-var grid: GridContainer
-var first_card: Button
-var active_game: Control
+const CARD_SCENE := preload("res://Minigames/GameCard.tscn")
+
+@onready var menu: MarginContainer = %Menu
+@onready var grid: GridContainer = %Grid
+@onready var quit_button: Button = %QuitButton
+
+var first_card: Button = null
+var active_game: Control = null
 
 
 func _ready() -> void:
-	_build_ui()
+	quit_button.pressed.connect(get_tree().quit)
+	_populate_cards()
 	_update_grid_columns()
 	get_viewport().size_changed.connect(_update_grid_columns)
-	first_card.grab_focus()
+	if first_card:
+		first_card.grab_focus()
 
 
-func _build_ui() -> void:
-	var background := TextureRect.new()
-	background.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
-	background.texture = load("res://Asset/sprite/bg/13.png")
-	background.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-	background.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
-	background.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	add_child(background)
-
-	var shade := ColorRect.new()
-	shade.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
-	shade.color = Color(0.025, 0.035, 0.04, 0.82)
-	shade.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	add_child(shade)
-
-	menu = MarginContainer.new()
-	menu.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
-	menu.add_theme_constant_override("margin_left", 70)
-	menu.add_theme_constant_override("margin_top", 48)
-	menu.add_theme_constant_override("margin_right", 70)
-	menu.add_theme_constant_override("margin_bottom", 48)
-	add_child(menu)
-
-	var column := VBoxContainer.new()
-	column.add_theme_constant_override("separation", 28)
-	menu.add_child(column)
-
-	var header := HBoxContainer.new()
-	column.add_child(header)
-	var heading := VBoxContainer.new()
-	heading.add_theme_constant_override("separation", 4)
-	heading.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	header.add_child(heading)
-	var title := Label.new()
-	title.text = "小游戏试玩"
-	title.add_theme_font_size_override("font_size", 50)
-	title.add_theme_color_override("font_color", Color(1.0, 0.97, 0.9))
-	heading.add_child(title)
-	var brand := Label.new()
-	brand.text = "一纸千山"
-	brand.add_theme_font_size_override("font_size", 22)
-	brand.add_theme_color_override("font_color", Color(0.91, 0.82, 0.68))
-	heading.add_child(brand)
-	var quit_button := Button.new()
-	quit_button.text = "退出"
-	quit_button.custom_minimum_size = Vector2(128, 52)
-	quit_button.add_theme_font_size_override("font_size", 21)
-	quit_button.add_theme_stylebox_override("normal", _card_style(Color(0.13, 0.17, 0.18, 0.95)))
-	quit_button.add_theme_stylebox_override("hover", _card_style(Color(0.24, 0.29, 0.29, 0.98)))
-	quit_button.pressed.connect(get_tree().quit)
-	header.add_child(quit_button)
-
-	var scroll := ScrollContainer.new()
-	scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
-	scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
-	scroll.follow_focus = true
-	column.add_child(scroll)
-	grid = GridContainer.new()
-	grid.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	grid.add_theme_constant_override("h_separation", 18)
-	grid.add_theme_constant_override("v_separation", 18)
-	scroll.add_child(grid)
-
-	for entry in GAMES:
-		var card := _game_card(entry)
+func _populate_cards() -> void:
+	for index in GAMES.size():
+		var entry: Dictionary = GAMES[index]
+		var card: Button = CARD_SCENE.instantiate()
 		grid.add_child(card)
+		card.setup(index, entry)
+		card.pressed.connect(_open_game.bind(entry))
 		if first_card == null:
 			first_card = card
 
 
-func _game_card(entry: Dictionary) -> Button:
-	var card := Button.new()
-	card.custom_minimum_size = Vector2(370, 156)
-	card.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	card.add_theme_stylebox_override("normal", _card_style(Color(0.11, 0.16, 0.17, 0.95)))
-	card.add_theme_stylebox_override("hover", _card_style(Color(0.22, 0.29, 0.29, 0.98)))
-	card.add_theme_stylebox_override("pressed", _card_style(Color(0.31, 0.37, 0.35, 0.98)))
-	card.pressed.connect(_open_game.bind(entry))
-	var content := MarginContainer.new()
-	content.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
-	content.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	content.add_theme_constant_override("margin_left", 26)
-	content.add_theme_constant_override("margin_top", 18)
-	content.add_theme_constant_override("margin_right", 26)
-	content.add_theme_constant_override("margin_bottom", 18)
-	card.add_child(content)
-	var details := VBoxContainer.new()
-	details.add_theme_constant_override("separation", 8)
-	details.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	content.add_child(details)
-	var index := Label.new()
-	index.text = "%02d / 08" % (GAMES.find(entry) + 1)
-	index.add_theme_font_size_override("font_size", 19)
-	index.add_theme_color_override("font_color", Color(0.9, 0.7, 0.52))
-	index.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	details.add_child(index)
-	var title := Label.new()
-	title.text = entry.title
-	title.add_theme_font_size_override("font_size", 32)
-	title.add_theme_color_override("font_color", Color(1.0, 0.97, 0.9))
-	title.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	details.add_child(title)
-	var chapter := Label.new()
-	chapter.text = entry.chapter
-	chapter.add_theme_font_size_override("font_size", 21)
-	chapter.add_theme_color_override("font_color", Color(0.84, 0.86, 0.83))
-	chapter.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	details.add_child(chapter)
-	return card
-
-
-func _card_style(fill: Color) -> StyleBoxFlat:
-	var style := StyleBoxFlat.new()
-	style.bg_color = fill
-	style.border_color = Color(0.77, 0.68, 0.51, 0.65)
-	style.set_border_width_all(1)
-	style.set_corner_radius_all(4)
-	return style
-
-
 func _update_grid_columns() -> void:
 	var viewport_width := get_viewport_rect().size.x
-	grid.columns = 1 if viewport_width < 1040 else 2
+	grid.columns = 1 if viewport_width < 1100 else 2
 	var side_margin := 24 if viewport_width < 700 else 70
 	menu.add_theme_constant_override("margin_left", side_margin)
 	menu.add_theme_constant_override("margin_right", side_margin)
-	for card in grid.get_children():
-		card.custom_minimum_size.x = 260 if viewport_width < 700 else 370
 
 
 func _open_game(entry: Dictionary) -> void:
@@ -173,7 +69,10 @@ func _open_game(entry: Dictionary) -> void:
 
 
 func _return_to_hub() -> void:
+	if active_game == null:
+		return
 	active_game.queue_free()
 	active_game = null
 	menu.show()
-	first_card.grab_focus()
+	if first_card:
+		first_card.grab_focus()
