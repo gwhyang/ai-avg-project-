@@ -10,7 +10,8 @@ leave --All--
 join lindeng (normal) left
 lindeng: （低声自语）原来曾祖父阿棠经历过那样一番风雨。这一封没能寄出的回批，藏着他一生的挣扎、坚守与遗憾。
 林灯坐在木箱边，打开随身的笔记本电脑。她作为银信档案志愿者，开始扫描、转录这封家族私藏的回批。
-# TODO mini-game: 批文还原; auto-complete during story-only build
+# 小游戏：批文还原
+do Minigames.run("restoration")
 林灯补全了被潮气晕染的文字：儿在故土心常念。
 林灯指尖停在屏幕前，轻声念出这句，只觉得与曾祖父的一生，忽然严丝合缝地对上了。
 lindeng: （低声）原来，他心里一直念着的，是家。

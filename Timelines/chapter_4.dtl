@@ -38,10 +38,12 @@ if {aquanbo_bond} > 100:
 布帘被轻轻掀开，阿全伯迈步走入，脸上带着风尘与沉痛
 join aquanbo (normal) right
 aquanbo: （低声）我刚从南洋得到消息。多少华工苦力，干最苦最累的活，勒紧肚子不吃饱，也要挤出银钱买公债。一封封救国批，就是海外华人血肉凝成的纽带。
-# TODO mini-game: 救国批甄别; auto-complete during story-only build
-set {aquanbo_bond} += 10
-if {aquanbo_bond} > 100:
-	set {aquanbo_bond} = 100
+# 小游戏：救国批甄别
+do Minigames.run("relief")
+if {minigame_reward} > 0:
+	set {aquanbo_bond} += {minigame_reward}
+	if {aquanbo_bond} > 100:
+		set {aquanbo_bond} = 100
 阿棠凭着学批的眼力，一眼就锁定了批信二。
 aquanbo: （赞许地点头）眼力不错。救国批和普通家批混在一起，最难分辨。你能认出，往后伪装护送，就多一分把握。
 往后的日子，阿棠跟着顺伯、阿全伯，学习如何将救国汇款巧妙伪装进普通家批。数次外出送批，遭遇哨卡反复开箱查验。

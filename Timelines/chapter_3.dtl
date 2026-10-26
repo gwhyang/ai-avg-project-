@@ -16,13 +16,20 @@ shunbo: 路上会过日伪哨卡，更要提防赖四那伙地痞。那人为日
 shunbo: 遇上事，多动脑子，不要一味逞血气之勇。
 lindeng: 赖四，档案口述史料里面提过这个汉奸地痞，很多批脚都遭过他的劫。千万不要冲动硬拼。
 atang: 我记住了。
-# TODO mini-game: 银两清点; auto-complete during story-only build
-set {shunbo_trust} += 10
-if {shunbo_trust} > 100:
-	set {shunbo_trust} = 100
+# 小游戏：银两清点
+do Minigames.run("counting")
+if {minigame_reward} > 0:
+	set {shunbo_trust} += {minigame_reward}
+	if {shunbo_trust} > 100:
+		set {shunbo_trust} = 100
 阿棠手口并用，很快点清了数目，一分不差。
 shunbo: （满意点头）批银是侨属的活命钱，一分一厘都要清楚。点得明白，才送得安心。
-# TODO mini-game: 送批路线选择; auto-complete during story-only build
+# 小游戏：送批路线
+do Minigames.run("route")
+if {minigame_reward} > 0:
+	set {shunbo_trust} += {minigame_reward}
+	if {shunbo_trust} > 100:
+		set {shunbo_trust} = 100
 阿棠背着包裹走上乡间土路。走到半山腰岔路口，路边灌木丛猛地窜出几个人。赖四一身灰布汉奸短打，嘴角挂着狞笑，身后跟着两个手持木棍的跟班，拦死整条小路。
 leave shunbo
 join laisi (normal) right

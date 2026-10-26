@@ -17,10 +17,12 @@ leave shunbo
 join laisi (normal) right
 laisi: （冷笑，一脚踢翻旁边堆放批信的竹箩）少给我装糊涂！早有人看见阿全伯频繁出入你这后堂！搜！给我把屋子翻个底朝天！一寸地方都不要放过！
 阿棠看着满地四散飞舞的银信，心脏狠狠往下沉。柜中既有无数百姓的家批；若是参与救国批，还藏着救国批凭据。一旦被搜出，全盘皆输。
-# TODO mini-game: 识破伪信; auto-complete during story-only build
-set {shunbo_trust} += 10
-if {shunbo_trust} > 100:
-	set {shunbo_trust} = 100
+# 小游戏：识破伪信
+do Minigames.run("forgery")
+if {minigame_reward} > 0:
+	set {shunbo_trust} += {minigame_reward}
+	if {shunbo_trust} > 100:
+		set {shunbo_trust} = 100
 阿棠瞥见墨迹在灯光下微微反光，心里顿时有了底。
 join atang (normal) left
 atang: （不慌不忙，语气镇定）官爷，这状子墨迹都还没干透，分明是现写的。若真有人长期盯着我们，何须临时起笔？只怕是有人想借官爷的手，报私仇罢了。

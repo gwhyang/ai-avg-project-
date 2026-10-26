@@ -22,23 +22,29 @@ shunbo: “饼干三百片”，即是港币三百元。海外寄批的人、家
 atang: （恍然大悟）原来纸上写的吃食门牌，字字都是救命的银钱。
 shunbo: （神色严肃）所以我说，看懂批，不只是认得上面的字。看不懂隐语，就算你双脚把批信送到人家家门口，也算没有真正“送达”。
 shunbo: 家属读不懂暗语，不知道里面藏着活命银钱，这封批便等同于一张废纸。你做批脚，第一要务便是读懂这层藏在纸下的心意。
-# TODO mini-game: 批文解读; auto-complete during story-only build
-set {shunbo_trust} += 15
-if {shunbo_trust} > 100:
-	set {shunbo_trust} = 100
+# 小游戏：批文解读
+do Minigames.run("reading")
+if {minigame_reward} > 0:
+	set {shunbo_trust} += {minigame_reward}
+	if {shunbo_trust} > 100:
+		set {shunbo_trust} = 100
 shunbo: （眼中露出一丝欣慰，伸手轻轻拍阿棠肩头）悟性尚可。记住，批脚不只是跑腿送信，更是读懂人心与暗语的人。
 （内心）薄薄一纸批文，字字皆有苦衷。那些看似无关紧要的词句，藏着一家人活下去的希望。
 lindeng: 答对了，和档案馆实物批文解读一模一样。
-# TODO mini-game: 隐语配对; auto-complete during story-only build
-set {shunbo_trust} += 10
-if {shunbo_trust} > 100:
-	set {shunbo_trust} = 100
+# 小游戏：隐语配对
+do Minigames.run("pairing")
+if {minigame_reward} > 0:
+	set {shunbo_trust} += {minigame_reward}
+	if {shunbo_trust} > 100:
+		set {shunbo_trust} = 100
 阿棠一一配对，越对越顺，终于把隐语的规矩彻底刻进心里。
 shunbo: （点头）不错，隐语这门功夫，你算是入了门。往后看批，眼睛要毒，心思要细。
-# TODO mini-game: 批封辨识; auto-complete during story-only build
-set {shunbo_trust} += 10
-if {shunbo_trust} > 100:
-	set {shunbo_trust} = 100
+# 小游戏：批封辨识
+do Minigames.run("envelope")
+if {minigame_reward} > 0:
+	set {shunbo_trust} += {minigame_reward}
+	if {shunbo_trust} > 100:
+		set {shunbo_trust} = 100
 阿棠端详片刻，指尖点在批封乙上。
 shunbo: （赞许）眼力见长了。批封是银信的门面，格式不对，家属看不懂，批也就送不成了。
 leave shunbo
