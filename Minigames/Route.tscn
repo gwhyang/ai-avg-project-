@@ -164,3 +164,11 @@ custom_minimum_size = Vector2(156, 56)
 layout_mode = 2
 theme_override_font_sizes/font_size = 22
 text = "重新开始"
+
+[node name="Continue" type="Button" parent="Workspace/Padding/Content/Footer"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(156, 56)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "确认路线"

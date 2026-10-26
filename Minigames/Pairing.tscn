@@ -301,4 +301,12 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 22
 text = "核对配对"
 
+[node name="Continue" type="Button" parent="Workspace/Padding/Content/FooterGrid"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(156, 56)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "继续剧情"
+
 [node name="Links" type="Node2D" parent="."]

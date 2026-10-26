@@ -2,6 +2,7 @@ extends Control
 ## 批文解读类小游戏。布局在 Quiz.tscn，本脚本只负责数据、答题状态与流程。
 
 signal exit_requested
+signal story_finished(result: Dictionary)
 
 const QUIZ_DATA = preload("res://Minigames/QuizData.gd")
 
@@ -20,12 +21,15 @@ const QUIZ_DATA = preload("res://Minigames/QuizData.gd")
 @onready var feedback_label: Label = %Feedback
 @onready var retry_button: Button = %Retry
 @onready var restart_button: Button = %Restart
+@onready var continue_button: Button = %Continue
 
 var game_id := "reading"
 var game: Dictionary = {}
 var option_buttons: Array[Button] = []
 var complete := false
 var had_wrong_answer := false
+var story_mode := false
+var _last_result: Dictionary = {}
 
 
 func configure(id: String) -> void:
@@ -51,6 +55,7 @@ func _ready() -> void:
 	back_button.pressed.connect(_on_back_pressed)
 	retry_button.pressed.connect(_on_retry)
 	restart_button.pressed.connect(_on_restart)
+	continue_button.pressed.connect(_on_continue)
 
 	resized.connect(_update_side_margins)
 	_update_side_margins()
@@ -91,14 +96,36 @@ func _on_answer(index: int) -> void:
 		if reward > 0:
 			feedback_label.text += "\n" + game.reward_name + " +" + _format_reward(reward)
 		feedback_label.theme_type_variation = &"FeedbackSuccess"
-		restart_button.show()
-		restart_button.grab_focus()
+		_last_result = {
+			"success": true,
+			"retried": had_wrong_answer,
+			"reward": reward,
+		}
+		if story_mode:
+			continue_button.show()
+			continue_button.grab_focus()
+		else:
+			restart_button.show()
+			restart_button.grab_focus()
 	else:
 		had_wrong_answer = true
 		feedback_label.text = game.wrong
 		feedback_label.theme_type_variation = &"FeedbackFailure"
 		retry_button.show()
 		retry_button.grab_focus()
+
+
+func set_story_mode(enabled: bool) -> void:
+	story_mode = enabled
+	back_button.visible = not enabled
+	restart_button.hide()
+	continue_button.hide()
+	if enabled and complete:
+		continue_button.show()
+
+
+func _on_continue() -> void:
+	story_finished.emit(_last_result)
 
 
 func _on_retry() -> void:
@@ -121,6 +148,7 @@ func _clear_answer() -> void:
 	feedback_label.theme_type_variation = &""
 	retry_button.hide()
 	restart_button.hide()
+	continue_button.hide()
 
 
 func _format_reward(value: float) -> String:
@@ -144,5 +172,8 @@ func _update_side_margins() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
+		if story_mode:
+			get_viewport().set_input_as_handled()
+			return
 		_on_back_pressed()
 		get_viewport().set_input_as_handled()

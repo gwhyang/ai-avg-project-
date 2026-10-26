@@ -2,6 +2,7 @@ extends Control
 ## 送批路线。路线卡由 RouteCard.tscn 实例化，本脚本只负责数据、选中与结果。
 
 signal exit_requested
+signal story_finished(result: Dictionary)
 
 const ROUTES := [
 	{
@@ -35,16 +36,19 @@ const ROUTE_CARD := preload("res://Minigames/RouteCard.tscn")
 @onready var result_reward: Label = %ResultReward
 @onready var status_label: Label = %Status
 @onready var replay_button: Button = %Replay
+@onready var continue_button: Button = %Continue
 @onready var back_button: Button = %Back
 
 var route_cards: Array = []
 var route_buttons: Array = []
 var selected_route := -1
+var story_mode := false
 
 
 func _ready() -> void:
 	back_button.pressed.connect(_on_back_pressed)
 	replay_button.pressed.connect(_on_replay_pressed)
+	continue_button.pressed.connect(_on_continue)
 	_populate_cards()
 	resized.connect(_on_resized)
 	_on_resized()
@@ -66,12 +70,34 @@ func _populate_cards() -> void:
 func _select_route(route_index: int) -> void:
 	selected_route = route_index
 	_refresh()
+	if story_mode:
+		continue_button.show()
+		continue_button.grab_focus()
 
 
 func _on_replay_pressed() -> void:
 	selected_route = -1
 	_refresh()
+	continue_button.hide()
 	route_buttons[0].grab_focus()
+
+
+func set_story_mode(enabled: bool) -> void:
+	story_mode = enabled
+	back_button.visible = not enabled
+	replay_button.visible = not enabled
+	continue_button.visible = enabled and selected_route >= 0
+
+
+func _on_continue() -> void:
+	if selected_route < 0:
+		return
+	story_finished.emit({
+		"success": true,
+		"retried": false,
+		"reward": 5 if selected_route == 2 else 0,
+		"choice": selected_route,
+	})
 
 
 func _on_back_pressed() -> void:

@@ -209,3 +209,11 @@ custom_minimum_size = Vector2(196, 54)
 layout_mode = 2
 theme_override_font_sizes/font_size = 22
 text = "重新开始"
+
+[node name="Continue" type="Button" parent="ScreenMargin/Column/Workspace/Padding/Body/Scroll/ScrollBody/Actions"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(196, 54)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "继续剧情"

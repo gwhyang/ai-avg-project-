@@ -2,6 +2,7 @@ extends Control
 ## 隐语配对。两组题目与连线画布都在 Pairing.tscn 里，本脚本只负责数据与判定。
 
 signal exit_requested
+signal story_finished(result: Dictionary)
 
 const PHRASES := ["悦弟尾牙到莆", "分配米伍拾斤"]
 const OPTIONS := [
@@ -29,6 +30,7 @@ const MUTED := Color("bcbdb3")
 @onready var reward_label: Label = %Reward
 @onready var submit_button: Button = %Submit
 @onready var replay_button: Button = %Replay
+@onready var continue_button: Button = %Continue
 @onready var back_button: Button = %Back
 @onready var source_buttons: Array = [%Phrase1, %Phrase2]
 @onready var option_buttons: Array = [[%A1A, %A1B], [%A2A, %A2B, %A2C]]
@@ -39,6 +41,8 @@ var chosen: Array[int] = [-1, -1]
 var active_group := -1
 var had_error := false
 var completed := false
+var story_mode := false
+var _last_result: Dictionary = {}
 
 
 func _ready() -> void:
@@ -69,6 +73,7 @@ func _bind_ui() -> void:
 	back_button.pressed.connect(_on_back_pressed)
 	replay_button.pressed.connect(_on_replay_pressed)
 	submit_button.pressed.connect(_on_submit_pressed)
+	continue_button.pressed.connect(_on_continue)
 	scroll_view.get_v_scroll_bar().value_changed.connect(
 		func(_value: float) -> void: _layout_links())
 
@@ -103,7 +108,16 @@ func _on_submit_pressed() -> void:
 	if wrong_groups.is_empty():
 		completed = true
 		var reward := 5 if had_error else 10
+		_last_result = {
+			"success": true,
+			"retried": had_error,
+			"reward": reward,
+		}
 		_set_status("两组配对正确。顺伯信任 +%d。" % reward, ACCENTS[0])
+		if story_mode:
+			submit_button.hide()
+			continue_button.show()
+			continue_button.grab_focus()
 	else:
 		had_error = true
 		var wrong_numbers := PackedStringArray()
@@ -121,9 +135,27 @@ func _on_replay_pressed() -> void:
 	active_group = -1
 	had_error = false
 	completed = false
+	_last_result = {}
+	submit_button.show()
+	continue_button.hide()
 	_set_status("选择一条隐语，再选择它对应的实际含义。", MUTED)
 	_refresh()
 	source_buttons[0].grab_focus()
+
+
+func set_story_mode(enabled: bool) -> void:
+	story_mode = enabled
+	back_button.visible = not enabled
+	replay_button.visible = not enabled
+	continue_button.visible = false
+	submit_button.show()
+	if enabled and completed:
+		submit_button.hide()
+		continue_button.show()
+
+
+func _on_continue() -> void:
+	story_finished.emit(_last_result)
 
 
 func _on_back_pressed() -> void:
