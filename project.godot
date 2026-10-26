@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Dialogic="*uid://ds2q0uclmolvu"
+Minigames="*res://Minigames/MinigameBridge.gd"
 
 [dialogic]
 
@@ -93,6 +94,10 @@ variables={
 "father_letter": false,
 "father_roll": 0,
 "joined_relief_batch": false,
+"minigame_choice": -1,
+"minigame_retried": false,
+"minigame_reward": 0.0,
+"minigame_success": false,
 "shunbo_trust": 0,
 "used_batch_money": false,
 "widow_li_batch_lost": false
