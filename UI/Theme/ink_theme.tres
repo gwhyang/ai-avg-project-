@@ -1,4 +1,4 @@
-[gd_resource type="Theme" format=3]
+[gd_resource type="Theme" format=3 uid="uid://dq7dv5hlp543g"]
 
 [ext_resource type="SystemFont" path="res://UI/Fonts/ink_serif.tres" id="1_vi2i2"]
 [ext_resource type="StyleBox" path="res://UI/StyleBoxes/button_disabled.tres" id="2_ucoys"]
