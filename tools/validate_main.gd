@@ -10,8 +10,8 @@ func _run() -> void:
 	root.add_child(main)
 	await process_frame
 
-	var menu: Control = main.get_node("Menu")
-	var start_button: Button = main.get_node("Menu/StartButton")
+	var menu: Control = main.get_node("BoardArea")
+	var start_button: Button = main.get_node("%StartButton")
 	var dialogic: Node = root.get_node("Dialogic")
 	if not menu.visible or not start_button.has_focus():
 		printerr("Main menu did not open ready for input")

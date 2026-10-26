@@ -1,61 +1,12 @@
-[gd_scene load_steps=7 format=3]
+[gd_scene load_steps=8 format=3]
 
 [ext_resource type="Script" path="res://Scenes/Main.gd" id="1_main"]
 [ext_resource type="Texture2D" path="res://Asset/sprite/bg/13.png" id="2_background"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_start"]
-bg_color = Color(0.48, 0.15, 0.14, 0.95)
-content_margin_left = 22.0
-content_margin_top = 14.0
-content_margin_right = 22.0
-content_margin_bottom = 14.0
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_start_hover"]
-bg_color = Color(0.62, 0.2, 0.17, 0.98)
-content_margin_left = 22.0
-content_margin_top = 14.0
-content_margin_right = 22.0
-content_margin_bottom = 14.0
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_quit"]
-bg_color = Color(0.08, 0.1, 0.1, 0.65)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.88, 0.84, 0.75, 0.65)
-content_margin_left = 22.0
-content_margin_top = 14.0
-content_margin_right = 22.0
-content_margin_bottom = 14.0
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_quit_hover"]
-bg_color = Color(0.14, 0.17, 0.17, 0.85)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.95, 0.9, 0.79, 0.9)
-content_margin_left = 22.0
-content_margin_top = 14.0
-content_margin_right = 22.0
-content_margin_bottom = 14.0
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
+[ext_resource type="StyleBox" path="res://UI/StyleBoxes/menu_board.tres" id="3_board"]
+[ext_resource type="Texture2D" path="res://Asset/ui/icons/icon_035.png" id="4_divider"]
+[ext_resource type="Font" path="res://UI/Fonts/ink_kai_bold.tres" id="6_title_font"]
+[ext_resource type="Font" path="res://UI/Fonts/ink_kai.tres" id="7_subtitle_font"]
+[ext_resource type="StyleBox" path="res://UI/StyleBoxes/button_focus_gold.tres" id="8_button_focus"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -86,55 +37,95 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-color = Color(0.025, 0.035, 0.035, 0.33)
+color = Color(0.027, 0.031, 0.035, 0.42)
 
-[node name="Menu" type="VBoxContainer" parent="."]
+[node name="BoardArea" type="Control" parent="."]
 layout_mode = 1
-anchor_left = 0.07
-anchor_top = 0.3
-anchor_right = 0.93
-anchor_bottom = 0.7
-theme_override_constants/separation = 20
+anchor_left = 0.055
+anchor_top = 0.5
+anchor_right = 0.945
+anchor_bottom = 0.5
+offset_top = -220.0
+offset_bottom = 220.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Title" type="Label" parent="Menu"]
+[node name="Board" type="PanelContainer" parent="BoardArea"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("3_board")
+
+[node name="Menu" type="VBoxContainer" parent="BoardArea/Board"]
+unique_name_in_owner = true
 layout_mode = 2
-size_flags_horizontal = 0
-theme_override_colors/font_color = Color(0.98, 0.96, 0.9, 1)
-theme_override_font_sizes/font_size = 72
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="Title" type="Label" parent="BoardArea/Board/Menu"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.165, 0.118, 0.078, 1)
+theme_override_fonts/font = ExtResource("6_title_font")
+theme_override_font_sizes/font_size = 80
 text = "一纸千山"
 
-[node name="Subtitle" type="Label" parent="Menu"]
+[node name="Subtitle" type="Label" parent="BoardArea/Board/Menu"]
 layout_mode = 2
-size_flags_horizontal = 0
-theme_override_colors/font_color = Color(0.92, 0.86, 0.73, 1)
-theme_override_font_sizes/font_size = 26
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.376, 0.267, 0.184, 1)
+theme_override_fonts/font = ExtResource("7_subtitle_font")
+theme_override_font_sizes/font_size = 30
 text = "一封未能寄出的家书"
 
-[node name="Spacer" type="Control" parent="Menu"]
-custom_minimum_size = Vector2(0, 28)
+[node name="Divider" type="TextureRect" parent="BoardArea/Board/Menu"]
+custom_minimum_size = Vector2(520, 46)
 layout_mode = 2
+size_flags_horizontal = 4
 mouse_filter = 2
+texture = ExtResource("4_divider")
+expand_mode = 1
+stretch_mode = 5
 
-[node name="StartButton" type="Button" parent="Menu"]
-custom_minimum_size = Vector2(260, 64)
+[node name="Actions" type="HBoxContainer" parent="BoardArea/Board/Menu"]
 layout_mode = 2
-size_flags_horizontal = 0
-focus_neighbor_bottom = NodePath("../QuitButton")
-theme_override_colors/font_color = Color(1, 0.98, 0.94, 1)
-theme_override_font_sizes/font_size = 28
-theme_override_styles/normal = SubResource("StyleBoxFlat_start")
-theme_override_styles/hover = SubResource("StyleBoxFlat_start_hover")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_start_hover")
+size_flags_horizontal = 4
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="StartButton" type="Button" parent="BoardArea/Board/Menu/Actions"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(340, 84)
+layout_mode = 2
+focus_neighbor_right = NodePath("../QuitButton")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/focus = ExtResource("8_button_focus")
 text = "开始故事"
 
-[node name="QuitButton" type="Button" parent="Menu"]
-custom_minimum_size = Vector2(260, 64)
+[node name="QuitButton" type="Button" parent="BoardArea/Board/Menu/Actions"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(240, 78)
 layout_mode = 2
-size_flags_horizontal = 0
-focus_neighbor_top = NodePath("../StartButton")
-theme_override_colors/font_color = Color(0.98, 0.96, 0.9, 1)
-theme_override_font_sizes/font_size = 28
-theme_override_styles/normal = SubResource("StyleBoxFlat_quit")
-theme_override_styles/hover = SubResource("StyleBoxFlat_quit_hover")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_quit_hover")
+focus_neighbor_left = NodePath("../StartButton")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = ExtResource("8_button_focus")
 text = "退出"
+
+[node name="Footer" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -50.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.898, 0.831, 0.678, 0.72)
+theme_override_font_sizes/font_size = 20
+text = "第六届粤港澳大湾区大学生艺术节参赛作品 · 银信侨批互动叙事"
+horizontal_alignment = 1
