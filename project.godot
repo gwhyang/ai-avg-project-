@@ -50,7 +50,10 @@ directories/dtl_directory={
 "postwar": "res://Timelines/postwar.dtl",
 "timeline": "res://Timelines/timeline.dtl"
 }
-layout/style_directory={}
+layout/style_directory={
+"": "res://UI/Dialogic/ink_wash_style.tres",
+"水墨": "res://UI/Dialogic/ink_wash_style.tres"
+}
 text/letter_speed=0.01
 text/initial_text_reveal_skippable=true
 text/text_reveal_skip_delay=0.1
@@ -94,8 +97,8 @@ variables={
 "used_batch_money": false,
 "widow_li_batch_lost": false
 }
-layout/style_list=[]
-layout/default_style="Default"
+layout/style_list=["res://UI/Dialogic/ink_wash_style.tres"]
+layout/default_style="res://UI/Dialogic/ink_wash_style.tres"
 
 [display]
 
@@ -107,6 +110,10 @@ window/stretch/aspect="expand"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
+
+[gui]
+
+theme/custom="res://UI/Theme/ink_theme.tres"
 
 [input]
 

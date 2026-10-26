@@ -1,0 +1,137 @@
+[gd_resource type="Resource" script_class="DialogicStyle" format=3]
+
+[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="1_6cush"]
+[ext_resource type="PackedScene" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_FullBackground/full_background_layer.tscn" id="2_736gv"]
+[ext_resource type="PackedScene" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Portraits/vn_portrait_layer.tscn" id="3_puu06"]
+[ext_resource type="PackedScene" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.tscn" id="4_v6g7b"]
+[ext_resource type="PackedScene" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/vn_textbox_layer.tscn" id="5_daitd"]
+[ext_resource type="PackedScene" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Glossary/glossary_popup_layer.tscn" id="6_pa3n3"]
+[ext_resource type="PackedScene" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Choices/vn_choice_layer.tscn" id="7_8nlfd"]
+[ext_resource type="PackedScene" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_TextInput/text_input_layer.tscn" id="8_us1ed"]
+[ext_resource type="PackedScene" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_History/history_layer.tscn" id="9_i2538"]
+[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style.gd" id="10_6cgka"]
+
+[sub_resource type="Resource" id="Resource_80yk5"]
+script = ExtResource("1_6cush")
+overrides = {
+"canvas_layer": "1",
+"follow_viewport": "false",
+"global_bg_color": "Color(1, 1, 1, 1)",
+"global_font": "res://UI/Fonts/ink_serif.tres",
+"global_font_color": "Color(0.161, 0.113, 0.075, 1)",
+"global_font_size": "34"
+}
+
+[sub_resource type="Resource" id="Resource_e7xhx"]
+script = ExtResource("1_6cush")
+scene = ExtResource("2_736gv")
+
+[sub_resource type="Resource" id="Resource_2xwn4"]
+script = ExtResource("1_6cush")
+scene = ExtResource("3_puu06")
+
+[sub_resource type="Resource" id="Resource_f13te"]
+script = ExtResource("1_6cush")
+scene = ExtResource("4_v6g7b")
+
+[sub_resource type="Resource" id="Resource_gvmid"]
+script = ExtResource("1_6cush")
+scene = ExtResource("5_daitd")
+overrides = {
+"autoadvance_progressbar": "true",
+"box_animation_in": "2",
+"box_animation_new_text": "0",
+"box_animation_out": "2",
+"box_color_custom": "Color(1, 1, 1, 1)",
+"box_color_use_global": "false",
+"box_margin_bottom": "40",
+"box_panel": "res://UI/StyleBoxes/dialogue_box.tres",
+"box_size": "Vector2(1680, 330)",
+"name_label_alignment": "0",
+"name_label_box_modulate": "Color(1, 1, 1, 1)",
+"name_label_box_offset": "Vector2(320, 0)",
+"name_label_box_panel": "res://UI/StyleBoxes/name_plate.tres",
+"name_label_box_use_global_color": "false",
+"name_label_custom_color": "Color(0.965, 0.918, 0.839, 1)",
+"name_label_custom_font_size": "34",
+"name_label_font": "res://UI/Fonts/ink_kai_bold.tres",
+"name_label_use_character_color": "false",
+"name_label_use_global_color": "false",
+"name_label_use_global_font": "false",
+"name_label_use_global_font_size": "false",
+"next_indicator_animation": "0",
+"next_indicator_enabled": "true",
+"next_indicator_position_offset": "Vector2(-46, -58)",
+"next_indicator_show_on_autoadvance": "false",
+"next_indicator_show_on_questions": "true",
+"next_indicator_size": "Vector2(30, 42)",
+"next_indicator_texture": "res://Asset/ui/icons/icon_011.png",
+"text_alignment": "0",
+"text_custom_color": "Color(0.161, 0.113, 0.075, 1)",
+"text_size": "34",
+"text_use_global_color": "false",
+"text_use_global_font": "true",
+"text_use_global_size": "false",
+"typing_sounds_enabled": "false"
+}
+
+[sub_resource type="Resource" id="Resource_m00cb"]
+script = ExtResource("1_6cush")
+scene = ExtResource("6_pa3n3")
+overrides = {
+"box_base_modulate": "Color(1, 1, 1, 1)",
+"box_modulate_mode": "1"
+}
+
+[sub_resource type="Resource" id="Resource_12a6m"]
+script = ExtResource("1_6cush")
+scene = ExtResource("7_8nlfd")
+overrides = {
+"boxes_fill_width": "true",
+"boxes_min_size": "Vector2(820, 86)",
+"boxes_offset": "Vector2(0, 0)",
+"boxes_stylebox_disabled": "res://UI/StyleBoxes/button_disabled.tres",
+"boxes_stylebox_focused": "res://UI/StyleBoxes/button_focus_gold.tres",
+"boxes_stylebox_hovered": "res://UI/StyleBoxes/button_hover.tres",
+"boxes_stylebox_normal": "res://UI/StyleBoxes/button_normal.tres",
+"boxes_stylebox_pressed": "res://UI/StyleBoxes/button_pressed.tres",
+"boxes_v_separation": "18",
+"font_size_custom": "34",
+"font_size_use_global": "false",
+"font_use_global": "true",
+"text_color_custom": "Color(0.161, 0.113, 0.075, 1)",
+"text_color_disabled": "Color(0.38, 0.34, 0.29, 0.8)",
+"text_color_focused": "Color(0.161, 0.113, 0.075, 1)",
+"text_color_hovered": "Color(0.161, 0.113, 0.075, 1)",
+"text_color_pressed": "Color(0.965, 0.918, 0.839, 1)",
+"text_color_use_global": "false"
+}
+
+[sub_resource type="Resource" id="Resource_ehn0l"]
+script = ExtResource("1_6cush")
+scene = ExtResource("8_us1ed")
+
+[sub_resource type="Resource" id="Resource_44yce"]
+script = ExtResource("1_6cush")
+scene = ExtResource("9_i2538")
+overrides = {
+"font_custom_size": "26",
+"font_use_global_fonts": "true",
+"font_use_global_size": "false"
+}
+
+[resource]
+script = ExtResource("10_6cgka")
+name = "水墨"
+layer_list = Array[String](["10", "11", "12", "13", "14", "15", "16", "17"])
+layer_info = {
+"": SubResource("Resource_80yk5"),
+"10": SubResource("Resource_e7xhx"),
+"11": SubResource("Resource_2xwn4"),
+"12": SubResource("Resource_f13te"),
+"13": SubResource("Resource_gvmid"),
+"14": SubResource("Resource_m00cb"),
+"15": SubResource("Resource_12a6m"),
+"16": SubResource("Resource_ehn0l"),
+"17": SubResource("Resource_44yce")
+}
