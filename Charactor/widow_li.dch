@@ -3,6 +3,8 @@
 "@subpath": NodePath(""),
 &"display_name": "李寡妇",
 &"default_portrait": "normal",
+&"offset": Vector2(0, 390),
+&"scale": 1.2,
 &"portraits": {
 "normal": {"scene": "", "export_overrides": {"image": "\"res://Asset/sprite/characters/widow_li/normal.png\""}},
 "sad": {"scene": "", "export_overrides": {"image": "\"res://Asset/sprite/characters/widow_li/sad.png\""}}

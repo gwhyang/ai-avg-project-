@@ -12,6 +12,7 @@ const TEXTURE_NAMEPLATE := "res://Asset/ui/buttons/button_009.png"
 const TEXTURE_NEXT := "res://Asset/ui/icons/icon_011.png"
 const FONT_SERIF := "res://UI/Fonts/ink_serif.tres"
 const FONT_KAI_BOLD := "res://UI/Fonts/ink_kai_bold.tres"
+const PORTRAIT_LAYER := "res://UI/Dialogic/Layers/vn_portrait_layer_ink.tscn"
 
 var errors := 0
 
@@ -121,6 +122,12 @@ func _check_dialogic_style_file() -> void:
 	var base := style.get_layer_info("")
 	_expect(_override_value(base, "global_font") == FONT_SERIF, "base layer global_font is wrong")
 	_expect(int(_override_value(base, "global_font_size")) >= 30, "base layer global_font_size is too small")
+
+	var portrait := style.get_layer_info("11")
+	_expect(portrait.scene != null, "portrait layer scene is missing")
+	if portrait.scene != null:
+		_expect(portrait.scene.resource_path == PORTRAIT_LAYER,
+			"portrait layer is not the ink layout: " + portrait.scene.resource_path)
 
 	var textbox := style.get_layer_info("13")
 	_expect(_override_value(textbox, "box_panel") == "res://UI/StyleBoxes/dialogue_box.tres",

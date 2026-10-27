@@ -3,6 +3,8 @@
 "@subpath": NodePath(""),
 &"display_name": "顺伯",
 &"default_portrait": "normal",
+&"offset": Vector2(0, 390),
+&"scale": 1.2,
 &"portraits": {
 "normal": {"scene": "", "export_overrides": {"image": "\"res://Asset/sprite/characters/shunbo/normal.png\""}},
 "advising": {"scene": "", "export_overrides": {"image": "\"res://Asset/sprite/characters/shunbo/advising.png\""}}

@@ -108,6 +108,7 @@ layout/style_directory={
 `ink_wash_style.tres` 沿用 Dialogic 内置的 8 个布局层（背景、立绘、输入、文本框、名词解释、选项、文本输入、历史），只写覆盖项：
 
 - 基础层：全局字体 34、墨色、白色叠色
+- 立绘（11）：项目内 `UI/Dialogic/Layers/vn_portrait_layer_ink.tscn`，左右站位外移，人物 1.2×、下移，对话框压住下半身
 - 文本框（13）：`box_panel` 用 `panel_002`；名字牌用 `button_009`，楷体粗体 34；正文 34、左对齐；淡入上浮 / 淡出下沉；下一句指示 `icon_011`；关闭打字音
 - 选项（15）：同一套蓝 / 金 / 红按钮切图，820×86，间距 18，深墨字色，保持 Dialogic 默认按钮音效
 - 名词解释（14）：白色叠色，继承内置面板
@@ -122,16 +123,24 @@ godot --headless --path . --script res://tools/build_ui_resources.gd
 
 注意：重跑会覆盖在检查器里对 `UI/` 下 .tres 的手工改动。
 
+## 立绘站位
+
+参考“左右两人、半身偏大、底部被对话框压住”的视觉小说构图：
+
+- 第 11 层改用项目内 `UI/Dialogic/Layers/vn_portrait_layer_ink.tscn`，不改 addon 原文件
+- 五个位置仍为 leftmost / left / center / right / rightmost；其中 `left` 容器 0.11–0.31、`right` 容器 0.69–0.89，人物更靠画面两侧
+- 立绘使用 `FIT_SCALE_HEIGHT`；角色资源里统一 `&"scale": 1.2`、`&"offset": Vector2(0, 390)`（阿棠 430，用于对齐头部），因此人物约 1.2 倍、整体下移，脚和下半身落到画面外，由对话框压住
+- 垂直偏移必须写在每个 `.dch` 的 `offset` 里：Dialogic 运行时会新建角色容器并复制目标容器的位置/尺寸，但**不会复制 `origin_offset`**，写在容器上对实际立绘无效
+- 需要重新截图检查时，可参考 `tools/capture_ui.gd` 的 `ui_speaker`；两人构图可用第二章 `join shunbo ... right` + `join atang ... left` 段验证
+
 ## 主菜单
 
 `Scenes/Main.tscn`：
 
-- 背景 `Asset/sprite/bg/13.png` + 压暗层
-- 居中的卷轴板 `PanelContainer`（`menu_board.tres`），尺寸随视口宽度伸缩、高度固定 440，九宫格只横向拉伸，卷轴左下的帆船不会被纵向拉变形
-- 标题「一纸千山」楷体 80；副标题「一封未能寄出的家书」30；`icon_035` 分隔线
-- 开始 / 退出按钮使用全局按钮切图，焦点态为金色按钮图
+- 背景 `Asset/ui/main_ui/cover_jiangmen.png`，标题图 `Asset/ui/main_ui/title_yizhi_qianshan.png`
+- `icon_035` 分隔线；开始故事 / 退出按钮使用全局按钮切图，焦点态为金色按钮图
+- Web 端退出按钮显示「重新载入」（见 Web 导出注意事项）
 - 底部小字说明赛事与题材
-- `Main.gd` 只保留开始故事 / 返回菜单的流程逻辑，节点用 `%` 唯一名引用
 
 ## 小游戏 UI
 

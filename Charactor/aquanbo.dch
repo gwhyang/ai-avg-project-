@@ -15,7 +15,7 @@
 &"display_name": "阿全伯",
 &"mirror": false,
 &"nicknames": ["全伯"],
-&"offset": Vector2(0, 0),
+&"offset": Vector2(0, 390),
 &"portraits": {
 "normal": {
 "export_overrides": {
@@ -31,5 +31,5 @@
 "scene": ""
 }
 },
-&"scale": 1.0
+&"scale": 1.2
 }
