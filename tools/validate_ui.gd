@@ -61,14 +61,14 @@ func _check_project_theme() -> void:
 	if theme == null:
 		return
 	_expect(theme.default_font != null, "theme has no default font")
-	var default_font := theme.default_font as SystemFont
-	_expect(default_font != null, "theme default font is not a SystemFont")
+	var default_font := theme.default_font as FontVariation
+	_expect(default_font != null, "theme default font is not a FontVariation")
 	if default_font:
-		var has_cjk := false
-		for name in default_font.font_names:
-			if name.contains("CJK") or name.contains("Song") or name.contains("Sun") or name.contains("Kai"):
-				has_cjk = true
-		_expect(has_cjk, "theme default font has no CJK family: " + str(default_font.font_names))
+		var base := default_font.base_font
+		_expect(base != null, "theme default font has no base font")
+		if base:
+			_expect(base.resource_path.ends_with("NotoSerifSC-Subset.ttf"),
+				"theme default font is not the bundled Noto Serif SC subset: " + base.resource_path)
 	_expect(theme.get_font("font", "Button") != null, "Button font is not set")
 	_expect(theme.get_font_size("font_size", "Button") > 0, "Button font size is not set")
 	var normal := theme.get_stylebox("normal", "Button")

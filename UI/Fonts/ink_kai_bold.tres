@@ -1,5 +1,9 @@
-[gd_resource type="SystemFont" format=3]
+[gd_resource type="FontVariation" format=3]
+
+[ext_resource type="FontFile" path="res://UI/Fonts/NotoSerifSC-Subset.ttf" id="1_tnq8j"]
 
 [resource]
-font_names = PackedStringArray("Kaiti SC", "STKaiti", "KaiTi", "Noto Serif CJK SC", "SimSun", "serif")
-font_weight = 700
+base_font = ExtResource("1_tnq8j")
+variation_opentype = {
+"wght": 700.0
+}

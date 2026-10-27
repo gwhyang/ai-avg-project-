@@ -29,6 +29,7 @@ const ART_ROUTE_CARD_SELECTED := "res://Asset/ui/widgets/widget_002.png"
 const ART_PANEL_GENERIC := "res://Asset/ui/widgets/widget_001.png"
 const ART_LINE_EDIT := "res://Asset/ui/papers/paper_007.png"
 const ART_NEXT_INDICATOR := "res://Asset/ui/icons/icon_011.png"
+const BUNDLED_FONT := "res://UI/Fonts/NotoSerifSC-Subset.ttf"
 
 const INK := Color(0.161, 0.113, 0.075)
 const INK_SOFT := Color(0.353, 0.251, 0.176)
@@ -69,33 +70,23 @@ func _save(resource: Resource, path: String) -> void:
 
 
 func _make_fonts() -> void:
-	var serif_names := PackedStringArray([
-		"Noto Serif CJK SC", "Source Han Serif SC", "Noto Serif SC",
-		"Songti SC", "STSong", "SimSun", "serif",
-	])
-	var regular := _system_font(serif_names, 400)
-	_save(regular, FONT_DIR + "/ink_serif.tres")
-
-	var bold := _system_font(serif_names, 700)
-	_save(bold, FONT_DIR + "/ink_serif_bold.tres")
-
-	var kai_names := PackedStringArray([
-		"Kaiti SC", "STKaiti", "KaiTi", "Noto Serif CJK SC", "SimSun", "serif",
-	])
-	var kai := _system_font(kai_names, 400)
-	_save(kai, FONT_DIR + "/ink_kai.tres")
-
-	var kai_bold := _system_font(kai_names, 700)
-	_save(kai_bold, FONT_DIR + "/ink_kai_bold.tres")
+	# Web has no SystemFont support, so all platforms use the bundled OFL font.
+	# It is subset to the glyphs used by this project (see UI/Fonts/font_chars.txt).
+	var base := load(BUNDLED_FONT) as FontFile
+	if base == null:
+		printerr("Bundled font missing or not imported: ", BUNDLED_FONT)
+		quit(1)
+		return
+	_save(_variation(base, 400), FONT_DIR + "/ink_serif.tres")
+	_save(_variation(base, 700), FONT_DIR + "/ink_serif_bold.tres")
+	_save(_variation(base, 500), FONT_DIR + "/ink_kai.tres")
+	_save(_variation(base, 700), FONT_DIR + "/ink_kai_bold.tres")
 
 
-func _system_font(names: PackedStringArray, weight: int) -> SystemFont:
-	var font := SystemFont.new()
-	font.font_names = names
-	font.font_weight = weight
-	font.allow_system_fallback = true
-	font.antialiasing = TextServer.FONT_ANTIALIASING_GRAY
-	font.subpixel_positioning = TextServer.SUBPIXEL_POSITIONING_AUTO
+func _variation(base: FontFile, weight: float) -> FontVariation:
+	var font := FontVariation.new()
+	font.base_font = base
+	font.variation_opentype = {"wght": weight}
 	return font
 
 

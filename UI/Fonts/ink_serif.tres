@@ -1,4 +1,9 @@
-[gd_resource type="SystemFont" format=3]
+[gd_resource type="FontVariation" format=3]
+
+[ext_resource type="FontFile" path="res://UI/Fonts/NotoSerifSC-Subset.ttf" id="1_67ksg"]
 
 [resource]
-font_names = PackedStringArray("Noto Serif CJK SC", "Source Han Serif SC", "Noto Serif SC", "Songti SC", "STSong", "SimSun", "serif")
+base_font = ExtResource("1_67ksg")
+variation_opentype = {
+"wght": 400.0
+}
