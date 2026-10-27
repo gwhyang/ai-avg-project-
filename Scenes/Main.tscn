@@ -1,14 +1,16 @@
-[gd_scene load_steps=8 format=3]
+[gd_scene format=3 uid="uid://uysv7u78nv72"]
 
-[ext_resource type="Script" path="res://Scenes/Main.gd" id="1_main"]
-[ext_resource type="Texture2D" path="res://Asset/sprite/bg/13.png" id="2_background"]
-[ext_resource type="StyleBox" path="res://UI/StyleBoxes/menu_board.tres" id="3_board"]
-[ext_resource type="Texture2D" path="res://Asset/ui/icons/icon_035.png" id="4_divider"]
-[ext_resource type="Font" path="res://UI/Fonts/ink_kai_bold.tres" id="6_title_font"]
-[ext_resource type="Font" path="res://UI/Fonts/ink_kai.tres" id="7_subtitle_font"]
+[ext_resource type="Script" uid="uid://bfhjv1cgjuoiu" path="res://Scenes/Main.gd" id="1_main"]
+[ext_resource type="Texture2D" uid="uid://p0kcfncxx4up" path="res://Asset/ui/main_ui/cover_jiangmen.png" id="2_pbw6q"]
+[ext_resource type="Texture2D" uid="uid://cmcs1305kpbkw" path="res://Asset/ui/main_ui/title_yizhi_qianshan.png" id="3_v1gob"]
+[ext_resource type="Texture2D" uid="uid://ckhk6byu7qel7" path="res://Asset/ui/icons/icon_035.png" id="4_divider"]
 [ext_resource type="StyleBox" path="res://UI/StyleBoxes/button_focus_gold.tres" id="8_button_focus"]
 
-[node name="Main" type="Control"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bhunq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_riqys"]
+
+[node name="Main" type="Control" unique_id=831403617]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,7 +19,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_main")
 
-[node name="Background" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="." unique_id=598991047]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -25,11 +27,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("2_background")
+texture = ExtResource("2_pbw6q")
 expand_mode = 1
 stretch_mode = 6
 
-[node name="Shade" type="ColorRect" parent="."]
+[node name="Shade" type="ColorRect" parent="." unique_id=1126407073]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -39,7 +42,7 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0.027, 0.031, 0.035, 0.42)
 
-[node name="BoardArea" type="Control" parent="."]
+[node name="BoardArea" type="Control" parent="." unique_id=746876864]
 layout_mode = 1
 anchor_left = 0.055
 anchor_top = 0.5
@@ -50,38 +53,36 @@ offset_bottom = 220.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Board" type="PanelContainer" parent="BoardArea"]
+[node name="Board" type="PanelContainer" parent="BoardArea" unique_id=1984591656]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = ExtResource("3_board")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_bhunq")
 
-[node name="Menu" type="VBoxContainer" parent="BoardArea/Board"]
+[node name="Menu" type="VBoxContainer" parent="BoardArea/Board" unique_id=704809999]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_constants/separation = 8
+theme_override_constants/separation = 54
 alignment = 1
 
-[node name="Title" type="Label" parent="BoardArea/Board/Menu"]
+[node name="Panel" type="PanelContainer" parent="BoardArea/Board/Menu" unique_id=1471897338]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_riqys")
+
+[node name="Title" type="TextureRect" parent="BoardArea/Board/Menu/Panel" unique_id=1434954124]
+custom_minimum_size = Vector2(720, 240)
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_colors/font_color = Color(0.165, 0.118, 0.078, 1)
-theme_override_fonts/font = ExtResource("6_title_font")
-theme_override_font_sizes/font_size = 80
-text = "一纸千山"
+size_flags_vertical = 4
+size_flags_stretch_ratio = 5.1
+texture = ExtResource("3_v1gob")
+expand_mode = 3
+stretch_mode = 4
 
-[node name="Subtitle" type="Label" parent="BoardArea/Board/Menu"]
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_colors/font_color = Color(0.376, 0.267, 0.184, 1)
-theme_override_fonts/font = ExtResource("7_subtitle_font")
-theme_override_font_sizes/font_size = 30
-text = "一封未能寄出的家书"
-
-[node name="Divider" type="TextureRect" parent="BoardArea/Board/Menu"]
+[node name="Divider" type="TextureRect" parent="BoardArea/Board/Menu" unique_id=283333378]
 custom_minimum_size = Vector2(520, 46)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -90,31 +91,31 @@ texture = ExtResource("4_divider")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Actions" type="HBoxContainer" parent="BoardArea/Board/Menu"]
+[node name="Actions" type="HBoxContainer" parent="BoardArea/Board/Menu" unique_id=1887060657]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 24
 alignment = 1
 
-[node name="StartButton" type="Button" parent="BoardArea/Board/Menu/Actions"]
+[node name="StartButton" type="Button" parent="BoardArea/Board/Menu/Actions" unique_id=1689792205]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(340, 84)
+custom_minimum_size = Vector2(360, 84)
 layout_mode = 2
 focus_neighbor_right = NodePath("../QuitButton")
 theme_override_font_sizes/font_size = 36
 theme_override_styles/focus = ExtResource("8_button_focus")
 text = "开始故事"
 
-[node name="QuitButton" type="Button" parent="BoardArea/Board/Menu/Actions"]
+[node name="QuitButton" type="Button" parent="BoardArea/Board/Menu/Actions" unique_id=299892521]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(240, 78)
+custom_minimum_size = Vector2(360, 78)
 layout_mode = 2
 focus_neighbor_left = NodePath("../StartButton")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/focus = ExtResource("8_button_focus")
 text = "退出"
 
-[node name="Footer" type="Label" parent="."]
+[node name="Footer" type="Label" parent="." unique_id=639116771]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -124,7 +125,6 @@ offset_top = -50.0
 offset_bottom = -18.0
 grow_horizontal = 2
 grow_vertical = 0
-mouse_filter = 2
 theme_override_colors/font_color = Color(0.898, 0.831, 0.678, 0.72)
 theme_override_font_sizes/font_size = 20
 text = "第六届粤港澳大湾区大学生艺术节参赛作品 · 银信侨批互动叙事"
