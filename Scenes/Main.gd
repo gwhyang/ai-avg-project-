@@ -13,7 +13,11 @@ var story_running := false
 
 func _ready() -> void:
 	start_button.pressed.connect(_on_start_pressed)
-	quit_button.pressed.connect(get_tree().quit)
+	if OS.get_name() == "Web" or OS.has_feature("web"):
+		quit_button.text = "重新载入"
+		quit_button.pressed.connect(_on_web_quit)
+	else:
+		quit_button.pressed.connect(get_tree().quit)
 	Dialogic.timeline_started.connect(_on_timeline_started)
 	Dialogic.timeline_ended.connect(_on_timeline_ended)
 	start_button.grab_focus()
@@ -35,6 +39,15 @@ func _on_timeline_ended() -> void:
 	story_running = false
 	show_menu(true)
 	start_button.grab_focus()
+
+
+func _on_web_quit() -> void:
+	# Browser tabs cannot be closed by the page; reload to a clean title screen.
+	var js := Engine.get_singleton("JavaScriptBridge")
+	if js:
+		js.eval("window.location.reload();")
+	else:
+		get_tree().reload_current_scene()
 
 
 func show_menu(shown: bool) -> void:
