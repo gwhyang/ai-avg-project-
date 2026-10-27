@@ -15,7 +15,7 @@
 &"display_name": "阿妹",
 &"mirror": false,
 &"nicknames": ["王秀珍"],
-&"offset": Vector2(0, 730),
+&"offset": Vector2(0, 513),
 &"portraits": {
 "normal": {
 "export_overrides": {

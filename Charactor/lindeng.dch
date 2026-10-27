@@ -15,7 +15,7 @@
 &"display_name": "林灯",
 &"mirror": false,
 &"nicknames": ["阿灯"],
-&"offset": Vector2(0, 730),
+&"offset": Vector2(0, 513),
 &"portraits": {
 "curious": {
 "export_overrides": {

@@ -108,7 +108,7 @@ layout/style_directory={
 `ink_wash_style.tres` 沿用 Dialogic 内置的 8 个布局层（背景、立绘、输入、文本框、名词解释、选项、文本输入、历史），只写覆盖项：
 
 - 基础层：全局字体 34、墨色、白色叠色
-- 立绘（11）：项目内 `UI/Dialogic/Layers/vn_portrait_layer_ink.tscn`，左右站位外移，人物 1.5×、下移，对话框压住下半身
+- 立绘（11）：项目内 `UI/Dialogic/Layers/vn_portrait_layer_ink.tscn`，左右站位外移，人物 1.5×，对话框压住下半身
 - 文本框（13）：`box_panel` 用 `panel_002`；名字牌用 `button_009`，楷体粗体 34；正文 34、左对齐；淡入上浮 / 淡出下沉；下一句指示 `icon_011`；关闭打字音
 - 选项（15）：同一套蓝 / 金 / 红按钮切图，820×86，间距 18，深墨字色，保持 Dialogic 默认按钮音效
 - 名词解释（14）：白色叠色，继承内置面板
@@ -129,8 +129,9 @@ godot --headless --path . --script res://tools/build_ui_resources.gd
 
 - 第 11 层改用项目内 `UI/Dialogic/Layers/vn_portrait_layer_ink.tscn`，不改 addon 原文件
 - 五个位置仍为 leftmost / left / center / right / rightmost；其中 `left` 容器 0.11–0.31、`right` 容器 0.69–0.89，人物更靠画面两侧
-- 立绘使用 `FIT_SCALE_HEIGHT`；角色资源里统一 `&"scale": 1.5`、`&"offset": Vector2(0, 730)`（阿棠 772，用于对齐头部），因此人物显示高度约为画面高度的 1.5 倍，脚和下半身落到画面外，由对话框压住
-- `offset` 是直接叠加在角色节点位置上的**屏幕像素**，不会再乘 `scale`；头部约落在画面上方 1/4 处
+- 立绘使用 `FIT_SCALE_HEIGHT`；角色资源里统一 `&"scale": 1.5`、`&"offset": Vector2(0, 513)`（阿棠 545，用于对齐头部），因此人物显示高度约为画面高度的 1.5 倍，脚和下半身落到画面外，由对话框压住
+- `offset` 是直接叠加在角色节点位置上的**屏幕像素**，不会再乘 `scale`：**y 越大越往下**。这版只放大、不额外下移，头部更靠画面上方；若想整体下移，增大 `offset.y` 即可
+- 若还要放大但保持头部高度不变：每增加 `0.1` 的 `scale`，`offset.y` 约增加 `108`（因为立绘原高 1080px），例如 `scale 1.6` 配 `offset 621`
 - 垂直偏移必须写在每个 `.dch` 的 `offset` 里：Dialogic 运行时会新建角色容器并复制目标容器的位置/尺寸，但**不会复制 `origin_offset`**，写在容器上对实际立绘无效
 - 需要重新截图检查时，可参考 `tools/capture_ui.gd` 的 `ui_speaker`；两人构图可用第二章 `join shunbo ... right` + `join atang ... left` 段验证
 

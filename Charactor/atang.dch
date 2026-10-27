@@ -4,7 +4,7 @@
 &"display_name": "阿棠",
 &"nicknames": ["陈梧棠"],
 &"default_portrait": "normal",
-&"offset": Vector2(0, 772),
+&"offset": Vector2(0, 545),
 &"scale": 1.5,
 &"portraits": {
 "normal": {"scene": "", "export_overrides": {"image": "\"res://Asset/sprite/characters/atang/normal.png\""}},
