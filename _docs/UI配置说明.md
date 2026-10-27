@@ -135,6 +135,16 @@ godot --headless --path . --script res://tools/build_ui_resources.gd
 - 垂直偏移必须写在每个 `.dch` 的 `offset` 里：Dialogic 运行时会新建角色容器并复制目标容器的位置/尺寸，但**不会复制 `origin_offset`**，写在容器上对实际立绘无效
 - 需要重新截图检查时，可参考 `tools/capture_ui.gd` 的 `ui_speaker`；两人构图可用第二章 `join shunbo ... right` + `join atang ... left` 段验证
 
+## 说话人高亮
+
+规则：有**已入场的角色**说话时，说话人保持原亮度，其他已入场角色轻微压暗；旁白、以及说话人尚未入场（画外音/电话）时，所有人恢复正常亮度。
+
+- 实现：`UI/Dialogic/SpeakerFocus.gd` 自动加载，监听 Dialogic 的 `text_started`、`character_joined`、`character_left`、`character_portrait_changed`、`timeline_started/ended`
+- 只改立绘节点的 `modulate`，不写 Timeline，也不影响对话框、名牌和 `.dch`
+- 压暗色 `DIMMED_COLOR = Color(0.78, 0.76, 0.72, 1.0)`，过渡 `FADE_TIME = 0.18`；想更明显就把颜色调低（如 0.68），想更轻就调高（如 0.85）
+- 旁白不压暗；如果说话人没有入场，也按“无高亮对象”处理，避免整个画面一起变暗
+- 没有使用内置 `simple_highlight_portrait`：它会直接把非说话人压到深灰，而且旁白时无法自动恢复全员亮度；本项目用 Dialogic 的文本信号做轻微压暗更符合水墨风格
+
 ## 主菜单
 
 `Scenes/Main.tscn`：
