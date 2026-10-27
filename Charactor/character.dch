@@ -15,7 +15,7 @@
 &"display_name": "Character",
 &"mirror": false,
 &"nicknames": [""],
-&"offset": Vector2(0, 390),
+&"offset": Vector2(0, 730),
 &"portraits": {},
-&"scale": 1.2
+&"scale": 1.5
 }

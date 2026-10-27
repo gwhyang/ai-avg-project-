@@ -15,7 +15,7 @@
 &"display_name": "奶奶",
 &"mirror": false,
 &"nicknames": [""],
-&"offset": Vector2(0, 390),
+&"offset": Vector2(0, 730),
 &"portraits": {
 "normal": {
 "export_overrides": {
@@ -25,5 +25,5 @@
 "scene": ""
 }
 },
-&"scale": 1.2
+&"scale": 1.5
 }

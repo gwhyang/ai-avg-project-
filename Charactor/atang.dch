@@ -4,8 +4,8 @@
 &"display_name": "阿棠",
 &"nicknames": ["陈梧棠"],
 &"default_portrait": "normal",
-&"offset": Vector2(0, 430),
-&"scale": 1.2,
+&"offset": Vector2(0, 772),
+&"scale": 1.5,
 &"portraits": {
 "normal": {"scene": "", "export_overrides": {"image": "\"res://Asset/sprite/characters/atang/normal.png\""}},
 "worried": {"scene": "", "export_overrides": {"image": "\"res://Asset/sprite/characters/atang/worried.png\""}},
