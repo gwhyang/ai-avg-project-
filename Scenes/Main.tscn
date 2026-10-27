@@ -73,7 +73,7 @@ layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_riqys")
 
 [node name="Title" type="TextureRect" parent="BoardArea/Board/Menu/Panel" unique_id=1434954124]
-custom_minimum_size = Vector2(720, 240)
+custom_minimum_size = Vector2(1080, 360)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4

@@ -38,6 +38,7 @@ const GOLD := Color(0.784, 0.627, 0.353)
 const CREAM := Color(0.965, 0.918, 0.839)
 
 const DIALOGIC_DEFAULT_PARTS := "res://addons/dialogic/Modules/DefaultLayoutParts/"
+const PORTRAIT_LAYER := "res://UI/Dialogic/Layers/vn_portrait_layer_ink.tscn"
 
 
 func _initialize() -> void:
@@ -325,7 +326,7 @@ func _make_dialogic_style() -> void:
 
 	var layers := [
 		["10", "Layer_FullBackground/full_background_layer.tscn", {}],
-		["11", "Layer_VN_Portraits/vn_portrait_layer.tscn", {}],
+		["11", PORTRAIT_LAYER, {}],
 		["12", "Layer_Input/full_advance_input_layer.tscn", {}],
 		["13", "Layer_VN_Textbox/vn_textbox_layer.tscn", {
 			"box_panel": BOX_DIR + "/dialogue_box.tres",
@@ -397,6 +398,9 @@ func _make_dialogic_style() -> void:
 	]
 
 	for layer in layers:
-		style.add_layer(DIALOGIC_DEFAULT_PARTS + layer[1], _export_overrides(layer[2]), layer[0])
+		var scene_path: String = layer[1]
+		if not scene_path.begins_with("res://"):
+			scene_path = DIALOGIC_DEFAULT_PARTS + scene_path
+		style.add_layer(scene_path, _export_overrides(layer[2]), layer[0])
 
 	_save(style, STYLE_PATH)
