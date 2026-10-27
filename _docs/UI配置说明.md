@@ -11,7 +11,7 @@
 
 ```text
 UI/
-  Fonts/                      SystemFont 字体资源（宋体/楷体，含中文回退栈）
+  Fonts/                      Noto Serif SC 子集字体 + FontVariation（OFL 1.1）
   StyleBoxes/                 九宫格 StyleBoxTexture / StyleBoxFlat
   Theme/ink_theme.tres        全局主题（project.godot -> gui/theme/custom）
   Dialogic/ink_wash_style.tres Dialogic 样式（默认样式，8 个内置层）
@@ -53,12 +53,11 @@ tools/
 
 ## 字体
 
-`UI/Fonts/` 下是 `SystemFont` 资源，按优先级回退：
+Web 平台不支持 Godot 的 `SystemFont`，所以所有平台统一使用随包携带的 **Noto Serif SC 子集字体**（OFL 1.1）：
 
-- 正文 / 界面：Noto Serif CJK SC → 思源宋体 → Songti SC → STSong → SimSun → serif
-- 标题 / 名牌：Kaiti SC → STKaiti → KaiTi → 宋体回退
-
-不把字体文件打进工程（当前导出目标是 Windows 与 Android，两者都有中文字体）。如果以后增加 Web 导出，需要在工程内嵌一份可再分发的中文字体，并把 `ink_serif*.tres`、`ink_kai*.tres` 换成 `FontFile`，否则浏览器端会缺字。
+- `UI/Fonts/NotoSerifSC-Subset.ttf`：只保留当前工程用到的 1662 个字符（剧情、UI、中文标点、ASCII），约 1.2MB
+- `ink_serif.tres` / `ink_serif_bold.tres` / `ink_kai.tres` / `ink_kai_bold.tres`：基于该字体的 `FontVariation`，wght 分别为 400 / 700 / 500 / 700
+- 字体许可与子集重建方式见 `UI/Fonts/README.md`；增加新文案后需要重新生成 `font_chars.txt` 与子集，否则 Web 端会缺字
 
 ## 全局主题
 
@@ -167,6 +166,20 @@ godot --headless --path . --script res://tools/build_ui_resources.gd
 - 剧情模式隐藏返回/重新开始，成功/选定路线后显示「继续剧情 / 确认路线」；Esc 不会跳过剧情节点
 
 接入点、八个 id 与奖励表见 `Minigames/README.md`。小游戏剧情模式截图见 `tools/capture_ui.gd` 的 `ui_story_quiz*`。
+
+## Web 导出注意事项
+
+- **音频总线必须是 `Master`**：`dialogic/audio/channel_defaults` 里空字符串 `""` 在 Web 会解析成 bus index -1，启动章节音乐时抛 `invalid bus index "-1"`，单线程 Web 会直接卡死。本项目已把默认通道和 `music` 通道都设为 `Master`。
+- **浏览器不能真正“退出游戏”**：`get_tree().quit()` 只会停掉运行时、页面看起来卡住。`Main.gd` 在 Web 上把按钮改成「重新载入」，通过 `JavaScriptBridge` 执行 `window.location.reload()`，回到干净的标题页。
+- **不要用 `SystemFont`**：Web 不支持系统字体，中文会全部变方块。本项目已改为随包携带 Noto Serif SC 子集（见上文字体一节）。
+- 导出用 Web preset（`variant/thread_support=false`），本地验证：
+
+```bash
+godot --headless --path . --export-release "Web" <输出目录>/index.html
+python -m http.server 8765 --directory <输出目录>
+```
+
+打开 `http://127.0.0.1:8765/index.html`，确认：开始故事能进入对话、控制台没有 `invalid bus index`、中文正常、点「重新载入」回到标题。
 
 ## 验证
 
